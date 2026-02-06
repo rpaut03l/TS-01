@@ -1115,15 +1115,3 @@ Root cost: 5
 - ❌ "AND nodes take MIN" → NO (AND=SUM, OR=MIN)
 
 ---
-
-## 📝 License & Credits
-
-**Course:** Artificial Intelligence  
-**Institution:** IIT Jodhpur  
-**Professor:** Romi Banerjee  
-**Coverage:** Slides 1-86, Set 2  
-**Exam Date:** February 8, 2026
-
----
-
-**Good luck on your quiz! 🚀💯**
