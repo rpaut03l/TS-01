@@ -2,17 +2,17 @@
 
 ## 📚 Table of Contents
 
-1. [Introduction](#introduction)
-2. [Core Concepts](#core-concepts)
-3. [Mathematical Foundation](#mathematical-foundation)
-4. [Distance Metrics](#distance-metrics)
-5. [Algorithm Variants](#algorithm-variants)
-6. [Implementation Guide](#implementation-guide)
-7. [Visualizations & Diagrams](#visualizations--diagrams)
-8. [Cheat Sheet](#cheat-sheet)
-9. [Practice Problems](#practice-problems)
-10. [Best Practices](#best-practices)
-11. [Common Pitfalls](#common-pitfalls)
+1. [Introduction](#-introduction)
+2. [Core Concepts](#-core-concepts)
+3. [Mathematical Foundation](#-mathematical-foundation)
+4. [Distance Metrics](#-distance-metrics)
+5. [Algorithm Variants](#-algorithm-variants)
+6. [Implementation Guide](#-implementation-guide)
+7. [Visualizations & Diagrams](#-visualizations--diagrams)
+8. [Cheat Sheet](#-cheat-sheet)
+9. [Practice Problems](#-practice-problems)
+10. [Best Practices](#-best-practices)
+11. [Common Pitfalls](#-common-pitfalls)
 
 ---
 
