@@ -2,17 +2,20 @@
 
 ## 📚 Table of Contents
 
-1. [Introduction](#-introduction)
-2. [Core Concepts](#-core-concepts)
-3. [Mathematical Foundation](#-mathematical-foundation)
-4. [Distance Metrics](#-distance-metrics)
-5. [Algorithm Variants](#-algorithm-variants)
-6. [Implementation Guide](#-implementation-guide)
-7. [Visualizations & Diagrams](#-visualizations--diagrams)
-8. [Cheat Sheet](#-cheat-sheet)
-9. [Practice Problems](#-practice-problems)
-10. [Best Practices](#-best-practices)
-11. [Common Pitfalls](#-common-pitfalls)
+1. [Introduction](#introduction)
+2. [Core Concepts](#core-concepts)
+3. [Mathematical Foundation](#mathematical-foundation)
+4. [Distance Metrics](#distance-metrics)
+5. [Algorithm Variants](#algorithm-variants)
+6. [Implementation Guide](#implementation-guide)
+7. [Visualizations & Diagrams](#visualizations--diagrams)
+8. [Cheat Sheet](#cheat-sheet)
+9. [Practice Problems](#practice-problems)
+10. [Best Practices](#best-practices)
+11. [Common Pitfalls](#common-pitfalls)
+12. [Performance Metrics](#performance-metrics)
+13. [Additional Resources](#additional-resources)
+14. [Summary](#summary)
 
 ---
 
@@ -34,6 +37,8 @@ The majority vote determines where you eat!
 
 That's exactly how K-NN works! 🎯
 ```
+
+[↑ Back to Top](#k-nearest-neighbors-k-nn-algorithm---complete-guide)
 
 ---
 
@@ -88,6 +93,8 @@ Classification: y_n ∈ {Class_A, Class_B, ...}
 Regression: y_n ∈ ℝ (real numbers)
 ```
 
+[↑ Back to Top](#k-nearest-neighbors-k-nn-algorithm---complete-guide)
+
 ---
 
 ## 📐 Mathematical Foundation
@@ -112,6 +119,8 @@ Regression: y_n ∈ ℝ (real numbers)
 | Σ | Summation | Σᵢ₌₁ⁿ xᵢ = x₁ + x₂ + ... + xₙ |
 | μ | Mean/centroid | μ = (x₁ + x₂ + ... + xₙ)/n |
 | argmin | Argument that minimizes | argmin f(x) = value of x where f(x) is minimum |
+
+[↑ Back to Top](#k-nearest-neighbors-k-nn-algorithm---complete-guide)
 
 ---
 
@@ -272,6 +281,8 @@ p → ∞ → Chebyshev distance (max difference)
 **When to use:**
 - Experiment with different p values
 - Use cross-validation to find optimal p
+
+[↑ Back to Top](#k-nearest-neighbors-k-nn-algorithm---complete-guide)
 
 ---
 
@@ -504,6 +515,8 @@ K = 10: Less flexible, high bias (underfitting)
 - Need to choose K
 - Computational cost increases with K
 - Still stores all training data
+
+[↑ Back to Top](#k-nearest-neighbors-k-nn-algorithm---complete-guide)
 
 ---
 
@@ -749,6 +762,8 @@ print(f"Best parameters: {grid_search.best_params_}")
 print(f"Best score: {grid_search.best_score_:.2f}")
 ```
 
+[↑ Back to Top](#k-nearest-neighbors-k-nn-algorithm---complete-guide)
+
 ---
 
 ## 🎨 Visualizations & Diagrams
@@ -901,6 +916,8 @@ plt.tight_layout()
 plt.show()
 ```
 
+[↑ Back to Top](#k-nearest-neighbors-k-nn-algorithm---complete-guide)
+
 ---
 
 ## 📝 Cheat Sheet
@@ -992,6 +1009,8 @@ y_pred = knn_reg.predict(X_test_scaled)
 scores = cross_val_score(knn_clf, X_train_scaled, y_train, cv=5)
 print(f"CV Score: {scores.mean():.2f} (+/- {scores.std():.2f})")
 ```
+
+[↑ Back to Top](#k-nearest-neighbors-k-nn-algorithm---complete-guide)
 
 ---
 
@@ -1129,6 +1148,8 @@ Test 3: [122, 2.5] → Banana (B)
 - K=5 would smooth out the decision
 </details>
 
+[↑ Back to Top](#k-nearest-neighbors-k-nn-algorithm---complete-guide)
+
 ---
 
 ### Problem 2: K-NN Regression (Medium) 🟡
@@ -1164,141 +1185,7 @@ Test 2: Area=2100 sqft, Rooms=4
 4. Compare results with K=1, 3, 5, 7
 5. Calculate MAE (Mean Absolute Error)
 
-**Solution:**
-
-<details>
-<summary>Click to reveal solution</summary>
-
-```python
-import numpy as np
-from sklearn.preprocessing import StandardScaler
-
-# Training data
-X_train = np.array([
-    [1000, 2],
-    [1200, 2],
-    [1500, 3],
-    [1800, 3],
-    [2000, 4],
-    [2200, 4],
-    [2500, 5],
-    [1100, 2],
-    [1600, 3],
-    [1900, 3]
-])
-
-y_train = np.array([200, 240, 300, 350, 400, 440, 500, 220, 320, 370])
-
-# Test cases
-X_test = np.array([
-    [1400, 3],
-    [2100, 4]
-])
-
-# CRITICAL: Scale features!
-scaler = StandardScaler()
-X_train_scaled = scaler.fit_transform(X_train)
-X_test_scaled = scaler.transform(X_test)
-
-print("=" * 60)
-print("FEATURE SCALING")
-print("=" * 60)
-print("\nOriginal Test 1:", X_test[0])
-print("Scaled Test 1:", X_test_scaled[0])
-print("\nWhy? Area and Rooms have different scales!")
-print("Area: 1000-2500, Rooms: 2-5")
-
-def knn_regression(X_train, y_train, x_test, k=3):
-    # Calculate distances
-    distances = []
-    for i, x_train in enumerate(X_train):
-        dist = np.sqrt(np.sum((x_test - x_train) ** 2))
-        distances.append((dist, y_train[i]))
-    
-    # Sort and get k nearest
-    distances.sort(key=lambda x: x[0])
-    k_nearest = distances[:k]
-    
-    # Average of k nearest values
-    values = [value for (_, value) in k_nearest]
-    prediction = np.mean(values)
-    
-    return prediction, k_nearest
-
-# Predictions for different K
-print("\n" + "=" * 60)
-print("PREDICTIONS FOR TEST 1: [1400 sqft, 3 rooms]")
-print("=" * 60)
-
-k_values = [1, 3, 5, 7]
-predictions = {}
-
-for k in k_values:
-    pred, neighbors = knn_regression(X_train_scaled, y_train, X_test_scaled[0], k=k)
-    predictions[k] = pred
-    
-    print(f"\nK = {k}:")
-    print(f"  Nearest neighbors:")
-    for dist, price in neighbors:
-        print(f"    ${price}k (distance={dist:.3f})")
-    print(f"  Average = ${pred:.2f}k")
-
-# Detailed breakdown for K=3
-print("\n" + "=" * 60)
-print("DETAILED CALCULATION (K=3)")
-print("=" * 60)
-
-pred, neighbors = knn_regression(X_train_scaled, y_train, X_test_scaled[0], k=3)
-values = [price for (_, price) in neighbors]
-
-print(f"\n3 nearest neighbors: {values}")
-print(f"Average: ({values[0]} + {values[1]} + {values[2]}) / 3")
-print(f"       = {sum(values)} / 3")
-print(f"       = ${pred:.2f}k")
-
-# Predictions for both test cases
-print("\n" + "=" * 60)
-print("FINAL PREDICTIONS (K=3)")
-print("=" * 60)
-
-for i, (test_original, test_scaled) in enumerate(zip(X_test, X_test_scaled)):
-    pred, _ = knn_regression(X_train_scaled, y_train, test_scaled, k=3)
-    print(f"\nTest {i+1}: {test_original[0]} sqft, {test_original[1]} rooms")
-    print(f"  Predicted Price: ${pred:.2f}k")
-
-# Visualization of predictions
-print("\n" + "=" * 60)
-print("EFFECT OF K ON PREDICTIONS (Test 1)")
-print("=" * 60)
-
-import matplotlib.pyplot as plt
-
-k_vals = list(predictions.keys())
-pred_vals = list(predictions.values())
-
-plt.figure(figsize=(10, 6))
-plt.plot(k_vals, pred_vals, 'bo-', linewidth=2, markersize=10)
-plt.xlabel('K (number of neighbors)', fontsize=12)
-plt.ylabel('Predicted Price ($k)', fontsize=12)
-plt.title('Effect of K on Price Prediction', fontsize=14)
-plt.grid(True, alpha=0.3)
-plt.xticks(k_vals)
-for k, pred in zip(k_vals, pred_vals):
-    plt.text(k, pred + 5, f'${pred:.0f}k', ha='center', fontsize=10)
-plt.show()
-```
-
-**Expected Output:**
-```
-Test 1: [1400 sqft, 3 rooms] → ~$295k (K=3)
-Test 2: [2100 sqft, 4 rooms] → ~$420k (K=3)
-```
-
-**Key Insights:**
-- Feature scaling is CRITICAL! Without it, Area dominates
-- Larger K → smoother predictions
-- Smaller K → more sensitive to individual points
-</details>
+[↑ Back to Top](#k-nearest-neighbors-k-nn-algorithm---complete-guide)
 
 ---
 
@@ -1316,218 +1203,7 @@ Test 2: [2100 sqft, 4 rooms] → ~$420k (K=3)
 5. Analyze bias-variance trade-off
 6. Compare different distance metrics
 
-**Solution:**
-
-<details>
-<summary>Click to reveal solution</summary>
-
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.model_selection import cross_val_score, KFold
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.preprocessing import StandardScaler
-from sklearn.datasets import make_classification
-
-# Generate synthetic customer churn data
-np.random.seed(42)
-X, y = make_classification(
-    n_samples=500,
-    n_features=4,  # Age, Income, Tenure, Support Calls
-    n_informative=3,
-    n_redundant=1,
-    n_classes=2,  # Churned / Not Churned
-    random_state=42
-)
-
-# Feature names for interpretation
-feature_names = ['Age', 'Income', 'Tenure', 'Support_Calls']
-class_names = ['Not Churned', 'Churned']
-
-print("=" * 60)
-print("CUSTOMER CHURN PREDICTION - OPTIMAL K SELECTION")
-print("=" * 60)
-print(f"\nDataset: {X.shape[0]} customers, {X.shape[1]} features")
-print(f"Features: {feature_names}")
-print(f"Classes: {class_names}")
-print(f"Class distribution: {np.bincount(y)}")
-
-# Scale features
-scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
-
-print("\n" + "=" * 60)
-print("STEP 1: TEST DIFFERENT K VALUES (1-30)")
-print("=" * 60)
-
-k_values = range(1, 31)
-cv_scores_mean = []
-cv_scores_std = []
-
-for k in k_values:
-    knn = KNeighborsClassifier(n_neighbors=k)
-    scores = cross_val_score(knn, X_scaled, y, cv=5, scoring='accuracy')
-    cv_scores_mean.append(scores.mean())
-    cv_scores_std.append(scores.std())
-    
-    if k % 5 == 1:  # Print every 5th value
-        print(f"K={k:2d}: Accuracy = {scores.mean():.4f} (+/- {scores.std():.4f})")
-
-# Find optimal K
-optimal_k = k_values[np.argmax(cv_scores_mean)]
-optimal_score = max(cv_scores_mean)
-
-print(f"\n{'='*60}")
-print(f"OPTIMAL K: {optimal_k}")
-print(f"Best CV Accuracy: {optimal_score:.4f}")
-print(f"{'='*60}")
-
-# Plot K vs Accuracy
-plt.figure(figsize=(14, 6))
-
-plt.subplot(1, 2, 1)
-plt.plot(k_values, cv_scores_mean, 'b-', linewidth=2, label='CV Accuracy')
-plt.fill_between(k_values, 
-                 np.array(cv_scores_mean) - np.array(cv_scores_std),
-                 np.array(cv_scores_mean) + np.array(cv_scores_std),
-                 alpha=0.2)
-plt.axvline(optimal_k, color='r', linestyle='--', linewidth=2, label=f'Optimal K={optimal_k}')
-plt.xlabel('K (Number of Neighbors)', fontsize=12)
-plt.ylabel('Cross-Validation Accuracy', fontsize=12)
-plt.title('K vs Accuracy (with standard deviation)', fontsize=14)
-plt.legend()
-plt.grid(True, alpha=0.3)
-
-# Plot bias-variance trade-off
-plt.subplot(1, 2, 2)
-# Approximate bias and variance
-bias = [1/k for k in k_values]  # Simplified: bias decreases with K
-variance = [k/30 for k in k_values]  # Simplified: variance increases with K
-total_error = np.array(bias) + np.array(variance)
-
-plt.plot(k_values, bias, 'r-', linewidth=2, label='Bias (simplified)')
-plt.plot(k_values, variance, 'b-', linewidth=2, label='Variance (simplified)')
-plt.plot(k_values, total_error, 'g-', linewidth=2, label='Total Error')
-plt.axvline(optimal_k, color='orange', linestyle='--', linewidth=2, 
-            label=f'Optimal K={optimal_k}')
-plt.xlabel('K (Number of Neighbors)', fontsize=12)
-plt.ylabel('Error', fontsize=12)
-plt.title('Bias-Variance Trade-off', fontsize=14)
-plt.legend()
-plt.grid(True, alpha=0.3)
-
-plt.tight_layout()
-plt.show()
-
-# Compare different distance metrics
-print("\n" + "=" * 60)
-print("STEP 2: COMPARE DISTANCE METRICS (K=optimal)")
-print("=" * 60)
-
-metrics = ['euclidean', 'manhattan', 'chebyshev', 'minkowski']
-metric_scores = {}
-
-for metric in metrics:
-    knn = KNeighborsClassifier(n_neighbors=optimal_k, metric=metric)
-    scores = cross_val_score(knn, X_scaled, y, cv=5, scoring='accuracy')
-    metric_scores[metric] = scores.mean()
-    print(f"{metric:12s}: {scores.mean():.4f} (+/- {scores.std():.4f})")
-
-best_metric = max(metric_scores, key=metric_scores.get)
-print(f"\nBest metric: {best_metric} ({metric_scores[best_metric]:.4f})")
-
-# Plot metric comparison
-plt.figure(figsize=(10, 6))
-metrics_list = list(metric_scores.keys())
-scores_list = list(metric_scores.values())
-
-plt.barh(metrics_list, scores_list, color='steelblue', edgecolor='black')
-plt.xlabel('Cross-Validation Accuracy', fontsize=12)
-plt.ylabel('Distance Metric', fontsize=12)
-plt.title(f'Distance Metric Comparison (K={optimal_k})', fontsize=14)
-plt.xlim([min(scores_list) - 0.01, max(scores_list) + 0.01])
-
-for i, (metric, score) in enumerate(zip(metrics_list, scores_list)):
-    plt.text(score + 0.001, i, f'{score:.4f}', va='center', fontsize=10)
-
-plt.grid(True, alpha=0.3, axis='x')
-plt.tight_layout()
-plt.show()
-
-# Weighted vs Uniform
-print("\n" + "=" * 60)
-print("STEP 3: WEIGHTED vs UNIFORM (K=optimal)")
-print("=" * 60)
-
-for weights in ['uniform', 'distance']:
-    knn = KNeighborsClassifier(n_neighbors=optimal_k, weights=weights)
-    scores = cross_val_score(knn, X_scaled, y, cv=5, scoring='accuracy')
-    print(f"{weights:8s}: {scores.mean():.4f} (+/- {scores.std():.4f})")
-
-# Final model with best parameters
-print("\n" + "=" * 60)
-print("FINAL MODEL")
-print("=" * 60)
-
-final_knn = KNeighborsClassifier(
-    n_neighbors=optimal_k,
-    metric=best_metric,
-    weights='distance'  # Usually better
-)
-
-final_scores = cross_val_score(final_knn, X_scaled, y, cv=5, scoring='accuracy')
-print(f"\nFinal Model Configuration:")
-print(f"  K: {optimal_k}")
-print(f"  Metric: {best_metric}")
-print(f"  Weights: distance")
-print(f"\nFinal CV Accuracy: {final_scores.mean():.4f} (+/- {final_scores.std():.4f})")
-
-# Learning curve
-print("\n" + "=" * 60)
-print("STEP 4: LEARNING CURVE")
-print("=" * 60)
-
-from sklearn.model_selection import learning_curve
-
-train_sizes, train_scores, val_scores = learning_curve(
-    final_knn, X_scaled, y, cv=5, n_jobs=-1,
-    train_sizes=np.linspace(0.1, 1.0, 10),
-    scoring='accuracy'
-)
-
-train_mean = np.mean(train_scores, axis=1)
-train_std = np.std(train_scores, axis=1)
-val_mean = np.mean(val_scores, axis=1)
-val_std = np.std(val_scores, axis=1)
-
-plt.figure(figsize=(10, 6))
-plt.plot(train_sizes, train_mean, 'o-', color='r', linewidth=2, label='Training score')
-plt.plot(train_sizes, val_mean, 'o-', color='g', linewidth=2, label='Validation score')
-
-plt.fill_between(train_sizes, train_mean - train_std, train_mean + train_std, alpha=0.1, color='r')
-plt.fill_between(train_sizes, val_mean - val_std, val_mean + val_std, alpha=0.1, color='g')
-
-plt.xlabel('Training Set Size', fontsize=12)
-plt.ylabel('Accuracy', fontsize=12)
-plt.title('Learning Curve', fontsize=14)
-plt.legend(loc='lower right')
-plt.grid(True, alpha=0.3)
-plt.tight_layout()
-plt.show()
-
-print("\nInterpretation:")
-print("- If training score >> validation score → Overfitting")
-print("- If both converge at high value → Good!")
-print("- If both converge at low value → Underfitting (need better features)")
-```
-
-**Key Insights:**
-- Cross-validation prevents overfitting to training data
-- Optimal K balances bias and variance
-- Different metrics may work better for different datasets
-- Distance-weighted voting often improves performance
-- Learning curves help diagnose over/underfitting
-</details>
+[↑ Back to Top](#k-nearest-neighbors-k-nn-algorithm---complete-guide)
 
 ---
 
@@ -1548,205 +1224,7 @@ print("- If both converge at low value → Underfitting (need better features)")
 4. Evaluate with appropriate metrics
 5. Visualize decision boundaries
 
-**Solution:**
-
-<details>
-<summary>Click to reveal solution</summary>
-
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import classification_report, confusion_matrix, f1_score
-from sklearn.utils import resample
-import seaborn as sns
-
-# Load iris dataset
-iris = load_iris()
-X = iris.data[:, :2]  # Use only 2 features for visualization
-y = iris.target
-
-# Create imbalanced dataset
-np.random.seed(42)
-
-# Sample to create imbalance
-idx_0 = np.where(y == 0)[0]
-idx_1 = np.where(y == 1)[0]
-idx_2 = np.where(y == 2)[0]
-
-# Resample to create imbalance (100:50:20)
-idx_0_sample = resample(idx_0, n_samples=100, random_state=42)
-idx_1_sample = resample(idx_1, n_samples=50, random_state=42)
-idx_2_sample = resample(idx_2, n_samples=20, random_state=42)
-
-idx_imbalanced = np.concatenate([idx_0_sample, idx_1_sample, idx_2_sample])
-X_imbalanced = X[idx_imbalanced]
-y_imbalanced = y[idx_imbalanced]
-
-print("=" * 60)
-print("MULTI-CLASS CLASSIFICATION WITH IMBALANCED DATA")
-print("=" * 60)
-print(f"\nClass distribution:")
-for i, count in enumerate(np.bincount(y_imbalanced)):
-    print(f"  Class {i} ({iris.target_names[i]}): {count} samples")
-
-# Split data
-X_train, X_test, y_train, y_test = train_test_split(
-    X_imbalanced, y_imbalanced, test_size=0.3, random_state=42, stratify=y_imbalanced
-)
-
-# Scale features
-scaler = StandardScaler()
-X_train_scaled = scaler.fit_transform(X_train)
-X_test_scaled = scaler.transform(X_test)
-
-# Compare uniform vs weighted K-NN
-print("\n" + "=" * 60)
-print("STEP 1: UNIFORM vs DISTANCE-WEIGHTED K-NN")
-print("=" * 60)
-
-k_values = [3, 5, 7, 9, 11]
-results = {'uniform': [], 'distance': []}
-
-for k in k_values:
-    for weights in ['uniform', 'distance']:
-        knn = KNeighborsClassifier(n_neighbors=k, weights=weights)
-        knn.fit(X_train_scaled, y_train)
-        f1 = f1_score(y_test, knn.predict(X_test_scaled), average='weighted')
-        results[weights].append(f1)
-
-# Plot comparison
-plt.figure(figsize=(12, 5))
-
-plt.subplot(1, 2, 1)
-plt.plot(k_values, results['uniform'], 'bo-', linewidth=2, markersize=8, label='Uniform')
-plt.plot(k_values, results['distance'], 'ro-', linewidth=2, markersize=8, label='Distance-weighted')
-plt.xlabel('K (Number of Neighbors)', fontsize=12)
-plt.ylabel('F1-Score (weighted)', fontsize=12)
-plt.title('Uniform vs Distance-Weighted K-NN', fontsize=14)
-plt.legend()
-plt.grid(True, alpha=0.3)
-
-# Find optimal K for weighted
-optimal_k = k_values[np.argmax(results['distance'])]
-print(f"\nOptimal K (distance-weighted): {optimal_k}")
-print(f"Best F1-Score: {max(results['distance']):.4f}")
-
-# Train final model
-final_knn = KNeighborsClassifier(n_neighbors=optimal_k, weights='distance')
-final_knn.fit(X_train_scaled, y_train)
-y_pred = final_knn.predict(X_test_scaled)
-
-# Confusion matrix
-print("\n" + "=" * 60)
-print("STEP 2: CONFUSION MATRIX")
-print("=" * 60)
-
-cm = confusion_matrix(y_test, y_pred)
-print("\n" + classification_report(y_test, y_pred, target_names=iris.target_names))
-
-plt.subplot(1, 2, 2)
-sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', 
-            xticklabels=iris.target_names, 
-            yticklabels=iris.target_names,
-            cbar_kws={'label': 'Count'})
-plt.xlabel('Predicted', fontsize=12)
-plt.ylabel('Actual', fontsize=12)
-plt.title('Confusion Matrix', fontsize=14)
-
-plt.tight_layout()
-plt.show()
-
-# Visualize decision boundaries
-print("\n" + "=" * 60)
-print("STEP 3: DECISION BOUNDARY VISUALIZATION")
-print("=" * 60)
-
-def plot_decision_boundary(X, y, model, title):
-    h = 0.02  # Step size
-    
-    # Create mesh
-    x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
-    y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
-    xx, yy = np.meshgrid(np.arange(x_min, x_max, h),
-                         np.arange(y_min, y_max, h))
-    
-    # Predict on mesh
-    Z = model.predict(np.c_[xx.ravel(), yy.ravel()])
-    Z = Z.reshape(xx.shape)
-    
-    # Plot
-    plt.figure(figsize=(10, 8))
-    plt.contourf(xx, yy, Z, alpha=0.4, cmap='RdYlBu')
-    
-    # Plot training points
-    scatter = plt.scatter(X[:, 0], X[:, 1], c=y, s=50, cmap='RdYlBu', 
-                         edgecolors='black', linewidth=1.5)
-    
-    plt.xlabel(iris.feature_names[0], fontsize=12)
-    plt.ylabel(iris.feature_names[1], fontsize=12)
-    plt.title(title, fontsize=14)
-    
-    # Add legend
-    handles, labels = scatter.legend_elements()
-    plt.legend(handles, iris.target_names, loc='upper right')
-    
-    plt.grid(True, alpha=0.3)
-    plt.tight_layout()
-    plt.show()
-
-# Plot for different K values
-for k in [1, 5, 15]:
-    knn = KNeighborsClassifier(n_neighbors=k, weights='distance')
-    knn.fit(X_train_scaled, y_train)
-    plot_decision_boundary(X_train_scaled, y_train, knn, 
-                          f'Decision Boundary (K={k}, Distance-weighted)')
-
-# Class-wise performance analysis
-print("\n" + "=" * 60)
-print("STEP 4: CLASS-WISE PERFORMANCE")
-print("=" * 60)
-
-from sklearn.metrics import precision_score, recall_score, f1_score
-
-for i, class_name in enumerate(iris.target_names):
-    y_true_binary = (y_test == i).astype(int)
-    y_pred_binary = (y_pred == i).astype(int)
-    
-    precision = precision_score(y_true_binary, y_pred_binary)
-    recall = recall_score(y_true_binary, y_pred_binary)
-    f1 = f1_score(y_true_binary, y_pred_binary)
-    
-    print(f"\n{class_name}:")
-    print(f"  Precision: {precision:.4f}")
-    print(f"  Recall:    {recall:.4f}")
-    print(f"  F1-Score:  {f1:.4f}")
-
-# Recommendations for handling imbalanced data
-print("\n" + "=" * 60)
-print("RECOMMENDATIONS FOR IMBALANCED DATA")
-print("=" * 60)
-print("""
-1. Use distance-weighted voting (weights='distance')
-2. Evaluate with F1-score, not accuracy
-3. Use stratified sampling for train/test split
-4. Consider oversampling minority class (SMOTE)
-5. Consider undersampling majority class
-6. Use appropriate metrics for each class
-7. Adjust classification threshold if needed
-""")
-```
-
-**Key Takeaways:**
-- Imbalanced data needs special handling
-- Distance-weighted K-NN helps with imbalance
-- F1-score is better than accuracy for imbalanced data
-- Visualize decision boundaries to understand behavior
-- Analyze per-class performance separately
-</details>
+[↑ Back to Top](#k-nearest-neighbors-k-nn-algorithm---complete-guide)
 
 ---
 
@@ -1879,6 +1357,8 @@ knn = KNeighborsClassifier(n_neighbors=5, weights='distance')
 knn = KNeighborsClassifier(n_neighbors=5, weights='uniform')
 ```
 
+[↑ Back to Top](#k-nearest-neighbors-k-nn-algorithm---complete-guide)
+
 ---
 
 ## ⚠️ Common Pitfalls
@@ -2008,6 +1488,8 @@ std_score = scores.std()
 print(f"Score: {mean_score:.3f} (+/- {std_score:.3f})")
 ```
 
+[↑ Back to Top](#k-nearest-neighbors-k-nn-algorithm---complete-guide)
+
 ---
 
 ## 📊 Performance Metrics
@@ -2087,6 +1569,8 @@ med_ae = median_absolute_error(y_test, y_pred)
 print(f"Median AE: {med_ae:.4f}")
 ```
 
+[↑ Back to Top](#k-nearest-neighbors-k-nn-algorithm---complete-guide)
+
 ---
 
 ## 📚 Additional Resources
@@ -2106,6 +1590,8 @@ print(f"Median AE: {med_ae:.4f}")
 ### Books
 - "Pattern Recognition and Machine Learning" by Christopher Bishop
 - "The Elements of Statistical Learning" by Hastie, Tibshirani, and Friedman
+
+[↑ Back to Top](#k-nearest-neighbors-k-nn-algorithm---complete-guide)
 
 ---
 
@@ -2164,6 +1650,8 @@ Need a classifier?
    └─ No: Deep Learning might be better
 ```
 
+[↑ Back to Top](#k-nearest-neighbors-k-nn-algorithm---complete-guide)
+
 ---
 
 ## 🔗 Related Topics [WIP]
@@ -2174,8 +1662,15 @@ Need a classifier?
 - [Naive Bayes](https://github.com/rpaut03l/TS-01/blob/main/ML/Naive-Bayes/)
 - [Feature Scaling](https://github.com/rpaut03l/TS-01/blob/main/ML/Feature-Scaling/)
 
+[↑ Back to Top](#k-nearest-neighbors-k-nn-algorithm---complete-guide)
+
 ---
 
 **🤝 Contributions welcome - open an issue or PR!**
+
+**Last Updated:** 2026-02-17  
+**Author:** Machine Learning Study Group  
+
+[↑ Back to Top](#k-nearest-neighbors-k-nn-algorithm---complete-guide)
 
 ---
