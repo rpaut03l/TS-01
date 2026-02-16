@@ -1658,7 +1658,7 @@ Need a classifier?
 
 - [Support Vector Machines (SVM)](https://github.com/rpaut03l/TS-01/blob/main/ML/SVM/)
 - [Decision Trees](https://github.com/rpaut03l/TS-01/blob/main/ML/Decision-Trees/)
-- [Random Forests](https://github.com/rpaut03l/TS-01/blob/main/ML/Random-Forests/)
+- [Random Forest](https://github.com/rpaut03l/TS-01/blob/main/ML/Randon-Forest/ML-Random-Forest-Complete-Guide.pdf)
 - [Naive Bayes](https://github.com/rpaut03l/TS-01/blob/main/ML/Naive-Bayes/)
 - [Feature Scaling](https://github.com/rpaut03l/TS-01/blob/main/ML/Feature-Scaling/)
 
