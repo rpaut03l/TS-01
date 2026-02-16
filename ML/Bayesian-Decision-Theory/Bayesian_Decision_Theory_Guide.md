@@ -40,7 +40,7 @@ Imagine you work at a fish factory. Fish come on a conveyor belt and you need to
 
 **The Challenge:** You need to decide quickly - is this fish Sea Bass or Salmon?
 
-This is called a **Classification Problem**.
+This is called a **_Classification Problem_**.
 
 ---
 
