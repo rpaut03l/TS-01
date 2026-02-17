@@ -182,13 +182,13 @@ STOP when any of these are true:
 │ ① All examples in node = same class             │
 │    → Make leaf with that class                  │
 │                                                 │
-│ ② No attributes left to split on               │
+│ ② No attributes left to split on                │
 │    → Make leaf with MAJORITY class              │
 │                                                 │
-│ ③ No examples left in this branch              │
+│ ③ No examples left in this branch               │
 │    → Make leaf with PARENT'S majority class     │
 │                                                 │
-│ ④ Gain < threshold (pre-pruning)               │
+│ ④ Gain < threshold (pre-pruning)                │
 │    → Make leaf with majority class              │
 └─────────────────────────────────────────────────┘
 ```
@@ -1226,25 +1226,25 @@ This is WHY ensembles (Random Forests) outperform single trees
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                    DECISION TREE LEARNING — OVERVIEW                 │
+│                    DECISION TREE LEARNING — OVERVIEW                │
 ├─────────────────────────────────────────────────────────────────────┤
-│                                                                       │
-│  DATA → [Compute Entropy] → [Compute Gain per Attribute]             │
-│                ↓                         ↓                            │
-│           entropy(D)            gain(D, Aᵢ) = entropy(D)             │
-│       = -Σ Pr(c)log₂Pr(c)       - Σ(|Dⱼ|/|D|)×entropy(Dⱼ)         │
-│                                                                       │
-│  [Pick MAX gain attribute] → [Split data] → [Recurse on subsets]     │
-│                                                                       │
-│  STOPPING: Pure node | No attributes | Gain < threshold               │
-│                                                                       │
-│  OVERFITTING: Prune! (Post-pruning preferred)                         │
-│                                                                       │
-│  CONTINUOUS: Try all midpoint thresholds, pick max gain               │
-│                                                                       │
-│  RULES: Each root→leaf path = one IF-THEN rule                        │
-│                                                                       │
-│  VARIANTS: ID3 (Gain) | C4.5 (GainRatio) | CART (Gini)               │
+│                                                                     │
+│  DATA → [Compute Entropy] → [Compute Gain per Attribute]            │
+│                ↓                         ↓                          │
+│           entropy(D)            gain(D, Aᵢ) = entropy(D)            │
+│       = -Σ Pr(c)log₂Pr(c)       - Σ(|Dⱼ|/|D|)×entropy(Dⱼ)           │
+│                                                                     │
+│  [Pick MAX gain attribute] → [Split data] → [Recurse on subsets]    │
+│                                                                     │
+│  STOPPING: Pure node | No attributes | Gain < threshold             │
+│                                                                     │
+│  OVERFITTING: Prune! (Post-pruning preferred)                       │
+│                                                                     │
+│  CONTINUOUS: Try all midpoint thresholds, pick max gain             │
+│                                                                     │
+│  RULES: Each root→leaf path = one IF-THEN rule                      │
+│                                                                     │
+│  VARIANTS: ID3 (Gain) | C4.5 (GainRatio) | CART (Gini)              │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
