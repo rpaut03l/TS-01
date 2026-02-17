@@ -1,6 +1,5 @@
 # 🌳 Decision Trees — Complete Study Guide
 
-> **Reference:** CS583, Bing Liu, UIC | Subhash Bhagat Sir ML Slides  
 > **Topic:** Decision Tree Learning using Entropy & Information Gain  
 > **Level:** Beginner → Advanced
 
@@ -1250,5 +1249,3 @@ This is WHY ensembles (Random Forests) outperform single trees
 ```
 
 ---
-
-*Last updated: February 2026 | Based on CS583 (Bing Liu, UIC) + Subhash Bhagat Sir ML Slides*
