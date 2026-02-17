@@ -2,7 +2,7 @@
 
 > **15 High-Yield Theory Questions** covering all conceptual aspects of Linear Discriminant Analysis
 > 
-> These are the most commonly asked theory questions in exams — master these and you're set!
+> These are the most commonly asked theory questions — master these and you're set!
 
 ---
 
