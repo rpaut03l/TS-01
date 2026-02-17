@@ -326,50 +326,50 @@ INPUT:   Training data with class labels
 OUTPUT:  LDA direction w*, projected data
 
 ┌──────────────────────────────────────────────────────────┐
-│  STEP 1 ── Compute class means                          │
+│  STEP 1 ── Compute class means                           │
 │                                                          │
-│  μ₁ = (1/N₁) Σ xₙ   for all n in class 1               │
-│  μ₂ = (1/N₂) Σ xₙ   for all n in class 2               │
+│  μ₁ = (1/N₁) Σ xₙ   for all n in class 1                 │
+│  μ₂ = (1/N₂) Σ xₙ   for all n in class 2                 │
 └──────────────────────────────────────────────────────────┘
                            ↓
 ┌──────────────────────────────────────────────────────────┐
-│  STEP 2 ── Compute within-class scatter matrices        │
+│  STEP 2 ── Compute within-class scatter matrices         │
 │                                                          │
-│  S₁ = Σ (xₙ−μ₁)(xₙ−μ₁)ᵀ    for n in class 1           │
-│  S₂ = Σ (xₙ−μ₂)(xₙ−μ₂)ᵀ    for n in class 2           │
-│  Sᵂ = S₁ + S₂                                           │
+│  S₁ = Σ (xₙ−μ₁)(xₙ−μ₁)ᵀ    for n in class 1               │
+│  S₂ = Σ (xₙ−μ₂)(xₙ−μ₂)ᵀ    for n in class 2               │
+│  Sᵂ = S₁ + S₂                                            │
 └──────────────────────────────────────────────────────────┘
                            ↓
 ┌──────────────────────────────────────────────────────────┐
-│  STEP 3 ── Compute between-class scatter matrix         │
+│  STEP 3 ── Compute between-class scatter matrix          │
 │                                                          │
-│  Sʙ = (μ₂ − μ₁)(μ₂ − μ₁)ᵀ                             │
+│  Sʙ = (μ₂ − μ₁)(μ₂ − μ₁)ᵀ                                │
 └──────────────────────────────────────────────────────────┘
                            ↓
 ┌──────────────────────────────────────────────────────────┐
-│  STEP 4 ── Find optimal direction w*                    │
+│  STEP 4 ── Find optimal direction w*                     │
 │                                                          │
-│  w* = Sᵂ⁻¹ (μ₂ − μ₁)                                   │
+│  w* = Sᵂ⁻¹ (μ₂ − μ₁)                                     │
 └──────────────────────────────────────────────────────────┘
                            ↓
 ┌──────────────────────────────────────────────────────────┐
-│  STEP 5 ── Project all data                             │
+│  STEP 5 ── Project all data                              │
 │                                                          │
-│  yₙ = (w*)ᵀ xₙ   for every training point xₙ           │
+│  yₙ = (w*)ᵀ xₙ   for every training point xₙ              │
 │                                                          │
-│  Also project class means:                              │
-│  m̃₁ = (w*)ᵀ μ₁                                         │
-│  m̃₂ = (w*)ᵀ μ₂                                         │
+│  Also project class means:                               │
+│  m̃₁ = (w*)ᵀ μ₁                                           │
+│  m̃₂ = (w*)ᵀ μ₂                                           │
 └──────────────────────────────────────────────────────────┘
                            ↓
 ┌──────────────────────────────────────────────────────────┐
-│  STEP 6 ── Classify new point x_new                     │
+│  STEP 6 ── Classify new point x_new                      │
 │                                                          │
-│  y_new = (w*)ᵀ x_new                                    │
-│  threshold t = (m̃₁ + m̃₂) / 2                           │
+│  y_new = (w*)ᵀ x_new                                     │
+│  threshold t = (m̃₁ + m̃₂) / 2                             │
 │                                                          │
-│  If y_new ≥ t  →  class 2                               │
-│  If y_new < t  →  class 1                               │
+│  If y_new ≥ t  →  class 2                                │
+│  If y_new < t  →  class 1                                │
 └──────────────────────────────────────────────────────────┘
 ```
 
@@ -782,73 +782,73 @@ Case 3: Large d AND small scatter → PERFECT ✅
 
 ```
 ╔══════════════════════════════════════════════════════════════════╗
-║                     LDA COMPLETE CHEATSHEET                     ║
+║                     LDA COMPLETE CHEATSHEET                      ║
 ╠══════════════════════════════════════════════════════════════════╣
 ║                                                                  ║
 ║  WHAT:  Supervised dimensionality reduction + classification     ║
 ║  WHY:   Maximize class separation (not just variance like PCA)   ║
 ║                                                                  ║
 ╠══════════════════════════════════════════════════════════════════╣
-║  CORE FORMULA — Fisher's Criterion:                             ║
+║  CORE FORMULA — Fisher's Criterion:                              ║
 ║                                                                  ║
-║          wᵀ Sʙ w         Between-class scatter                  ║
-║  J(w) = ──────────  =  ──────────────────────                   ║
-║          wᵀ Sᵂ w         Within-class scatter                   ║
+║          wᵀ Sʙ w         Between-class scatter                   ║
+║  J(w) = ──────────  =  ──────────────────────                    ║
+║          wᵀ Sᵂ w         Within-class scatter                    ║
 ║                                                                  ║
-║  MAXIMIZE J(w) → find the best projection direction w*          ║
-║                                                                  ║
-╠══════════════════════════════════════════════════════════════════╣
-║  CLOSED-FORM SOLUTION:                                          ║
-║                                                                  ║
-║  w* = Sᵂ⁻¹ (μ₂ − μ₁)          [2-class case]                   ║
-║                                                                  ║
-║  General: solve  Sʙ w = λ Sᵂ w  [eigenvalue problem]            ║
+║  MAXIMIZE J(w) → find the best projection direction w*           ║
 ║                                                                  ║
 ╠══════════════════════════════════════════════════════════════════╣
-║  SCATTER MATRICES:                                              ║
+║  CLOSED-FORM SOLUTION:                                           ║
 ║                                                                  ║
-║  Within:   Sᵂ = S₁ + S₂                                        ║
-║            Sₖ = Σ(xₙ−μₖ)(xₙ−μₖ)ᵀ                              ║
+║  w* = Sᵂ⁻¹ (μ₂ − μ₁)          [2-class case]                     ║
 ║                                                                  ║
-║  Between:  Sʙ = (μ₂−μ₁)(μ₂−μ₁)ᵀ              [2-class]        ║
-║            Sʙ = Σₖ Nₖ(μₖ−μ̄)(μₖ−μ̄)ᵀ           [multi-class]  ║
+║  General: solve  Sʙ w = λ Sᵂ w  [eigenvalue problem]             ║
 ║                                                                  ║
 ╠══════════════════════════════════════════════════════════════════╣
-║  NUMBER OF LDA AXES:                                            ║
+║  SCATTER MATRICES:                                               ║
 ║                                                                  ║
-║  # axes = min(C−1,  p)                                          ║
-║  C = # classes       p = # features                             ║
+║  Within:   Sᵂ = S₁ + S₂                                          ║
+║            Sₖ = Σ(xₙ−μₖ)(xₙ−μₖ)ᵀ                                   ║
 ║                                                                  ║
-║  2 classes → 1 axis   │  3 classes → 2 axes                     ║
-║  5 classes → 4 axes   │  N classes → N−1 axes                   ║
-║                                                                  ║
-╠══════════════════════════════════════════════════════════════════╣
-║  CLASSIFICATION RULE:                                           ║
-║                                                                  ║
-║  y = wᵀ x_new                                                   ║
-║  t = (m̃₁ + m̃₂) / 2      ← midpoint threshold                  ║
-║  y ≥ t  →  class 2                                              ║
-║  y < t  →  class 1                                              ║
+║  Between:  Sʙ = (μ₂−μ₁)(μ₂−μ₁)ᵀ              [2-class]           ║
+║            Sʙ = Σₖ Nₖ(μₖ−μ̄)(μₖ−μ̄)ᵀ           [multi-class]         ║
 ║                                                                  ║
 ╠══════════════════════════════════════════════════════════════════╣
-║  2×2 MATRIX INVERSE (exam helper):                              ║
+║  NUMBER OF LDA AXES:                                             ║
 ║                                                                  ║
-║  A = [a b]     A⁻¹ = ──1──  × [ d  −b]                         ║
-║      [c d]           ad−bc     [−c   a]                         ║
+║  # axes = min(C−1,  p)                                           ║
+║  C = # classes       p = # features                              ║
 ║                                                                  ║
-║  det(A) = ad − bc                                               ║
-║                                                                  ║
-╠══════════════════════════════════════════════════════════════════╣
-║  LDA vs PCA:                                                    ║
-║                                                                  ║
-║  PCA:  Unsupervised │ max variance  │ no labels   │ any # axes  ║
-║  LDA:  Supervised   │ max separation│ needs labels│ C−1 axes    ║
+║  2 classes → 1 axis   │  3 classes → 2 axes                      ║
+║  5 classes → 4 axes   │  N classes → N−1 axes                    ║
 ║                                                                  ║
 ╠══════════════════════════════════════════════════════════════════╣
-║  ASSUMPTIONS:                                                   ║
-║  1. Classes are Gaussian (normally distributed)                 ║
-║  2. Equal covariance across classes (Σ₁ = Σ₂)                  ║
-║     [If violated → use QDA instead]                             ║
+║  CLASSIFICATION RULE:                                            ║
+║                                                                  ║
+║  y = wᵀ x_new                                                    ║
+║  t = (m̃₁ + m̃₂) / 2      ← midpoint threshold                     ║
+║  y ≥ t  →  class 2                                               ║
+║  y < t  →  class 1                                               ║
+║                                                                  ║
+╠══════════════════════════════════════════════════════════════════╣
+║  2×2 MATRIX INVERSE (exam helper):                               ║
+║                                                                  ║
+║  A = [a b]     A⁻¹ = ──1──  × [ d  −b]                           ║
+║      [c d]           ad−bc     [−c   a]                          ║
+║                                                                  ║
+║  det(A) = ad − bc                                                ║
+║                                                                  ║
+╠══════════════════════════════════════════════════════════════════╣
+║  LDA vs PCA:                                                     ║
+║                                                                  ║
+║  PCA:  Unsupervised │ max variance  │ no labels   │ any # axes   ║
+║  LDA:  Supervised   │ max separation│ needs labels│ C−1 axes     ║
+║                                                                  ║
+╠══════════════════════════════════════════════════════════════════╣
+║  ASSUMPTIONS:                                                    ║
+║  1. Classes are Gaussian (normally distributed)                  ║
+║  2. Equal covariance across classes (Σ₁ = Σ₂)                    ║
+║     [If violated → use QDA instead]                              ║
 ║                                                                  ║
 ╚══════════════════════════════════════════════════════════════════╝
 ```
