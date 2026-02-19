@@ -160,10 +160,10 @@ One possible tree using Age as root (from the slides):
 
 ```
   ┌─────────────────┐      ┌───────────────────────────┐
-  │  DECISION NODE  │  vs  │        LEAF NODE           │
-  │                 │      │                            │
-  │     Age?        │      │   Class: Yes               │
-  │   ↙   ↓   ↘   │      │   Confidence: 2/2 = 100%   │
+  │  DECISION NODE  │  vs  │        LEAF NODE          │
+  │                 │      │                           │
+  │     Age?        │      │   Class: Yes              │
+  │   ↙   ↓   ↘     │      │   Confidence: 2/2 = 100%  │
   └─────────────────┘      └───────────────────────────┘
    Asks a question           Gives the final answer
 ```
