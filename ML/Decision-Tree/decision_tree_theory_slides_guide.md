@@ -541,7 +541,7 @@ $$\text{entropy}(D) = -\sum_{j=1}^{|C|} \Pr(c_j) \cdot \log_2 \Pr(c_j)$$
   │                    50% positive, 50% negative                │
   │                    → Must keep splitting                     │
   │                                                              │
-  │  0 < entropy < 1   Somewhere in between                     │
+  │  0 < entropy < 1   Somewhere in between                      │
   │                    Lower = purer = better                    │
   └──────────────────────────────────────────────────────────────┘
 ```
