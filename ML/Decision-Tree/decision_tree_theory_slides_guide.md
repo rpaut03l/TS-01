@@ -603,7 +603,7 @@ $$\text{entropy}(D) = -\sum_{j=1}^{|C|} \Pr(c_j) \cdot \log_2 \Pr(c_j)$$
 ```
   ┌─────────────────────────────────────────────────────────────────┐
   │  "As the data become purer and purer, the entropy value         │
-  │   becomes smaller and smaller. This is useful to us!"          │
+  │   becomes smaller and smaller. This is useful to us!"           │
   │                                        — Bing Liu, UIC          │
   └─────────────────────────────────────────────────────────────────┘
 ```
@@ -681,11 +681,11 @@ $$\text{gain}(D, A_i) = \text{entropy}(D) - \text{entropy}_{A_i}(D)$$
 
   After split on Own House:
   ┌──────────────────┐     ┌────────────────────────────┐
-  │  Own House=true  │     │  Own House=false            │
-  │  ● ● ● ● ● ●    │     │  ○ ○ ○ ○ ○ ○  ● ● ●       │
-  │  6 Yes, 0 No     │     │  6 No, 3 Yes                │
-  │  entropy = 0.000 │     │  entropy = 0.918            │
-  │  PURE!           │     │  Still mixed, recurse       │
+  │  Own House=true  │     │  Own House=false           │
+  │  ● ● ● ● ● ●     │     │  ○ ○ ○ ○ ○ ○  ● ● ●        │
+  │  6 Yes, 0 No     │     │  6 No, 3 Yes               │
+  │  entropy = 0.000 │     │  entropy = 0.918           │
+  │  PURE!           │     │  Still mixed, recurse      │
   └──────────────────┘     └────────────────────────────┘
 
   Weighted after = (6/15)×0.000 + (9/15)×0.918 = 0.551
@@ -810,7 +810,7 @@ Among these 9 examples, Has Job wins → splits perfectly:
            ┌──────────────┴──────────────┐
          true                          false
            │                              │
-        ✅ Yes                    ┌───────┴────────┐
+        ✅ Yes                   ┌───────┴────────┐
          (6/6)                   │   Has job?     │
                                  └───────┬────────┘
                           ┌──────────────┴──────────────┐
@@ -866,7 +866,7 @@ Continuous values (temperature, salary, age as a number) cannot have one branch 
   │          values: t = (vi + vi+1) / 2                            │
   │                                                                 │
   │  STEP 3: For each candidate threshold t:                        │
-  │          Split into {x ≤ t}  and  {x > t}                      │
+  │          Split into {x ≤ t}  and  {x > t}                       │
   │          Compute information gain (or gain ratio)               │
   │                                                                 │
   │  STEP 4: Choose threshold with MAXIMUM gain                     │
@@ -944,7 +944,7 @@ The slide shows a 2D dataset (features X, Y) and its decision tree:
   │  Symptom:  High accuracy on TRAINING data                       │
   │            Poor accuracy on TEST data / new examples            │
   │                                                                 │
-  │  Signs:    Tree is too DEEP                                      │
+  │  Signs:    Tree is too DEEP                                     │
   │            Too many BRANCHES                                    │
   │            Some branches reflect NOISE or OUTLIERS              │
   └─────────────────────────────────────────────────────────────────┘
@@ -1098,19 +1098,19 @@ The slide shows the same 2D continuous dataset with two trees:
 ```
   ┌──────────────────────────────────────────────────────────┐
   │  EXACT VALUES (memorise):                                │
-  │    log₂(1.000) =  0.000   log₂(0.500) = -1.000          │
-  │    log₂(0.250) = -2.000   log₂(0.125) = -3.000          │
+  │    log₂(1.000) =  0.000   log₂(0.500) = -1.000           │
+  │    log₂(0.250) = -2.000   log₂(0.125) = -3.000           │
   │                                                          │
   │  FORMULA (for everything else):                          │
-  │    log₂(x) = log10(x) / 0.3010                          │
+  │    log₂(x) = log10(x) / 0.3010                           │
   │                                                          │
   │  COMMON EXAM VALUES:                                     │
-  │    log₂(0.600) = -0.737      Pr = 9/15                  │
-  │    log₂(0.400) = -1.322      Pr = 6/15                  │
-  │    log₂(0.667) = -0.585      Pr = 2/3                   │
-  │    log₂(0.333) = -1.585      Pr = 1/3                   │
-  │    log₂(0.800) = -0.322      Pr = 4/5                   │
-  │    log₂(0.200) = -2.322      Pr = 1/5                   │
+  │    log₂(0.600) = -0.737      Pr = 9/15                   │
+  │    log₂(0.400) = -1.322      Pr = 6/15                   │
+  │    log₂(0.667) = -0.585      Pr = 2/3                    │
+  │    log₂(0.333) = -1.585      Pr = 1/3                    │
+  │    log₂(0.800) = -0.322      Pr = 4/5                    │
+  │    log₂(0.200) = -2.322      Pr = 1/5                    │
   └──────────────────────────────────────────────────────────┘
 ```
 
@@ -1121,20 +1121,20 @@ The slide shows the same 2D continuous dataset with two trees:
 ```
   ┌────────────────────────────────────────────────────────────┐
   │  1. Count classes in D                                     │
-  │     → Pr(cj) = count(cj) / total                          │
+  │     → Pr(cj) = count(cj) / total                           │
   │                   ↓                                        │
   │  2. Compute entropy(D)                                     │
-  │     = −Σ Pr(cj) × log₂(Pr(cj))                           │
+  │     = −Σ Pr(cj) × log₂(Pr(cj))                             │
   │                   ↓                                        │
   │  3. For each attribute Ai:                                 │
-  │     a. Split D into subsets D1, D2, ..., Dv               │
+  │     a. Split D into subsets D1, D2, ..., Dv                │
   │     b. Compute entropy(Dj) for each subset                 │
-  │     c. Weighted entropy = Σ (|Dj|/|D|) × entropy(Dj)      │
-  │     d. gain = entropy(D) − weighted entropy               │
+  │     c. Weighted entropy = Σ (|Dj|/|D|) × entropy(Dj)       │
+  │     d. gain = entropy(D) − weighted entropy                │
   │                   ↓                                        │
   │  4. Pick Ai with MAXIMUM gain → split here                 │
   │                   ↓                                        │
-  │  5. Recurse on each subset (Ai removed from A)            │
+  │  5. Recurse on each subset (Ai removed from A)             │
   └────────────────────────────────────────────────────────────┘
 ```
 
@@ -1169,7 +1169,7 @@ The slide shows the same 2D continuous dataset with two trees:
   │               │  SplitInfo penalises │  corrects the bias    │
   │               │  wide/uneven splits  │                       │
   ├───────────────┼──────────────────────┼───────────────────────┤
-  │  Gini         │  1 − Σ Pr(cj)²      │  CART / sklearn       │
+  │  Gini         │  1 − Σ Pr(cj)²      │  CART / sklearn        │
   │               │  No log needed       │  fast to compute      │
   └───────────────┴──────────────────────┴───────────────────────┘
 ```
@@ -1180,9 +1180,9 @@ The slide shows the same 2D continuous dataset with two trees:
 
 ```
   ╔═══════════════════════════════════════════════════════════════╗
-  ║  STOP 1 — All same class:   entropy = 0   → leaf node        ║
-  ║  STOP 2 — No attributes:    A = empty      → majority vote   ║
-  ║  STOP 3 — Gain too small:   gain < theta   → pre-prune       ║
+  ║  STOP 1 — All same class:   entropy = 0   → leaf node         ║
+  ║  STOP 2 — No attributes:    A = empty      → majority vote    ║
+  ║  STOP 3 — Gain too small:   gain < theta   → pre-prune        ║
   ╚═══════════════════════════════════════════════════════════════╝
 ```
 
