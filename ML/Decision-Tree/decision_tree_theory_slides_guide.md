@@ -470,9 +470,9 @@ The entropy formula comes from information theory.
     → Low entropy = low uncertainty
 
   ┌─────────────────────────────────────────────────┐
-  │  Less you know  =  more valuable the info        │
-  │  More you know  =  less valuable the info        │
-  │  Entropy MEASURES this uncertainty in BITS       │
+  │  Less you know  =  more valuable the info       │
+  │  More you know  =  less valuable the info       │
+  │  Entropy MEASURES this uncertainty in BITS      │
   └─────────────────────────────────────────────────┘
 ```
 
