@@ -9,15 +9,15 @@
 
 - [Top 25 Must-Know Facts](#-top-25-must-know-facts)
 - [Essential Formulas](#-essential-formulas)
-- [Algorithm Comparison Table](#algorithm-comparison-table)
-- [Heuristic Properties](#heuristic-properties)
-- [Common Traps & Mistakes](#common-traps--mistakes)
-- [MCQ Practice Questions](#mcq-practice-questions)
-- [MSQ Practice Questions](#msq-practice-questions)
-- [One-Liner Questions](#one-liner-questions)
-- [Pattern Recognition Guide](#pattern-recognition-guide)
-- [Exam Strategy](#exam-strategy)
-- [Quick Reference Cards](#quick-reference-cards)
+- [Algorithm Comparison Table](#-algorithm-comparison-table)
+- [Heuristic Properties](#-heuristic-properties)
+- [Common Traps & Mistakes](#-common-traps--mistakes)
+- [MCQ Practice Questions](#-mcq-practice-questions)
+- [MSQ Practice Questions](#-msq-practice-questions)
+- [One-Liner Questions](#-one-liner-questions)
+- [Pattern Recognition Guide](#-pattern-recognition-guide)
+- [Exam Strategy](#-exam-strategy)
+- [Quick Reference Cards](#-quick-reference-cards)
 
 ---
 
