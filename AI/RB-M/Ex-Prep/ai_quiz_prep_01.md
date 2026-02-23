@@ -709,22 +709,6 @@ Can you answer these instantly?
 
 ---
 
-## 📞 Quick Links
-
-[↑ Back to Top](#-table-of-contents)
-
-### Jump to Section
-- [Top 25 Facts](#top-25-must-know-facts)
-- [Formulas](#essential-formulas)
-- [Algorithm Table](#algorithm-comparison-table)
-- [Common Traps](#common-traps--mistakes)
-- [MCQ Practice](#mcq-practice-questions)
-- [MSQ Practice](#msq-practice-questions)
-- [One-Liners](#one-liner-questions)
-- [Exam Strategy](#exam-strategy)
-
----
-
 ## ⚡ Power Moves
 
 [↑ Back to Top](#-table-of-contents)
