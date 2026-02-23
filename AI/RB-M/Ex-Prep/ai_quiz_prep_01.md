@@ -8,7 +8,7 @@
 ## 📚 Table of Contents
 
 - [Top 25 Must-Know Facts](#-top-25-must-know-facts)
-- [Essential Formulas](#essential-formulas)
+- [Essential Formulas](#-essential-formulas)
 - [Algorithm Comparison Table](#algorithm-comparison-table)
 - [Heuristic Properties](#heuristic-properties)
 - [Common Traps & Mistakes](#common-traps--mistakes)
