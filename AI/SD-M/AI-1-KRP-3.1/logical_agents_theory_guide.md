@@ -1,7 +1,7 @@
 # 🧠 Logical Agents — Complete Theory Guide
 ### AI Unit III: Knowledge, Reasoning, and Planning
 #### Based on *Artificial Intelligence: A Modern Approach* (Russell & Norvig, 3rd Edition)
-#### Dr: SD,M. | Slides: Logical Agents (KRP-3.1 | Norvig)
+#### Dr: SD, M. | Slides: Logical Agents (KRP-3.1 | Norvig)
 
 ---
 
