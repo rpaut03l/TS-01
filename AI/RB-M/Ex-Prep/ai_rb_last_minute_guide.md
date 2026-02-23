@@ -1,4 +1,4 @@
-# 🚨 20-MINUTE AI QUIZ SURVIVAL CARD 🚨
+# 🚨 LAST MINUTE AI QUIZ SURVIVAL CARD 🚨
 
 > **Last-minute cramming guide for AI Search Techniques Quiz** 
 
