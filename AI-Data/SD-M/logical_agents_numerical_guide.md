@@ -8,7 +8,7 @@
 
 | # | Problem Type | Jump Link |
 |---|---|---|
-| 1 | [Truth Table Construction](#problem-1-truth-table-construction) | Build complete truth tables |
+| 1 | [Truth Table Construction](#-problem-1-truth-table-construction) | Build complete truth tables |
 | 2 | [Evaluating Sentences in a Model](#problem-2-evaluating-sentences-in-a-model) | Compute truth values |
 | 3 | [Checking Entailment via Model Checking](#problem-3-checking-entailment-via-model-checking) | KB ⊨ α? |
 | 4 | [Wumpus World — Pit Detection](#problem-4-wumpus-world--pit-detection) | Agent reasoning |
