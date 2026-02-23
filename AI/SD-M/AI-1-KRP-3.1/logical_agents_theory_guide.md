@@ -83,7 +83,7 @@ M(α)           = "all situations where α is true"
 
 An agent that **stores facts** and uses **logic rules** to figure out new facts can behave **intelligently** — even in situations it has never seen before!
 
-> 🎯 **Reading Tip:** Every section has a "Kid-Friendly" box (💡) at the end. If a section feels confusing, jump to that box first for the simple version, then re-read the details!
+> 🎯 **Reading Tip:** Every section has a "Mind-Friendly" box (💡) at the end. If a section feels confusing, jump to that box first for the simple version, then re-read the details!
 
 ---
 
@@ -130,7 +130,7 @@ Passive Inference   →    Active Learning
 Classical Planning  →    Probabilistic Decisions
 ```
 
-> 💡 **Kid-Friendly:** Unit III = Playing chess where you can see all pieces. Unit IV = Playing battleship where you guess!
+> 💡 **Mind-Friendly:** Unit III = Playing chess where you can see all pieces. Unit IV = Playing battleship where you guess!
 
 ---
 
@@ -198,7 +198,7 @@ Reasoning Agent: "I smell smoke → fire nearby  ✅ Smart! Can handle
     └─────────────┘
 ```
 
-> 💡 **Kid-Friendly:** A reactive agent is like a dog that runs when it hears thunder. A reasoning agent is like a detective who puts clues together to find the answer!
+> 💡 **Mind-Friendly:** A reactive agent is like a dog that runs when it hears thunder. A reasoning agent is like a detective who puts clues together to find the answer!
 
 ---
 
@@ -238,7 +238,7 @@ Perception → Learning → Knowledge Representation → Reasoning → Planning 
   See/hear    Update KB      Store facts             Think!      Decide     Do it!
 ```
 
-> 💡 **Kid-Friendly:** Logic is like the grammar rules for a "language of thinking." Just like English has rules for making correct sentences, logic has rules for making correct conclusions!
+> 💡 **Mind-Friendly:** Logic is like the grammar rules for a "language of thinking." Just like English has rules for making correct sentences, logic has rules for making correct conclusions!
 
 ---
 
@@ -308,7 +308,7 @@ Inference:
   Rule 1 matches! → Answer: Antibiotic-X ✅
 ```
 
-> 💡 **Kid-Friendly:** A KB is like your brain's "fact notebook." TELL = writing a new fact. ASK = asking your brain a question. Inference = your brain connecting the dots!
+> 💡 **Mind-Friendly:** A KB is like your brain's "fact notebook." TELL = writing a new fact. ASK = asking your brain a question. Inference = your brain connecting the dots!
 
 ---
 
@@ -352,7 +352,7 @@ def diagnose(patient):
 
 > 🔑 **Best agents combine BOTH approaches!** Declarative knowledge can be compiled into efficient procedural code.
 
-> 💡 **Kid-Friendly:** Declarative = a recipe card that says "flour + sugar + heat = cake." Procedural = step-by-step instructions "First put flour in bowl, then add sugar, then put in oven at 350°F."
+> 💡 **Mind-Friendly:** Declarative = a recipe card that says "flour + sugar + heat = cake." Procedural = step-by-step instructions "First put flour in bowl, then add sugar, then put in oven at 350°F."
 
 ---
 
@@ -403,7 +403,7 @@ The Wumpus World is a **toy environment** (like a video game) designed to teach 
 | Sequential | Yes | Rewards come after many actions |
 | Partially observable | **YES** | Agent can't see everything — must REASON! |
 
-> 💡 **Kid-Friendly:** Imagine you're blindfolded in a cave. You can smell bad things (stench = monster nearby), feel wind (breeze = hole nearby), and see sparkles (glitter = gold!). You have to figure out what's where WITHOUT seeing it!
+> 💡 **Mind-Friendly:** Imagine you're blindfolded in a cave. You can smell bad things (stench = monster nearby), feel wind (breeze = hole nearby), and see sparkles (glitter = gold!). You have to figure out what's where WITHOUT seeing it!
 
 ---
 
@@ -462,7 +462,7 @@ Example: `[Stench, Breeze, None, None, None]` = "I smell something AND feel wind
 | "Given rules, what's optimal?" | "What pattern of moves avoids death?" |
 | Score = evaluation metric | Reward = training signal |
 
-> 💡 **Kid-Friendly:** Percepts are like your 5 senses in the cave. Stench = "I smell the monster!" Breeze = "I feel wind from a hole!" Glitter = "Ooh, shiny gold!"
+> 💡 **Mind-Friendly:** Percepts are like your 5 senses in the cave. Stench = "I smell the monster!" Breeze = "I feel wind from a hole!" Glitter = "Ooh, shiny gold!"
 
 ---
 
@@ -666,7 +666,7 @@ Entailment = the needle IS in the haystack (it exists)
 Inference  = FINDING the needle (the algorithm that proves it)
 ```
 
-> 💡 **Kid-Friendly:**
+> 💡 **Mind-Friendly:**
 > - **Syntax** = How to spell words correctly
 > - **Semantics** = What the words mean
 > - **Models** = All the "what if" scenarios
@@ -728,7 +728,7 @@ M(KB) ⊄ M(¬P(2,2))
 (Also can't conclude there IS a pit — we just don't know yet!)
 ```
 
-> 💡 **Kid-Friendly:** The agent makes a list of all possible worlds. Then crosses out the ones that don't match what it knows. If ALL remaining worlds agree on something, it's definitely true!
+> 💡 **Mind-Friendly:** The agent makes a list of all possible worlds. Then crosses out the ones that don't match what it knows. If ALL remaining worlds agree on something, it's definitely true!
 
 ---
 
@@ -813,7 +813,7 @@ then ANY sentence derived by sound inference
 is ALSO true in the real world!
 ```
 
-> 💡 **Kid-Friendly:** **Sound** = "I never lie." **Complete** = "I always find the truth." Best agent = does both!
+> 💡 **Mind-Friendly:** **Sound** = "I never lie." **Complete** = "I always find the truth." Best agent = does both!
 
 ---
 
@@ -883,7 +883,7 @@ Forward Chaining:           Backward Chaining:
   facts                       paths
 ```
 
-> 💡 **Kid-Friendly:** **Forward chaining** = "I have ingredients, let me cook everything I can!" **Backward chaining** = "I want cake — do I have flour? Sugar? Eggs? Yes? Then I can make cake!"
+> 💡 **Mind-Friendly:** **Forward chaining** = "I have ingredients, let me cook everything I can!" **Backward chaining** = "I want cake — do I have flour? Sugar? Eggs? Yes? Then I can make cake!"
 
 ---
 
@@ -913,7 +913,7 @@ Propositional  FOL  Fuzzy  Probabilistic  Non-monotonic
 
 Propositional logic is the **simplest** formal logic. It's the foundation for understanding all the others.
 
-> 💡 **Kid-Friendly:** Types of logic are like types of languages. Propositional logic is like baby talk — simple but limited. FOL is like adult English — can say complex things. Fuzzy logic is like saying "kinda" — things can be partly true!
+> 💡 **Mind-Friendly:** Types of logic are like types of languages. Propositional logic is like baby talk — simple but limited. FOL is like adult English — can say complex things. Fuzzy logic is like saying "kinda" — things can be partly true!
 
 ---
 
@@ -1002,7 +1002,7 @@ ComplexSentence  → (Sentence) | [Sentence]
                   | Sentence ⇔ Sentence
 ```
 
-> 💡 **Kid-Friendly:** Propositions are like LEGO blocks (P, Q, R). Connectives (AND, OR, NOT, IF-THEN) are how you snap them together to build bigger ideas!
+> 💡 **Mind-Friendly:** Propositions are like LEGO blocks (P, Q, R). Connectives (AND, OR, NOT, IF-THEN) are how you snap them together to build bigger ideas!
 
 ---
 
@@ -1093,7 +1093,7 @@ Step 2: P₂₂ ∨ P₃₁ = false ∨ true = true
 Step 3: true ∧ true = true ✅
 ```
 
-> 💡 **Kid-Friendly:** A model is like a "what-if" story. "What if P is true and Q is false?" Then we check what the whole sentence equals. Like filling in numbers in a math equation to see if it works!
+> 💡 **Mind-Friendly:** A model is like a "what-if" story. "What if P is true and Q is false?" Then we check what the whole sentence equals. Like filling in numbers in a math equation to see if it works!
 
 ---
 
@@ -1138,7 +1138,7 @@ Using just ⇒ would be incomplete!
 A square is breezy IF AND ONLY IF a neighbor has a pit.
 ```
 
-> 💡 **Kid-Friendly:** The KB is like a rulebook + diary. The rules say "breeze means pit nearby." The diary says "I felt breeze at [2,1] but not at [1,1]." Combine them to figure out where the pits are!
+> 💡 **Mind-Friendly:** The KB is like a rulebook + diary. The rules say "breeze means pit nearby." The diary says "I felt breeze at [2,1] but not at [1,1]." Combine them to figure out where the pits are!
 
 ---
 
@@ -1194,7 +1194,7 @@ In 2 of 3 models: P₂₂ = true → KB ⊭ ¬P₂₂ ❌ (can't conclude no pit
 | Soundness | ✅ Yes (directly implements entailment definition) |
 | Completeness | ✅ Yes (checks all models) |
 
-> 💡 **Kid-Friendly:** Model checking is like trying EVERY possible combination of a lock. If all combinations that match your clues also match your guess, your guess must be right! It always works, but it's slow for big locks.
+> 💡 **Mind-Friendly:** Model checking is like trying EVERY possible combination of a lock. If all combinations that match your clues also match your guess, your guess must be right! It always works, but it's slow for big locks.
 
 ---
 
