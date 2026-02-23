@@ -640,4 +640,4 @@ MISTAKE 5: Confusing Entailment (⊨) with Inference (⊢)
 
 ---
 
-> 📝 **Numerical Guide for AI Unit III** | 🔗 [Theory Guide →](./logical_agents_theory_guide.md) | 🎯 [Exam Guide →](./logical_agents_exam_guide.md) | 🗺️ [Mind Map →](./logical_agents_mindmap.png)
+> 📝 **Numerical Guide for AI Unit III** | 🔗 [Numerical Guide →](./logical_agents_numerical_guide.md) | 🎯 [Exam Guide →](./logical_agents_exam_guide.md) | 🗺️ [Mind Map →](./logical_agents_mindmap.png)
