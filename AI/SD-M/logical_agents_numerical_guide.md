@@ -9,19 +9,19 @@
 | # | Problem Type | Jump Link |
 |---|---|---|
 | 1 | [Truth Table Construction](#-problem-1-truth-table-construction) | Build complete truth tables |
-| 2 | [Evaluating Sentences in a Model](#problem-2-evaluating-sentences-in-a-model) | Compute truth values |
-| 3 | [Checking Entailment via Model Checking](#problem-3-checking-entailment-via-model-checking) | KB ⊨ α? |
-| 4 | [Wumpus World — Pit Detection](#problem-4-wumpus-world--pit-detection) | Agent reasoning |
-| 5 | [Wumpus World — Wumpus Location](#problem-5-wumpus-world--wumpus-location) | Elimination reasoning |
-| 6 | [Forward Chaining Step-by-Step](#problem-6-forward-chaining-step-by-step) | Data-driven inference |
-| 7 | [Backward Chaining Step-by-Step](#problem-7-backward-chaining-step-by-step) | Goal-driven inference |
-| 8 | [Building a KB from Scratch](#problem-8-building-a-kb-from-scratch) | Writing formal sentences |
-| 9 | [Soundness & Completeness Analysis](#problem-9-soundness--completeness-analysis) | Identifying errors |
-| 10 | [Operator Precedence & Parsing](#problem-10-operator-precedence--parsing) | Correct interpretation |
-| 11 | [Counting Models](#problem-11-counting-models) | How many possible worlds? |
-| 12 | [Implication & Biconditional Practice](#problem-12-implication--biconditional-practice) | Tricky truth values |
-| 13 | [Full Wumpus Walkthrough with Score](#problem-13-full-wumpus-walkthrough-with-score) | Complete game |
-| 14 | [TT-ENTAILS Pseudocode Tracing](#problem-14-tt-entails-pseudocode-tracing) | Algorithm trace |
+| 2 | [Evaluating Sentences in a Model](#-problem-2-evaluating-sentences-in-a-model) | Compute truth values |
+| 3 | [Checking Entailment via Model Checking](#-problem-3-checking-entailment-via-model-checking) | KB ⊨ α? |
+| 4 | [Wumpus World — Pit Detection](#-problem-4-wumpus-world--pit-detection) | Agent reasoning |
+| 5 | [Wumpus World — Wumpus Location](#-problem-5-wumpus-world--wumpus-location) | Elimination reasoning |
+| 6 | [Forward Chaining Step-by-Step](#-problem-6-forward-chaining-step-by-step) | Data-driven inference |
+| 7 | [Backward Chaining Step-by-Step](#-problem-7-backward-chaining-step-by-step) | Goal-driven inference |
+| 8 | [Building a KB from Scratch](#-problem-8-building-a-kb-from-scratch) | Writing formal sentences |
+| 9 | [Soundness & Completeness Analysis](#-problem-9-soundness--completeness-analysis) | Identifying errors |
+| 10 | [Operator Precedence & Parsing](#-problem-10-operator-precedence--parsing) | Correct interpretation |
+| 11 | [Counting Models](#-problem-11-counting-models) | How many possible worlds? |
+| 12 | [Implication & Biconditional Practice](#-problem-12-implication--biconditional-practice) | Tricky truth values |
+| 13 | [Full Wumpus Walkthrough with Score](#-problem-13-full-wumpus-walkthrough-with-score) | Complete game |
+| 14 | [TT-ENTAILS Pseudocode Tracing](#-problem-14-tt-entails-pseudocode-tracing) | Algorithm trace |
 
 ---
 
