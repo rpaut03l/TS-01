@@ -19,8 +19,8 @@
     │              HOW THESE 3 FILES CONNECT                  │
     │                                                         │
     │            ┌──────────────┐                             │
-    │            │  📋 INDEX     │  ← YOU ARE HERE            │
-    │            │  (This File)  │                            │
+    │            │  📋 INDEX    │  ← YOU ARE HERE             │
+    │            │  (This File) │                             │
     │            └──────┬───────┘                             │
     │                   │                                     │
     │          ┌────────┴────────┐                            │
