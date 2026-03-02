@@ -175,6 +175,6 @@
 
 > 📘 **Start:** [→ Theory Guide](./Essence_of_Calculus_THEORY.md) | [→ Practice Guide](./Essence_of_Calculus_PRACTICE.md)
 >
-> 🔗 **Also see:** [Linear Algebra Guide](./Essence_of_Linear_Algebra_INDEX.md)
+> 🔗 **Also see:** [Linear Algebra Guide](./Linear-Algebra/Essence_of_Linear_Algebra_INDEX.md)
 >
 > 🎓 **Created for:** ODS
