@@ -95,9 +95,9 @@
   
   ┌─────────────────────────────────────────────────┐
   │                                                 │
-  │            Number of FAVORABLE outcomes          │
-  │  P(A)  = ─────────────────────────────           │
-  │            Number of ALL POSSIBLE outcomes       │
+  │            Number of FAVORABLE outcomes         │
+  │  P(A)  = ─────────────────────────────          │
+  │            Number of ALL POSSIBLE outcomes      │
   │                                                 │
   └─────────────────────────────────────────────────┘
   
@@ -127,7 +127,7 @@
   │  and step 2 has b choices            │
   │  then TOTAL = a × b choices          │
   │                                      │
-  │  🍎 Like a menu: 3 mains × 4 drinks │
+  │  🍎 Like a menu: 3 mains × 4 drinks  │
   │     = 12 possible meals              │
   └──────────────────────────────────────┘
 ```
@@ -223,10 +223,10 @@
   │                                                      │
   │  "Does the ORDER matter?"                            │
   │                                                      │
-  │  YES → Permutation P(n,r) = n!/(n-r)!               │
-  │         (Gold, Silver, Bronze are DIFFERENT)          │
+  │  YES → Permutation P(n,r) = n!/(n-r)!                │
+  │         (Gold, Silver, Bronze are DIFFERENT)         │
   │                                                      │
-  │  NO  → Combination C(n,k) = n!/[k!(n-k)!]           │
+  │  NO  → Combination C(n,k) = n!/[k!(n-k)!]            │
   │         (Committee of 3: {A,B,C} = {C,B,A})          │
   │                                                      │
   │  Memory trick: "PoCo"                                │
@@ -285,9 +285,9 @@
   
   COMPLEMENT (Aᶜ or Ā): "NOT A"
   ┌──────────────────────────┐
-  │ ▓▓▓▓▓▓┌───────┐▓▓▓▓▓▓▓  │  Everything OUTSIDE A
-  │ ▓▓▓▓▓▓│ A     │▓▓▓▓▓▓▓  │  = Aᶜ
-  │ ▓▓▓▓▓▓└───────┘▓▓▓▓▓▓▓  │
+  │ ▓▓▓▓▓▓┌───────┐▓▓▓▓▓▓▓   │  Everything OUTSIDE A
+  │ ▓▓▓▓▓▓│ A     │▓▓▓▓▓▓▓   │  = Aᶜ
+  │ ▓▓▓▓▓▓└───────┘▓▓▓▓▓▓▓   │
   │         S                │
   └──────────────────────────┘
 ```
@@ -325,13 +325,13 @@
   It's EASY to count "NO matches at all."
   
   ┌──────────────────────────────────────────────────────┐
-  │  P(at least one match) = 1 − P(no matches at all)   │
+  │  P(at least one match) = 1 − P(no matches at all)    │
   │                                                      │
   │  This is THE COMPLEMENT TRICK — one of the most      │
-  │  powerful tools in probability!                       │
+  │  powerful tools in probability!                      │
   │                                                      │
-  │  🍎 Instead of counting all the ways to WIN,          │
-  │     count all the ways to LOSE, then subtract from 1. │
+  │  🍎 Instead of counting all the ways to WIN,         │
+  │     count all the ways to LOSE, then subtract from 1.│
   └──────────────────────────────────────────────────────┘
 ```
 
@@ -458,9 +458,9 @@
   
   ┌──────────────────────────────────────────────────────────┐
   │                                                          │
-  │                    P(A ∩ B)                               │
+  │                    P(A ∩ B)                              │
   │   P(A | B)  =  ────────────                              │
-  │                    P(B)                                   │
+  │                    P(B)                                  │
   │                                                          │
   │  In words: "Of all the worlds where B happens,           │
   │             how many of those ALSO have A?"              │
@@ -507,12 +507,12 @@
   🍎 Kid version: "Split the problem into CASES, solve each, add up."
   
   ┌────────────────────────────────────────────────────────┐
-  │  Think of B₁, B₂, B₃ as BUCKETS that cover everything │
+  │  Think of B₁, B₂, B₃ as BUCKETS that cover everything  │
   │                                                        │
   │  ┌─────────┬──────────┬──────────┐                     │
   │  │   B₁    │    B₂    │    B₃    │ ← partitions of S   │
-  │  │  P(A|B₁)│  P(A|B₂) │ P(A|B₃) │                     │
-  │  │  × P(B₁)│  × P(B₂) │ × P(B₃) │                     │
+  │  │  P(A|B₁)│  P(A|B₂) │ P(A|B₃) │                      │
+  │  │  × P(B₁)│  × P(B₂) │ × P(B₃) │                      │
   │  └─────────┴──────────┴──────────┘                     │
   │           P(A) = sum of all three                      │
   └────────────────────────────────────────────────────────┘
@@ -542,7 +542,7 @@
   │                                                          │
   │               P(B | A) · P(A)                            │
   │  P(A | B) = ──────────────────────────                   │
-  │             P(B|A)·P(A) + P(B|Aᶜ)·P(Aᶜ)                │
+  │             P(B|A)·P(A) + P(B|Aᶜ)·P(Aᶜ)                  │
   │                                                          │
   └──────────────────────────────────────────────────────────┘
   
@@ -555,8 +555,8 @@
   ┌──────────────────────────────────────────────────────────┐
   │  Bayes' Theorem FLIPS the conditioning:                  │
   │                                                          │
-  │  You know P(data | hypothesis)  ← "forward" direction   │
-  │  You WANT P(hypothesis | data)  ← "backward" direction  │
+  │  You know P(data | hypothesis)  ← "forward" direction    │
+  │  You WANT P(hypothesis | data)  ← "backward" direction   │
   │                                                          │
   │  Bayes lets you go BACKWARD from effect to cause!        │
   │                                                          │
@@ -625,10 +625,10 @@
   │  Think of 10,000 people:                                 │
   │    50 users → 49.5 test positive (true positives)        │
   │    9950 non-users → 99.5 test positive (FALSE positives!)│
-  │    Total positives: 49.5 + 99.5 ≈ 149                   │
+  │    Total positives: 49.5 + 99.5 ≈ 149                    │
   │    Actual users among positives: 49.5/149 ≈ 33%          │
   │                                                          │
-  │  🍎 The BASE RATE (how common the condition is) matters   │
+  │  🍎 The BASE RATE (how common the condition is) matters  │
   │     hugely! A "99% accurate" test can still be WRONG     │
   │     most of the time when the condition is rare.         │
   └──────────────────────────────────────────────────────────┘
@@ -649,11 +649,11 @@
   ┌──────────────────────────────────────────────────────────┐
   │  INDEPENDENT means:                                      │
   │                                                          │
-  │    P(A | B) = P(A)        "B doesn't change A's chance" │
-  │    P(B | A) = P(B)        "A doesn't change B's chance" │
-  │    P(A ∩ B) = P(A) · P(B) "just MULTIPLY"              │
+  │    P(A | B) = P(A)        "B doesn't change A's chance"  │
+  │    P(B | A) = P(B)        "A doesn't change B's chance"  │
+  │    P(A ∩ B) = P(A) · P(B) "just MULTIPLY"                │
   │                                                          │
-  │  All three are EQUIVALENT — if one holds, all hold.     │
+  │  All three are EQUIVALENT — if one holds, all hold.      │
   └──────────────────────────────────────────────────────────┘
   
   INDEPENDENT examples:
@@ -704,8 +704,8 @@
   ┌─────────────────────┬───────────────────────────────┐
   │  DISCRETE           │  CONTINUOUS                   │
   │  Countable values   │  Any value in a range         │
-  │  {0, 1, 2, 3, ...} │  (0.001, 3.7, π, ...)        │
-  │  Use PMF: P(X=k)   │  Use PDF: f(x), then AREAS    │
+  │  {0, 1, 2, 3, ...} │  (0.001, 3.7, π, ...)          │
+  │  Use PMF: P(X=k)   │  Use PDF: f(x), then AREAS     │
   │  Sum of probs = 1   │  Total area under curve = 1   │
   │  Ex: dice, coins    │  Ex: height, weight, time     │
   └─────────────────────┴───────────────────────────────┘
@@ -764,13 +764,13 @@
   
   ┌─────────────────────────────────────────────────┐
   │  C(n,k) = how many WAYS to pick which k trials  │
-  │  pᵏ     = those k trials all succeed             │
-  │  (1-p)ⁿ⁻ᵏ = remaining trials all fail            │
-  │                                                  │
-  │  E[X] = np                                       │
-  │  Var(X) = np(1−p)                                │
-  │                                                  │
-  │  🍎 "Flip n coins, count heads"                  │
+  │  pᵏ     = those k trials all succeed            │
+  │  (1-p)ⁿ⁻ᵏ = remaining trials all fail           │
+  │                                                 │
+  │  E[X] = np                                      │
+  │  Var(X) = np(1−p)                               │
+  │                                                 │
+  │  🍎 "Flip n coins, count heads"                 │
   └─────────────────────────────────────────────────┘
   
   🤖 AI/ML: Binary classification = Bernoulli at each prediction.
@@ -800,11 +800,11 @@
   │          ··     ··              μ = center (peak)         │
   │        ··         ··           σ = width (spread)         │
   │      ··   68.3%     ··                                    │
-  │    ··  ←─── 1σ ───→  ··       68% within 1σ of μ        │
-  │  ··                     ··    95% within 2σ of μ         │
-  │ · ←────── 2σ ──────→    ·    99.7% within 3σ of μ       │
+  │    ··  ←─── 1σ ───→  ··       68% within 1σ of μ          │
+  │  ··                     ··    95% within 2σ of μ          │
+  │ · ←────── 2σ ──────→    ·    99.7% within 3σ of μ         │
   │──────────────────────────────                             │
-  │  μ-3σ  μ-2σ  μ-σ  μ  μ+σ  μ+2σ  μ+3σ                    │
+  │  μ-3σ  μ-2σ  μ-σ  μ  μ+σ  μ+2σ  μ+3σ                      │
   │                                                           │
   │  🍎 The 68-95-99.7 rule (MEMORIZE THIS!)                  │
   └───────────────────────────────────────────────────────────┘
@@ -940,16 +940,16 @@
      If buses come at rate λ=4 per hour, average wait = 1/4 hour = 15 min.
   
   ┌──────────────────────────────────────────────────┐
-  │   f(x)                                          │
-  │  λ│╲                                            │
-  │   │  ╲                                          │
-  │   │    ╲                                        │
-  │   │      ╲────                                  │
-  │   │           ──────────                        │
-  │   └──────────────────────── x                   │
-  │   0    1/λ    2/λ    3/λ                        │
-  │        ↑                                        │
-  │    average = 1/λ                                │
+  │   f(x)                                           │
+  │  λ│╲                                             │
+  │   │  ╲                                           │
+  │   │    ╲                                         │
+  │   │      ╲────                                   │
+  │   │           ──────────                         │
+  │   └──────────────────────── x                    │
+  │   0    1/λ    2/λ    3/λ                         │
+  │        ↑                                         │
+  │    average = 1/λ                                 │
   └──────────────────────────────────────────────────┘
   
   CONNECTION: Geometric is DISCRETE waiting time (count trials).
@@ -1001,7 +1001,7 @@
   │  COUNT events in interval → Poisson(λ·t)                   │
   │  TIME between events      → Exponential(λ)                 │
   │                                                            │
-  │  Same process, two questions:                               │
+  │  Same process, two questions:                              │
   │  "How many?" → Poisson                                     │
   │  "How long?"  → Exponential                                │
   │                                                            │
@@ -1096,14 +1096,14 @@
   It's a special case of Gamma: χ²(k) = Gamma(k/2, 1/2)
   
   ┌──────────────────────────────────────────────────┐
-  │  Chi-squared shapes:                              │
+  │  Chi-squared shapes:                             │
   │                                                  │
   │  k=1: heavily right-skewed (starts at 0, peaks   │
   │        near 0, long tail right)                  │
   │  k=5: still skewed but moving toward symmetric   │
   │  k=30: almost looks Normal (by CLT!)             │
   │                                                  │
-  │  As k → ∞: χ²(k) → approximately N(k, 2k)       │
+  │  As k → ∞: χ²(k) → approximately N(k, 2k)        │
   └──────────────────────────────────────────────────┘
   
   USED IN:
@@ -1184,12 +1184,12 @@
   CONTINUOUS: E[X] = ∫ x · f(x) dx
   
   ┌──────────────────────────────────────────────────┐
-  │  E[X] = "If you repeated this experiment          │
-  │          millions of times and averaged the       │
-  │          results, you'd get E[X]."                │
+  │  E[X] = "If you repeated this experiment         │
+  │          millions of times and averaged the      │
+  │          results, you'd get E[X]."               │
   │                                                  │
-  │  🍎 Kid version: "If you played this game         │
-  │     forever, how much would you WIN ON AVERAGE?"  │
+  │  🍎 Kid version: "If you played this game        │
+  │     forever, how much would you WIN ON AVERAGE?" │
   └──────────────────────────────────────────────────┘
   
   PROPERTIES (super useful!):
@@ -1222,12 +1222,12 @@
   ┌──────────────────────────────────────────────────┐
   │  SHORTCUT FORMULA (MEMORIZE THIS!):              │
   │                                                  │
-  │  Var(X) = E[X²] − (E[X])²                       │
+  │  Var(X) = E[X²] − (E[X])²                        │
   │                                                  │
   │  "Average of squares minus square of average"    │
   │                                                  │
-  │  Step 1: Find E[X²] = Σ x²·P(x)                │
-  │  Step 2: Find E[X]  = Σ x·P(x)                  │
+  │  Step 1: Find E[X²] = Σ x²·P(x)                  │
+  │  Step 2: Find E[X]  = Σ x·P(x)                   │
   │  Step 3: Var = Step1 − (Step2)²                  │
   └──────────────────────────────────────────────────┘
   
@@ -1327,12 +1327,12 @@
     ρ = 0:  no linear relationship
     
   ┌──────────────────────────────────────────────────┐
-  │  ρ = +1      ρ ≈ +0.7     ρ ≈ 0     ρ ≈ -0.7   │
+  │  ρ = +1      ρ ≈ +0.7     ρ ≈ 0     ρ ≈ -0.7     │
   │   ··          · ·          ···        · ·        │
   │  ··          ·  ·         · · ·        ·  ·      │
-  │ ··          · ·  ·       ·  ·  ·      ·    ·    │
-  │··          ·   · ·       · · · ·     ·      ·   │
-  │           ·     ··        ···       ·        ·  │
+  │ ··          · ·  ·       ·  ·  ·      ·    ·     │
+  │··          ·   · ·       · · · ·     ·      ·    │
+  │           ·     ··        ···       ·        ·   │
   │  perfect    strong       no linear   strong neg  │
   │  positive   positive     relation    relation    │
   └──────────────────────────────────────────────────┘
@@ -1356,9 +1356,9 @@
   ┌──────────────────────────────────────────────────────────────┐
   │  LAW OF LARGE NUMBERS (LLN):                                 │
   │                                                              │
-  │  X̄ₙ = (X₁ + X₂ + ... + Xₙ) / n                             │
+  │  X̄ₙ = (X₁ + X₂ + ... + Xₙ) / n                                │
   │                                                              │
-  │  As n → ∞:  X̄ₙ → μ = E[X]                                   │
+  │  As n → ∞:  X̄ₙ → μ = E[X]                                    │
   │                                                              │
   │  "The sample average CONVERGES to the true mean."            │
   │                                                              │
@@ -1369,7 +1369,7 @@
   ┌──────────────────────────────────────────────────────────────┐
   │  CENTRAL LIMIT THEOREM (CLT):                                │
   │                                                              │
-  │  (X̄ₙ − μ) / (σ/√n)  →  N(0, 1)    as n → ∞                │
+  │  (X̄ₙ − μ) / (σ/√n)  →  N(0, 1)    as n → ∞                   │
   │                                                              │
   │  "The distribution of the sample average becomes NORMAL,     │
   │   no matter what the original distribution looks like!"      │
@@ -1380,13 +1380,13 @@
   │     The SUM has a nearly perfect bell curve!                 │
   │     Even though one die is flat (not bell-shaped at all).    │
   │                                                              │
-  │  PRACTICAL RULE: n ≥ 30 is usually "large enough" for CLT.  │
+  │  PRACTICAL RULE: n ≥ 30 is usually "large enough" for CLT.   │
   └──────────────────────────────────────────────────────────────┘
   
   ┌──────────────────────────────────────────────────────────────┐
   │  LLN vs CLT — What's the Difference?                         │
   │                                                              │
-  │  LLN: X̄ₙ → μ         (WHERE the average goes)               │
+  │  LLN: X̄ₙ → μ         (WHERE the average goes)                │
   │  CLT: X̄ₙ is Normal    (WHAT SHAPE the variation takes)       │
   │                                                              │
   │  LLN: "The average gets close to μ."                         │
