@@ -113,6 +113,15 @@
   P(Heads) = 1/2 = 0.5 = 50%
   
   TWO coins: 2 × 2 = 4 outcomes → {HH, HT, TH, TT}
+
+  TREE for 2 coins:
+       START
+      /      \
+    H          T
+   / \        / \
+  H    T    H    T     ← 4 leaves = 4 outcomes
+  HH   HT   TH   TT
+
   P(both heads) = 1/4 = 0.25 = 25%
   P(at least one head) = 3/4 = 75%  (HH, HT, TH)
   
@@ -140,6 +149,24 @@
   P(rolling even) = 3/6 = 1/2  (outcomes: 2, 4, 6)
   
   TWO dice: 6 × 6 = 36 outcomes
+
+  DICE SUM GRID (Die1 across, Die2 down):
+       1    2    3    4    5    6
+    ┌────┬────┬────┬────┬────┬────┐
+  1 │  2 │  3 │  4 │  5 │  6 │  7 │
+    ├────┼────┼────┼────┼────┼────┤
+  2 │  3 │  4 │  5 │  6 │  7 │  8 │
+    ├────┼────┼────┼────┼────┼────┤
+  3 │  4 │  5 │  6 │  7 │  8 │  9 │
+    ├────┼────┼────┼────┼────┼────┤
+  4 │  5 │  6 │  7 │  8 │  9 │ 10 │
+    ├────┼────┼────┼────┼────┼────┤
+  5 │  6 │  7 │  8 │  9 │ 10 │ 11 │
+    ├────┼────┼────┼────┼────┼────┤
+  6 │  7 │  8 │  9 │ 10 │ 11 │ 12 │
+    └────┴────┴────┴────┴────┴────┘
+  Count the 7s: appears 6 times (diagonal) → P(sum=7) = 6/36 = 1/6
+
   P(sum = 7) = 6/36 = 1/6  
     (the 6 ways: 1+6, 2+5, 3+4, 4+3, 5+2, 6+1)
   P(sum = 2) = 1/36  (only 1+1)
@@ -285,9 +312,9 @@
   
   COMPLEMENT (Aᶜ or Ā): "NOT A"
   ┌──────────────────────────┐
-  │ ▓▓▓▓▓▓┌───────┐▓▓▓▓▓▓▓   │  Everything OUTSIDE A
-  │ ▓▓▓▓▓▓│ A     │▓▓▓▓▓▓▓   │  = Aᶜ
-  │ ▓▓▓▓▓▓└───────┘▓▓▓▓▓▓▓   │
+  │ ▓▓▓▓▓▓┌───────┐▓▓▓▓▓▓▓  │  Everything OUTSIDE A
+  │ ▓▓▓▓▓▓│ A     │▓▓▓▓▓▓▓  │  = Aᶜ
+  │ ▓▓▓▓▓▓└───────┘▓▓▓▓▓▓▓  │
   │         S                │
   └──────────────────────────┘
 ```
@@ -330,8 +357,8 @@
   │  This is THE COMPLEMENT TRICK — one of the most      │
   │  powerful tools in probability!                      │
   │                                                      │
-  │  🍎 Instead of counting all the ways to WIN,         │
-  │     count all the ways to LOSE, then subtract from 1.│
+  │ 🍎 Instead of counting all the ways to WIN,          │
+  │    count all the ways to LOSE, then subtract from 1. │
   └──────────────────────────────────────────────────────┘
 ```
 
@@ -475,6 +502,27 @@
                   = (3/10) / (5/10) = 3/5 = 60%
 ```
 
+### Conditioning "Shrinks the Universe" — DIAGRAM
+
+```
+  BEFORE conditioning (full sample space S):
+  +--------------------------------------------+
+  |                S                            |
+  |    +--------+---------+                     |
+  |    |   A    |  A & B  |   B                 |
+  |    | (only) | (both)  | (only)              |
+  |    +--------+---------+                     |
+  |       rest of S                             |
+  +--------------------------------------------+
+
+  AFTER conditioning on B (universe shrinks to B only):
+            +---------+----------+
+            |  A & B  |  B only  |    <- this is your NEW universe
+            | (both)  | (not A)  |
+            +---------+----------+
+            P(A|B) = |A&B| / |B|   = the A-part's share of B
+```
+
 ### Multiplication Rule (rearranged)
 
 ```
@@ -572,6 +620,22 @@
      - Spam filters
      - Medical diagnosis AI
      - ALL Bayesian machine learning
+
+  THE BAYES FLOW:
+  ┌──────────┐    ┌──────────┐    ┌──────────┐
+  │  PRIOR   │    │LIKELIHOOD│    │POSTERIOR │
+  │  P(A)    │ ×  │  P(B|A)  │ ÷  │  P(A|B)  │
+  │ "belief  │    │ "how well│    │ "updated │
+  │  before  │    │  data    │    │  belief  │
+  │  data"   │    │  fits A" │    │  after   │
+  └──────────┘    └──────────┘    │  data"   │
+       │               │          └──────────┘
+       └───────┬───────┘               ↑
+               ▼                       │
+         ┌──────────┐                  │
+         │ P(B)     │──────────────────┘
+         │ evidence │  (normalize)
+         └──────────┘
 ```
 
 ---
@@ -618,6 +682,16 @@
     P(D|D⁺) = P(D⁺|D)·P(D) / P(D⁺)
              = 0.00495 / 0.01490
              = 0.332 ≈ 33.2%
+
+  THE 10,000 PEOPLE PICTURE:
+  +---------------------+--------------------------------------+
+  | 50 USERS (0.5%)     | 9,950 NON-USERS (99.5%)              |
+  |                     |                                      |
+  | 99% test positive:  | 1% test positive (false alarm!):     |
+  | 49.5 TRUE positives | 99.5 FALSE positives                 |
+  +---------------------+--------------------------------------+
+  Total positives: 49.5 + 99.5 = 149
+  Actual users among positives: 49.5/149 = 33%
   
   ┌──────────────────────────────────────────────────────────┐
   │  ONLY 33% chance they actually use the drug!             │
@@ -668,6 +742,16 @@
      given the class label. That's why it's called "naive" — 
      the assumption is almost never perfectly true but works
      surprisingly well in practice!
+
+  MUTUALLY EXCLUSIVE vs INDEPENDENT — DIAGRAM:
+
+  Mutually Exclusive:              Independent:
+  +------+     +------+           +------+---+------+
+  |  A   |     |  B   |           |  A   |AnB|  B   |
+  |      |     |      |           |      |   |      |
+  +------+     +------+           +------+---+------+
+  No overlap: P(AnB)=0            MUST overlap: P(AnB)=P(A)*P(B)>0
+  "If A happens, B can't"         "A happening doesn't affect B"
 ```
 
 ### 🧠 Q&A
@@ -704,8 +788,8 @@
   ┌─────────────────────┬───────────────────────────────┐
   │  DISCRETE           │  CONTINUOUS                   │
   │  Countable values   │  Any value in a range         │
-  │  {0, 1, 2, 3, ...} │  (0.001, 3.7, π, ...)          │
-  │  Use PMF: P(X=k)   │  Use PDF: f(x), then AREAS     │
+  │  {0, 1, 2, 3, ...}  │  (0.001, 3.7, π, ...)         │
+  │  Use PMF: P(X=k)    │  Use PDF: f(x), then AREAS    │
   │  Sum of probs = 1   │  Total area under curve = 1   │
   │  Ex: dice, coins    │  Ex: height, weight, time     │
   └─────────────────────┴───────────────────────────────┘
@@ -731,6 +815,25 @@
   CDF (Cumulative Distribution Function) — BOTH types:
     F(x) = P(X ≤ x) = "probability X is at most x"
     Always goes from 0 to 1, never decreases.
+
+  PMF EXAMPLE — fair die (discrete):
+  P(X=k)
+  1/6 │  ▓   ▓   ▓   ▓   ▓   ▓        Each bar = exactly 1/6
+      │  ▓   ▓   ▓   ▓   ▓   ▓        All bars sum to 1
+      └──+───+───+───+───+───+──
+         1   2   3   4   5   6
+
+  PDF EXAMPLE — f(x) = 2x on [0,1] (continuous):
+  f(x)
+  2 |             /|
+    |            / |
+    |           /  |              P(0.3 < X < 0.7)
+  1 |          /   |              = AREA under curve
+    |     ..../....|              = shaded region
+    |    / shaded  |
+  0 +---+----+----+---
+    0  0.3  0.7  1.0
+    "Probability = AREA, not height!"
 ```
 
 ---
@@ -882,6 +985,19 @@
      P(2 stars) = 9e⁻³/2 ≈ 22%
      P(3 stars) = 27e⁻³/6 ≈ 22%  ← most likely!
      P(4 stars) ≈ 17%
+
+     Poisson(λ=3):
+     P(k)
+     0.22│      ▓ ▓
+     0.17│      ▓ ▓ ▓
+     0.15│    ▓ ▓ ▓ ▓
+     0.10│    ▓ ▓ ▓ ▓ ▓
+     0.05│  ▓ ▓ ▓ ▓ ▓ ▓ ▓
+     0.00│▓ ▓ ▓ ▓ ▓ ▓ ▓ ▓ ▓
+         └───────────────────
+          0  1  2  3  4  5  6  7  8
+                   ↑
+              peak near λ=3
      
   REAL-WORLD EXAMPLES:
     - Emails per hour, customers per minute
@@ -912,6 +1028,13 @@
   
   🍎 Kid version: "How many times must I roll a die to get a 6?"
      p = 1/6, so on average E[X] = 6 rolls until first 6.
+
+     TIMELINE: each ✗ = not-6, ✓ = got 6!
+     Trial: 1   2   3   4   5   6   7   ...
+            ✗   ✗   ✗   ✗   ✓          ← first success on trial 5
+            │   │   │   │   │
+           5/6 5/6 5/6 5/6 1/6
+     P(X=5) = (5/6)⁴ × (1/6) ≈ 0.080
      
   MEMORYLESS PROPERTY:
     P(X > s+t | X > s) = P(X > t)
@@ -939,18 +1062,18 @@
   🍎 Kid version: "How long until the next bus arrives?"
      If buses come at rate λ=4 per hour, average wait = 1/4 hour = 15 min.
   
-  ┌──────────────────────────────────────────────────┐
-  │   f(x)                                           │
-  │  λ│╲                                             │
-  │   │  ╲                                           │
-  │   │    ╲                                         │
-  │   │      ╲────                                   │
-  │   │           ──────────                         │
-  │   └──────────────────────── x                    │
-  │   0    1/λ    2/λ    3/λ                         │
-  │        ↑                                         │
-  │    average = 1/λ                                 │
-  └──────────────────────────────────────────────────┘
+  ┌─────────────────────────────────────────────────┐
+  │   f(x)                                          │
+  │  λ│╲                                            │
+  │   │  ╲                                          │
+  │   │    ╲                                        │
+  │   │      ╲────                                  │
+  │   │           ──────────                        │
+  │   └──────────────────────── x                   │
+  │   0    1/λ    2/λ    3/λ                        │
+  │        ↑                                        │
+  │    average = 1/λ                                │
+  └─────────────────────────────────────────────────┘
   
   CONNECTION: Geometric is DISCRETE waiting time (count trials).
               Exponential is CONTINUOUS waiting time (measure time).
@@ -981,6 +1104,15 @@
     - Increasing hazard: aging lightbulb (more likely to fail as it ages)
     - Decreasing hazard: "infant mortality" (if it survives early, it's strong)
     - Constant hazard: radioactive decay, Exponential distribution
+
+  HAZARD RATE SHAPES:
+  h(t)
+    |       /           Increasing (aging: Weibull, beta>1)
+    |      /
+    |─────────────────  Constant (Exponential: memoryless)
+    |  \
+    |    \______        Decreasing (infant mortality: Weibull, beta<1)
+    └───────────── t
 ```
 
 ---
@@ -1038,6 +1170,12 @@
   🍎 Kid version: Exponential = "time to 1st bus."
      Gamma(3, λ) = "time until the 3rd bus arrives."
      Just the sum of 3 independent Exponentials!
+
+     TIMELINE: wait for the 3rd bus
+     ──────●────────────●──────●──────────► time
+           bus 1       bus 2  bus 3
+     ├─── Exp(λ) ───┤── Exp(λ)─┤── Exp(λ)─┤
+     ├───────── Gamma(3, λ) ────────────────┤
 ```
 
 ---
@@ -1105,6 +1243,19 @@
   │                                                  │
   │  As k → ∞: χ²(k) → approximately N(k, 2k)        │
   └──────────────────────────────────────────────────┘
+
+  Chi-squared SHAPE COMPARISON:
+  f(x)
+    |*
+    |* *       k=1 (heavy skew, peak at 0)
+    | *  *
+    |  *   * *
+    |   *     * * * *
+    |    ·         · · · ·      k=5 (moderate skew)
+    |     ·   ····         · · ·
+    |          ·  ·····          · · · ·  k=10 (mild skew)
+    └────────────────────────────────────── x
+    0     5     10     15     20     25
   
   USED IN:
     - Chi-squared TEST (is observed data consistent with expected?)
@@ -1139,6 +1290,19 @@
   🍎 Kid version: Regular distribution = "what grade will you get?"
      Joint distribution = "what grade AND how many hours studied?"
      It tells you about TWO things at once!
+
+  EXAMPLE joint PMF table:
+              Y=0    Y=1    Y=2   | Marginal of X
+    X=0      0.10   0.20   0.05  |  0.35
+    X=1      0.15   0.25   0.10  |  0.50
+    X=2      0.02   0.05   0.08  |  0.15
+    ---------+------+------+-----+---------
+    Marg(Y)  0.27   0.50   0.23  |  1.00
+
+    Each cell: P(X=x AND Y=y)
+    Row sums: marginal of X = P(X=x)
+    Col sums: marginal of Y = P(Y=y)
+    Grand total: must be 1.00
   
   Total probability: ΣΣ P(X=x,Y=y) = 1 (discrete)
                      ∫∫ f(x,y) dx dy = 1 (continuous)
@@ -1160,6 +1324,16 @@
   
   🍎 Kid version: If a table shows P(grade, hours) for all combos,
      the MARGINAL for grade = add across all hours for each grade.
+
+  DIAGRAM: Joint -> Marginal -> Conditional
+  ┌──────────────┐
+  │ JOINT f(x,y) │ ──sum over y──> f_X(x) = MARGINAL of X
+  │   (2D table  │ ──sum over x──> f_Y(y) = MARGINAL of Y
+  │   or surface)│
+  └──────────────┘
+         │
+         ▼ divide by marginal
+  f(y|x) = f(x,y) / f_X(x)  =  CONDITIONAL of Y given X
   
   CONDITIONAL = "given one variable, what's the distribution of the other?"
   
@@ -1230,6 +1404,19 @@
   │  Step 2: Find E[X]  = Σ x·P(x)                   │
   │  Step 3: Var = Step1 − (Step2)²                  │
   └──────────────────────────────────────────────────┘
+
+  LOW VARIANCE vs HIGH VARIANCE:
+  ┌────────────────────────────────────────────────┐
+  │  Low Var (σ=1):          High Var (σ=4):       │
+  │      ·····                   ·····             │
+  │    ··     ··             ···       ···         │
+  │  ··         ··         ··             ··       │
+  │ ·             ·       ·                 ·      │
+  │·               ·    ·                     ·    │
+  │────────────────── ──────────────────────────   │
+  │  Values cluster     Values spread far from     │
+  │  TIGHTLY near μ     the mean μ                 │
+  └────────────────────────────────────────────────┘
   
   PROPERTIES:
     Var(aX + b) = a² · Var(X)       (b disappears — shifting doesn't change spread!)
@@ -1268,6 +1455,23 @@
     
     Chebyshev works for ANY distribution — no shape assumptions!
     It's WEAK for Normal but TIGHT for worst-case distributions.
+
+    COMPARISON: Chebyshev bound vs actual (Normal):
+    k (sigmas) | Chebyshev bound  | Normal actual
+    -----------+------------------+---------------
+    1          | <= 100%          | 31.7% outside
+    2          | <= 25%           |  4.6% outside
+    3          | <= 11.1%         |  0.3% outside
+    4          | <=  6.25%        |  0.006% outside
+
+    DIAGRAM: What Chebyshev says
+    |          ?????         |         <- at MOST 1/k^2 probability here
+    |     |=============|    |
+    |     |  GUARANTEED  |   |
+    |     |  >= 1-1/k^2  |   |
+    |     |  probability |   |
+    ------+------+-------+--------
+         u-ks    u      u+ks
 ```
 
 ---
@@ -1379,6 +1583,13 @@
   │  🍎 Roll a die (uniform), add up 30 rolls.                   │
   │     The SUM has a nearly perfect bell curve!                 │
   │     Even though one die is flat (not bell-shaped at all).    │
+  │                                                              │
+  │  n=1 (1 die):    n=2 (sum):     n=5:         n=30:           │
+  │  ▓ ▓ ▓ ▓ ▓ ▓      ▓               ··           ·····         │
+  │  (flat/uniform)  ▓ ▓ ▓           ·    ·       ··     ··      │
+  │                ▓ ▓ ▓ ▓ ▓       ·        ·   ··         ··    │
+  │              ▓ ▓ ▓ ▓ ▓ ▓ ▓   ·            · ·              · │
+  │              (triangular)    (bell-ish)    (perfect bell!)   │
   │                                                              │
   │  PRACTICAL RULE: n ≥ 30 is usually "large enough" for CLT.   │
   └──────────────────────────────────────────────────────────────┘
