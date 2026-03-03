@@ -28,9 +28,9 @@
     │          ┌────────┴────────┐                            │
     │          ▼                 ▼                            │
     │   ┌──────────────┐  ┌──────────────┐                    │
-    │   │  📘 THEORY    │  │  🔢 PRACTICE  │                 │
-    │   │  Concepts +   │◄►│  Problems +   │                  │
-    │   │  Q&A + AI/ML  │  │  Step-by-step │                  │
+    │   │  📘 THEORY   │  │🔢 PRACTICE  │                    │
+    │   │  Concepts +  │◄►│ Problems +   │                    │
+    │   │  Q&A + AI/ML │  │ Step-by-step │                    │
     │   └──────────────┘  └──────────────┘                    │
     │         ▲                    ▲                          │
     │         │    Cross-links     │                          │
