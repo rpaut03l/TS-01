@@ -43,10 +43,10 @@
   ┌──────────────────────────────────────────────────────────┐
   │                                                          │
   │           f(x + h) − f(x)                                │
-  │  f'(x) = lim ─────────────                              │
+  │  f'(x) = lim ─────────────                               │
   │           h→0       h                                    │
   │                                                          │
-  │  In words: "take f at x+h, subtract f at x,             │
+  │  In words: "take f at x+h, subtract f at x,              │
   │   divide by h, then shrink h toward zero"                │
   └──────────────────────────────────────────────────────────┘
   
@@ -63,8 +63,8 @@
   Constant multiple  │  d/dx(c·f) = c · f'(x)            │  number × function
   Sum rule           │  d/dx(f+g) = f' + g'              │  adding functions
   Product rule       │  d/dx(f·g) = f'·g + f·g'          │  multiplying functions
-  Quotient rule      │  d/dx(f/g) = (f'g − fg')/g²      │  dividing functions
-  Chain rule         │  d/dx[f(g(x))] = f'(g(x))·g'(x)  │  function INSIDE function
+  Quotient rule      │  d/dx(f/g) = (f'g − fg')/g²       │  dividing functions
+  Chain rule         │  d/dx[f(g(x))] = f'(g(x))·g'(x)   │  function INSIDE function
   ───────────────────┼───────────────────────────────────┼──────────────────────
   d/dx(sin x) = cos x         │  d/dx(eˣ) = eˣ
   d/dx(cos x) = −sin x        │  d/dx(aˣ) = aˣ · ln(a)
@@ -133,14 +133,14 @@
     (x + h)² = x² + 2·x·h + h²
     
   ┌─────────────────────────────────────────────┐
-  │  WHY does (x+h)² = x² + 2xh + h²?          │
+  │  WHY does (x+h)² = x² + 2xh + h²?           │
   │                                             │
-  │  (x+h)² = (x+h)(x+h)                       │
-  │         = x·x + x·h + h·x + h·h            │
-  │         = x² + xh + hx + h²                │
+  │  (x+h)² = (x+h)(x+h)                        │
+  │         = x·x + x·h + h·x + h·h             │
+  │         = x² + xh + hx + h²                 │
   │         = x² + 2xh + h²                     │
   │                                             │
-  │  (because xh + hx = 2xh)                   │
+  │  (because xh + hx = 2xh)                    │
   └─────────────────────────────────────────────┘
   
   So: f(x + h) = x² + 2xh + h²
@@ -190,9 +190,9 @@
   │  f'(x) = 2x  ✅                     │
   │                                     │
   │  Meaning: At any point x, the slope │
-  │  of f(x)=x² is 2x.                 │
-  │  At x=3: slope = 2(3) = 6          │
-  │  At x=0: slope = 0 (flat!)         │
+  │  of f(x)=x² is 2x.                  │
+  │  At x=3: slope = 2(3) = 6           │
+  │  At x=0: slope = 0 (flat!)          │
   └─────────────────────────────────────┘
 ```
 
