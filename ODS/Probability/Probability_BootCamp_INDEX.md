@@ -304,4 +304,4 @@
 
 > 📘 **Start studying:** **[→ Theory Guide](./Probability_BootCamp_THEORY.md)** | **[→ Practice Guide](./Probability_BootCamp_PRACTICE.md)**
 >
-> 🎓 **Created for:** ODS | ML
+> 🎓 **Created for:** ODS | Mathematics for AI/ML
