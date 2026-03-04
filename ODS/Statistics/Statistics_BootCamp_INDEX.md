@@ -1,6 +1,6 @@
 # 📊 Statistics BootCamp — Master Study Hub
 
-### 🎓 ODS | M.L.
+### 🎓 ODS | AI 
 > **Source:** [Steve Brunton — Probability & Statistics BootCamp](https://www.youtube.com/playlist?list=PLMrJAkhIeNNR3sNYvfgiKgcStwuPSts9V) (Statistics portion) · University of Washington
 > **Goal:** Understand every concept in ONE read — explained like you're seeing it for the first time!
 > **Philosophy:** Think INTUITIVELY first, compute FORMALLY second
@@ -251,10 +251,10 @@ CHI-SQ: sum of (O-E)^2/E for categorical data.
 ANOVA: compare 3+ group means, F = MSB/MSW.
 REGRESSION: y-hat = b0 + b1*x.  b1 = Sxy/Sxx.  R^2 = SSR/SST.
 BAYESIAN: Posterior proportional to Likelihood * Prior.
-``` 
+```
 
 ---
 
 > [Open Theory Guide](./Statistics_BootCamp_THEORY.md) | [Open Practice Guide](./Statistics_BootCamp_PRACTICE.md)
 >
-> 🎓 Created for: ODS | M.L.
+> 🎓 Created for: ODS | AI
