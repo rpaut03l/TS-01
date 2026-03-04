@@ -28,7 +28,7 @@
     │          ┌────────┴────────┐                            │
     │          ▼                 ▼                            │
     │   ┌──────────────┐  ┌──────────────┐                    │
-    │   │  📘 THEORY   │  │🔢 PRACTICE  │                    │
+    │   │  📘 THEORY   │  │🔢 PRACTICE   │                   │
     │   │  Concepts +  │◄►│ Problems +   │                    │
     │   │  Q&A + AI/ML │  │ Step-by-step │                    │
     │   └──────────────┘  └──────────────┘                    │
@@ -169,8 +169,8 @@
            │ SET THEORY   │ │ BIRTHDAY    │ │ BASIC PROB   │
            │ (Ch 4)       │ │ PROBLEM(Ch5)│ │ P(A)=f/t     │
            └──────┬───────┘ └─────────────┘ └──────┬───────┘
-                  │                                 │
-                  ▼                                 ▼
+                  │                                │
+                  ▼                                ▼
         ┌──────────────────┐              ┌──────────────────┐
         │  CONDITIONAL     │              │  INDEPENDENCE    │
         │  PROBABILITY     │              │  (Ch 12)         │
@@ -193,17 +193,17 @@
       ▼        ▼        ▼         ▼          ▼
  ┌────────┐┌───────┐┌───────┐┌────────┐┌────────┐
  │BERNOULLI││POISSON││NORMAL││GEOMET- ││EXPON-  │
- │BINOMIAL ││(Ch17) ││(Ch15)││RIC     ││ENTIAL  │
- │(Ch 14)  ││       ││      ││(Ch 18) ││(Ch 19) │
+ │BINOMIAL││(Ch17) ││(Ch15)││RIC      ││ENTIAL  │
+ │(Ch 14) ││       ││      ││(Ch 18)  ││(Ch 19) │
  └────────┘└───┬───┘└───┬───┘└────────┘└────┬───┘
-               │        │                    │
-               │    ┌───┴────┐          ┌────┴────┐
+               │        │                   │
+               │    ┌───┴────┐          ┌───┴─────┐
                │    │CHI-SQ  │          │ GAMMA   │
                │    │(Ch 25) │          │ (Ch 22) │
                │    └────────┘          └─────────┘
                │
        ┌───────┴────────────────────────────────┐
-       ▼                                         ▼
+       ▼                                        ▼
  ┌──────────────────┐                  ┌──────────────────┐
  │ JOINT DISTRIB.   │                  │ EXPECTED VALUE   │
  │ (Ch 26-27)       │                  │ VARIANCE (Ch28-29│
@@ -242,13 +242,13 @@
   │                                    │                                │
   │                             [standardize]                           │
   │                                    │                                │
-  │  Geometric(p) ──[continuous       ▼                                 │
+  │  Geometric(p) ──[continuous        ▼                                │
   │                  analog]──► Standard Normal N(0,1)                  │
   │       │                            │                                │
   │       ▼                      [square it]                            │
-  │  Exponential(λ) ──[wait           ▼                                 │
+  │  Exponential(λ) ──[wait            ▼                                │
   │       │            for αth  Chi-Squared(k)                          │
-  │       │            event]         │                                 │
+  │       │            event]          │                                │
   │       ▼               │     [special case                           │
   │  Gamma(α,λ)◄──────────┘      of Gamma]                              │
   └─────────────────────────────────────────────────────────────────────┘
