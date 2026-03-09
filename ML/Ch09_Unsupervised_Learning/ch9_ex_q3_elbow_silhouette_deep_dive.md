@@ -6,7 +6,7 @@
 
 Colab Link: https://colab.research.google.com/drive/1pEbLmXvvEG2XjJvDuK7bj3UqB_0qmrmn#scrollTo=E5DsI6v6N7H1
 
-> **Nav:** [← Ch9 INDEX](./ml_ch9_index.md) | [📖 THEORY](./ml_ch9_theory.md) | [🔢 NUMERICAL](./ml_ch9_numerical.md) | 💻 **PRACTICE**(./ml_ch9_practice.md) | [📖 COLAB-CODE](./ml_ch9_theory.md)
+> **Nav:** [← Ch9 INDEX](./ml_ch9_index.md) | [📖 THEORY](./ml_ch9_theory.md) | [🔢 NUMERICAL](./ml_ch9_numerical.md) | [💻 PRACTICE](./ml_ch9_practice.md) | [📖COLAB-CODE](./ag_ch09_ex_q3_ans.ipynb)
 
 ---
 
