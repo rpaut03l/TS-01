@@ -1,5 +1,5 @@
 # 💻 Ch7 — Ensemble Learning: PRACTICE
-### *All book exercises solved. Mind-friendly steps. Colab code.*
+### *All book exercises solved. Mind-friendly steps. Full Colab code.*
 
 > **Nav:** [← INDEX](./ml_ch7_index.md) | [📖 THEORY](./ml_ch7_theory.md) | [🔢 NUMERICAL](./ml_ch7_practice.md) | 💻 **PRACTICE**
 
@@ -163,18 +163,50 @@ FIXES:
   2. ↑ n_estimators            → more boosting rounds
   3. ↑ max_depth (e.g. 3→5)   → more expressive trees
   4. ↓ min_samples_leaf        → allow finer splits
+```
 
-EARLY STOPPING to find optimal n_estimators:
-  for y_pred in gbm.staged_predict(X_val):
-      val_errors.append(1 - accuracy_score(y_val, y_pred))
-  best_n = np.argmin(val_errors) + 1
+```python
+# ── Early stopping to find optimal n_estimators ──────────────────
+# staged_predict() yields predictions after each tree is added
+
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.metrics import accuracy_score
+import numpy as np
+
+# Tiny demo with make_classification (no MNIST needed)
+from sklearn.datasets import make_classification
+from sklearn.model_selection import train_test_split
+
+X_d, y_d = make_classification(n_samples=2000, n_features=20, random_state=42)
+X_dt, X_dv, y_dt, y_dv = train_test_split(X_d, y_d, random_state=42)
+
+gbm = GradientBoostingClassifier(n_estimators=300, learning_rate=0.1,
+                                  max_depth=3, random_state=42)
+gbm.fit(X_dt, y_dt)
+
+# staged_predict → accuracy after each of the 300 trees
+val_errors = [1 - accuracy_score(y_dv, y_pred)
+              for y_pred in gbm.staged_predict(X_dv)]
+
+best_n = int(np.argmin(val_errors)) + 1   # +1 because index is 0-based
+print(f"Optimal n_estimators = {best_n}")
+print(f"Best val error        = {val_errors[best_n-1]:.4f}")
+
+# Refit with optimal n_estimators
+gbm_best = GradientBoostingClassifier(n_estimators=best_n, learning_rate=0.1,
+                                       max_depth=3, random_state=42)
+gbm_best.fit(X_dt, y_dt)
+print(f"Final val acc = {gbm_best.score(X_dv, y_dv):.4f}")
 ```
 
 ---
 
 ## 🔴 Q8 — MNIST Voting Ensemble (Full Code)
 
+> ⚠️ **Self-contained cell. SVM on 50k samples takes ~10-15 min in Colab. Use the faster version below if you're in a hurry.**
+
 ```python
+# ── CELL Q8: fully self-contained — paste & run directly ─────────
 import numpy as np
 from sklearn.datasets import fetch_openml
 from sklearn.model_selection import train_test_split
@@ -184,15 +216,113 @@ from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
 
 # ── 1. Load MNIST ────────────────────────────────────────────────
-mnist = fetch_openml('mnist_784', version=1, as_frame=False)
+print("Loading MNIST (this may take ~30s)...")
+mnist = fetch_openml('mnist_784', version=1, as_frame=False, parser='auto')
+X, y  = mnist.data, mnist.target.astype(int)
+print(f"Loaded: X={X.shape}, y={y.shape}")
+
+# ── 2. Split: 10k train / 5k val / 5k test  (fast version)
+#    Change train_size=50000 for full experiment (slow SVM!)
+X_tr, X_tmp, y_tr, y_tmp = train_test_split(
+    X, y, train_size=10000, random_state=42, stratify=y)
+X_val, X_test, y_val, y_test = train_test_split(
+    X_tmp, y_tmp, test_size=0.5, random_state=42, stratify=y_tmp)
+
+print(f"Train: {X_tr.shape}  Val: {X_val.shape}  Test: {X_test.shape}")
+
+# ── 3. Scale ─────────────────────────────────────────────────────
+scaler   = StandardScaler()
+X_tr_s   = scaler.fit_transform(X_tr)   # fit on train only!
+X_val_s  = scaler.transform(X_val)
+X_test_s = scaler.transform(X_test)
+
+# ── 4. Train each classifier individually ────────────────────────
+rf  = RandomForestClassifier(n_estimators=100, random_state=42, n_jobs=-1)
+et  = ExtraTreesClassifier(n_estimators=100, random_state=42, n_jobs=-1)
+svm = SVC(probability=True, random_state=42)   # probability=True needed for soft voting!
+
+for name, clf in [("Random Forest", rf), ("Extra Trees", et), ("SVM", svm)]:
+    print(f"Training {name}...")
+    clf.fit(X_tr_s, y_tr)
+    print(f"  val acc: {clf.score(X_val_s, y_val):.4f}")
+
+# ── 5. Soft Voting Ensemble ──────────────────────────────────────
+# VotingClassifier with pre-fitted estimators: set voting='soft'
+# NOTE: When estimators are already fitted, VotingClassifier re-fits them
+#       internally. To avoid that, use set_params to pass fitted ones
+#       OR just use predict_proba manually (Method B below).
+
+# Method A: Let VotingClassifier re-fit (straightforward)
+voting_clf = VotingClassifier(
+    estimators=[('rf', RandomForestClassifier(n_estimators=100, random_state=42, n_jobs=-1)),
+                ('et', ExtraTreesClassifier(n_estimators=100, random_state=42, n_jobs=-1)),
+                ('svm', SVC(probability=True, random_state=42))],
+    voting='soft'
+)
+voting_clf.fit(X_tr_s, y_tr)
+print(f"\nVoting (soft) val acc: {voting_clf.score(X_val_s, y_val):.4f}")
+
+# Method B: Manual soft vote using already-trained clfs (faster, no re-fit)
+proba_val = np.mean([
+    rf.predict_proba(X_val_s),
+    et.predict_proba(X_val_s),
+    svm.predict_proba(X_val_s)
+], axis=0)
+manual_preds = np.argmax(proba_val, axis=1)
+print(f"Manual soft vote val acc: {accuracy_score(y_val, manual_preds):.4f}")
+
+# ── 6. Compare: drop one clf at a time ───────────────────────────
+print("\n── Drop-one analysis (manual soft vote) ──")
+all_clfs = [("rf", rf), ("et", et), ("svm", svm)]
+for drop_name, _ in all_clfs:
+    keep = [(n, c) for n, c in all_clfs if n != drop_name]
+    p = np.mean([c.predict_proba(X_val_s) for _, c in keep], axis=0)
+    acc = accuracy_score(y_val, np.argmax(p, axis=1))
+    print(f"  Without {drop_name:3s}: val acc = {acc:.4f}")
+
+# ── 7. Final test score (run ONCE) ──────────────────────────────
+proba_test = np.mean([
+    rf.predict_proba(X_test_s),
+    et.predict_proba(X_test_s),
+    svm.predict_proba(X_test_s)
+], axis=0)
+test_acc = accuracy_score(y_test, np.argmax(proba_test, axis=1))
+print(f"\nFinal TEST acc (soft vote): {test_acc:.4f}")
+```
+
+---
+
+## 🔴 Q9 — MNIST Stacking Blender (Full Code)
+
+> ⚠️ **Self-contained cell — includes all data loading. No dependency on Q8.**
+
+```python
+# ── CELL Q9: fully self-contained — paste & run directly ─────────
+import numpy as np
+from sklearn.datasets import fetch_openml
+from sklearn.model_selection import train_test_split, cross_val_predict
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import (RandomForestClassifier, ExtraTreesClassifier,
+                               StackingClassifier, GradientBoostingClassifier)
+from sklearn.svm import SVC
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+
+# ── 1. Load & split MNIST ────────────────────────────────────────
+print("Loading MNIST...")
+mnist = fetch_openml('mnist_784', version=1, as_frame=False, parser='auto')
 X, y  = mnist.data, mnist.target.astype(int)
 
-# Use 50k train / 10k val / 10k test
-X_tr, X_tmp, y_tr, y_tmp = train_test_split(X, y, train_size=50000, random_state=42)
-X_val, X_test, y_val, y_test = train_test_split(X_tmp, y_tmp, test_size=0.5, random_state=42)
+# 3-way split: train / val (blender training) / test
+X_tr, X_tmp, y_tr, y_tmp = train_test_split(
+    X, y, train_size=10000, random_state=42, stratify=y)
+X_val, X_test, y_val, y_test = train_test_split(
+    X_tmp, y_tmp, test_size=0.5, random_state=42, stratify=y_tmp)
+
+print(f"Train: {X_tr.shape}  Val: {X_val.shape}  Test: {X_test.shape}")
 
 # ── 2. Scale ─────────────────────────────────────────────────────
-scaler = StandardScaler()
+scaler   = StandardScaler()
 X_tr_s   = scaler.fit_transform(X_tr)
 X_val_s  = scaler.transform(X_val)
 X_test_s = scaler.transform(X_test)
@@ -202,92 +332,116 @@ rf  = RandomForestClassifier(n_estimators=100, random_state=42, n_jobs=-1)
 et  = ExtraTreesClassifier(n_estimators=100, random_state=42, n_jobs=-1)
 svm = SVC(probability=True, random_state=42)
 
+print("Training base classifiers...")
 for name, clf in [("RF", rf), ("ET", et), ("SVM", svm)]:
     clf.fit(X_tr_s, y_tr)
-    print(f"{name} val acc: {clf.score(X_val_s, y_val):.4f}")
+    print(f"  {name} val acc: {clf.score(X_val_s, y_val):.4f}")
 
-# ── 4. Soft Voting Ensemble ──────────────────────────────────────
-voting = VotingClassifier(
-    estimators=[('rf',rf),('et',et),('svm',svm)],
-    voting='soft'
-)
-voting.fit(X_tr_s, y_tr)
-print(f"Voting val acc: {voting.score(X_val_s, y_val):.4f}")
-
-# ── 5. Test set (run ONCE at the end) ───────────────────────────
-print(f"\nFinal TEST acc: {voting.score(X_test_s, y_test):.4f}")
-
-# ── 6. Remove weakest member and retest ─────────────────────────
-# Try removing the worst individual classifier
-for drop in ['rf','et','svm']:
-    remaining = [(n,c) for n,c in [('rf',rf),('et',et),('svm',svm)] if n != drop]
-    v2 = VotingClassifier(estimators=remaining, voting='soft')
-    v2.fit(X_tr_s, y_tr)
-    print(f"Without {drop}: val acc = {v2.score(X_val_s, y_val):.4f}")
-```
-
----
-
-## 🔴 Q9 — MNIST Stacking Blender (Full Code)
-
-```python
-# Continuing from Q8 (base classifiers already trained)
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import StackingClassifier
-
-# ── METHOD 1: sklearn StackingClassifier ────────────────────────
+# ── 4. METHOD A: sklearn StackingClassifier ──────────────────────
+# cv=5 internally generates out-of-fold predictions for meta-learner
+print("\nTraining sklearn StackingClassifier (cv=5, may take a few mins)...")
 stack = StackingClassifier(
-    estimators=[('rf',rf),('et',et),('svm',svm)],
-    final_estimator=LogisticRegression(max_iter=1000),
-    cv=5,
+    estimators=[
+        ('rf',  RandomForestClassifier(n_estimators=100, random_state=42, n_jobs=-1)),
+        ('et',  ExtraTreesClassifier(n_estimators=100, random_state=42, n_jobs=-1)),
+        ('svm', SVC(probability=True, random_state=42))
+    ],
+    final_estimator=LogisticRegression(max_iter=1000, random_state=42),
+    cv=3,         # use 3 for speed, 5 for better results
     n_jobs=-1
 )
 stack.fit(X_tr_s, y_tr)
-print(f"Stacking val acc: {stack.score(X_val_s, y_val):.4f}")
+print(f"Stacking val acc:  {stack.score(X_val_s, y_val):.4f}")
+print(f"Stacking test acc: {stack.score(X_test_s, y_test):.4f}")
 
-# ── METHOD 2: Manual Stacking (understand the internals) ─────────
-# Base models predict on VAL SET → becomes blender's training data
+# ── 5. METHOD B: Manual stacking (understand the internals) ──────
+# Key insight: base clfs predict on VAL SET → becomes blender's train data
+# Val set was NEVER seen by base clfs during their training → no leakage!
+
 val_meta = np.column_stack([
-    rf.predict_proba(X_val_s),     # (10000, 10)
-    et.predict_proba(X_val_s),
-    svm.predict_proba(X_val_s)
-])  # shape: (10000, 30)
+    rf.predict_proba(X_val_s),    # shape (n_val, 10) — 10 digit classes
+    et.predict_proba(X_val_s),    # shape (n_val, 10)
+    svm.predict_proba(X_val_s)    # shape (n_val, 10)
+])   # final shape: (n_val, 30)
+print(f"\nMeta-features shape: {val_meta.shape}")
 
 blender = LogisticRegression(max_iter=1000, random_state=42)
 blender.fit(val_meta, y_val)
 
-# Blender predicts on TEST SET
+# Blender predicts on TEST SET using base clf predictions
 test_meta = np.column_stack([
     rf.predict_proba(X_test_s),
     et.predict_proba(X_test_s),
     svm.predict_proba(X_test_s)
 ])
-print(f"Manual stacking test acc: {blender.score(test_meta, y_test):.4f}")
+print(f"Manual blender test acc: {blender.score(test_meta, y_test):.4f}")
 
-# ── Final comparison ─────────────────────────────────────────────
-print("\n=== LEADERBOARD ===")
+# ── 6. Final leaderboard ─────────────────────────────────────────
+print("\n=== LEADERBOARD (test set) ===")
+
+# Manual soft vote (for comparison)
+proba_test = np.mean([rf.predict_proba(X_test_s),
+                      et.predict_proba(X_test_s),
+                      svm.predict_proba(X_test_s)], axis=0)
+vote_acc = accuracy_score(y_test, np.argmax(proba_test, axis=1))
+
 results = {
-    "Random Forest":  rf.score(X_test_s, y_test),
-    "Extra Trees":    et.score(X_test_s, y_test),
-    "SVM":            svm.score(X_test_s, y_test),
-    "Soft Voting":    voting.score(X_test_s, y_test),
-    "Stacking":       stack.score(X_test_s, y_test),
+    "Random Forest":     rf.score(X_test_s, y_test),
+    "Extra Trees":       et.score(X_test_s, y_test),
+    "SVM":               svm.score(X_test_s, y_test),
+    "Soft Voting":       vote_acc,
+    "Stacking (sklearn)": stack.score(X_test_s, y_test),
+    "Manual Blender":    blender.score(test_meta, y_test),
 }
 for name, acc in sorted(results.items(), key=lambda x: -x[1]):
-    print(f"  {name:20s}: {acc:.4f}  {'█'*int(acc*40)}")
+    bar = "█" * int(acc * 40)
+    print(f"  {name:22s}: {acc:.4f}  {bar}")
 ```
 
 ---
 
-## ⚡ One-Liners
+## ⚡ One-Liners (copy-paste snippets)
 
 ```python
-VotingClassifier([('rf',rf),('svm',svm)], voting='soft').fit(X,y)
-BaggingClassifier(n_estimators=500, oob_score=True).fit(X,y).oob_score_
-rf.feature_importances_
-AdaBoostClassifier(DecisionTreeClassifier(max_depth=1), n_estimators=200)
-np.argmin([e for e in gbm.staged_predict(X_val)]) + 1  # best n_estimators
-StackingClassifier([...], final_estimator=LogisticRegression())
+# Voting (soft) — always set probability=True for SVC
+VotingClassifier([('rf', RandomForestClassifier()), ('svm', SVC(probability=True))],
+                 voting='soft').fit(X_train, y_train)
+
+# Bagging with free OOB validation
+from sklearn.ensemble import BaggingClassifier
+from sklearn.tree import DecisionTreeClassifier
+bg = BaggingClassifier(DecisionTreeClassifier(), n_estimators=500,
+                        oob_score=True, n_jobs=-1).fit(X_train, y_train)
+print(bg.oob_score_)
+
+# Random Forest feature importance
+from sklearn.ensemble import RandomForestClassifier
+rf = RandomForestClassifier(n_estimators=100).fit(X_train, y_train)
+print(rf.feature_importances_)   # array of length n_features, sums to 1
+
+# AdaBoost with decision stump
+from sklearn.ensemble import AdaBoostClassifier
+from sklearn.tree import DecisionTreeClassifier
+AdaBoostClassifier(DecisionTreeClassifier(max_depth=1),
+                   n_estimators=200, learning_rate=0.1).fit(X_train, y_train)
+
+# GBM early stopping
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.metrics import accuracy_score
+import numpy as np
+gbm = GradientBoostingClassifier(n_estimators=300).fit(X_train, y_train)
+errs = [1 - accuracy_score(y_val, p) for p in gbm.staged_predict(X_val)]
+best_n = np.argmin(errs) + 1
+
+# Stacking
+from sklearn.ensemble import StackingClassifier
+from sklearn.linear_model import LogisticRegression
+StackingClassifier(estimators=[('rf', rf), ('et', et)],
+                   final_estimator=LogisticRegression(), cv=5).fit(X_train, y_train)
+
+# Manual soft vote (no re-fitting)
+proba = np.mean([clf.predict_proba(X_test) for clf in [rf, et, svm]], axis=0)
+preds = np.argmax(proba, axis=1)
 ```
 
 ---
@@ -305,6 +459,6 @@ StackingClassifier([...], final_estimator=LogisticRegression())
 
 ---
 
-> **Nav:** [← INDEX](./ml_ch7_index.md) | [📖 THEORY](./ml_ch7_theory.md) | [🔢 NUMERICAL](./ml_ch7_numerical.md) | 💻 PRACTICE
+> **Nav:** [← INDEX](./ml_ch7_index.md) | [📖 THEORY](./ml_ch7_theory.md) | [🔢 NUMERICAL](./ml_ch7_practice.md) | 💻 **PRACTICE**
 
-*AI · ML · github.com/rpaut03l/TS-01*
+* AI · ML · github.com/rpaut03l/TS-01*
