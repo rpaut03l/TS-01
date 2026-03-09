@@ -1,5 +1,5 @@
 # 💻 Ch7 — Ensemble Learning: PRACTICE
-### *All book exercises solved. Kid-friendly steps. Full Colab code.*
+### *All book exercises solved. Mind-friendly steps. Colab code.*
 
 > **Nav:** [← INDEX](./ml_ch7_index.md) | [📖 THEORY](./ml_ch7_theory.md) | [🔢 NUMERICAL](./ml_ch7_practice.md) | 💻 **PRACTICE**
 
