@@ -1,7 +1,7 @@
 # 📖 Ch7 — Ensemble Learning: THEORY
 ### *Hands-On ML Ch7 · Voting · Bagging · RF · AdaBoost · GBM · Stacking*
 
-> **Nav:** [← INDEX](./ML_Ch7_INDEX.md) | 📖 **THEORY** | [🔢 NUMERICAL →](./ML_Ch7_NUMERICAL.md) | [💻 PRACTICE →](./ML_Ch7_PRACTICE.md)
+> **Nav:** [← INDEX](./ml_ch7_index.md) | 📖 **THEORY** | [🔢 NUMERICAL →](./ml_ch7_numerical.md) | [💻 PRACTICE →](./ml_ch7_practice.md)
 
 ---
 
@@ -254,6 +254,6 @@ StackingClassifier(
 
 ---
 
-> **Nav:** [← INDEX](./ML_Ch7_INDEX.md) | 📖 THEORY | [🔢 NUMERICAL →](./ML_Ch7_NUMERICAL.md) | [💻 PRACTICE →](./ML_Ch7_PRACTICE.md)
+> **Nav:** [← INDEX](./ml_ch7_index.md) | 📖 THEORY | [🔢 NUMERICAL →](./ml_ch7_numerical.md) | [💻 PRACTICE →](./ml_ch7_practice.md)
 
 *AI · ML · github.com/rpaut03l/TS-01*
