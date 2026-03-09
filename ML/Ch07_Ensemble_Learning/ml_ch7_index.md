@@ -21,9 +21,9 @@ ML/Ch07_Ensemble_Learning/
 
 | File | What's inside | Time |
 |------|--------------|------|
-| [📖 THEORY](./ML_Ch7_THEORY.md) | Voting/Bagging/RF/AdaBoost/GBM/Stacking | 20 min |
-| [🔢 NUMERICAL](./ML_Ch7_NUMERICAL.md) | All formulas upfront + 7 worked problems | 20 min |
-| [💻 PRACTICE](./ML_Ch7_PRACTICE.md) | Q1-Q9 answered + MNIST voting+stacking code | 1-2 hrs |
+| [📖 THEORY](./ml_ch7_theory.md) | Voting/Bagging/RF/AdaBoost/GBM/Stacking | 20 min |
+| [🔢 NUMERICAL](./ml_ch7_numerical.md) | All formulas upfront + 7 worked problems | 20 min |
+| [💻 PRACTICE](./ml_ch7_practice.md) | Q1-Q9 answered + MNIST voting+stacking code | 1-2 hrs |
 
 ---
 
@@ -56,14 +56,6 @@ AdaBoost       ❌ seq     Bias       AdaBoostClassifier
 Gradient Boost ❌ seq     Bias       GradientBoostingClassifier
 Stacking       ✅ partial Both       StackingClassifier
 ```
-
----
-
-## 🔗 Links in TS-01
-
-- [→ Ch9 Unsupervised Learning](./ML_Ch9_INDEX.md)
-- [→ Ch3 Classification](../Ch03/INDEX.md)
-- [→ DSA Trees](../../DSA/Trees/INDEX.md)
 
 ---
 * AI · ML · github.com/rpaut03l/TS-01*
