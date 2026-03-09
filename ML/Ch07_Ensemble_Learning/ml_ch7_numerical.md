@@ -10,36 +10,36 @@
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │ 1. VOTING ERROR (Binomial)                                      │
-│    P(k wrong out of n) = C(n,k) · pᵏ · (1-p)^(n-k)           │
-│    Ensemble error = P(majority wrong) = Σ P(k) for k > n/2    │
-│    C(n,k) = n! / (k! · (n-k)!)                                 │
+│    P(k wrong out of n) = C(n,k) · pᵏ · (1-p)^(n-k)              │
+│    Ensemble error = P(majority wrong) = Σ P(k) for k > n/2      │
+│    C(n,k) = n! / (k! · (n-k)!)                                  │
 ├─────────────────────────────────────────────────────────────────┤
 │ 2. ADABOOST                                                     │
-│    Error rate:  r = (Σ wᵢ for wrong points) / (Σ all wᵢ)     │
-│    Clf weight:  α = η · ln((1-r)/r)     [η=learning rate]     │
-│    Update rule: wrong → wᵢ × exp(+α)   ← gets bigger         │
-│                 right → wᵢ × exp(-α)   ← gets smaller        │
-│    Normalize:   divide all wᵢ so they sum to 1                │
-│    Final pred:  ŷ = sign( Σ αₜ · hₜ(x) )                     │
+│    Error rate:  r = (Σ wᵢ for wrong points) / (Σ all wᵢ)        │
+│    Clf weight:  α = η · ln((1-r)/r)     [η=learning rate]       │
+│    Update rule: wrong → wᵢ × exp(+α)   ← gets bigger            │
+│                 right → wᵢ × exp(-α)   ← gets smaller           │
+│    Normalize:   divide all wᵢ so they sum to 1                  │
+│    Final pred:  ŷ = sign( Σ αₜ · hₜ(x) )                         │
 ├─────────────────────────────────────────────────────────────────┤
 │ 3. GRADIENT BOOSTING                                            │
-│    Start:    ŷ₀ = mean(y)                                      │
-│    Residual: r = y - ŷ_current                                 │
-│    Update:   ŷ_new = ŷ_old + η · h_new(x)   [h fits r]       │
-│    MSE:      mean( (y - ŷ)² )                                  │
+│    Start:    ŷ₀ = mean(y)                                       │
+│    Residual: r = y - ŷ_current                                  │
+│    Update:   ŷ_new = ŷ_old + η · h_new(x)   [h fits r]          │
+│    MSE:      mean( (y - ŷ)² )                                   │
 ├─────────────────────────────────────────────────────────────────┤
 │ 4. OOB (Out-of-Bag)                                             │
-│    P(point NOT picked in one draw) = 1 - 1/n                   │
-│    P(never picked in n draws) = (1-1/n)ⁿ → 1/e ≈ 0.368       │
-│    So ~63.2% points train each tree, ~36.8% are OOB            │
+│    P(point NOT picked in one draw) = 1 - 1/n                    │
+│    P(never picked in n draws) = (1-1/n)ⁿ → 1/e ≈ 0.368          │
+│    So ~63.2% points train each tree, ~36.8% are OOB             │
 ├─────────────────────────────────────────────────────────────────┤
 │ 5. SOFT VOTING                                                  │
-│    avg_prob[class] = (p₁ + p₂ + p₃) / 3                      │
-│    Predict class with highest average probability              │
+│    avg_prob[class] = (p₁ + p₂ + p₃) / 3                         │
+│    Predict class with highest average probability               │
 ├─────────────────────────────────────────────────────────────────┤
 │ 6. GINI IMPORTANCE (one split)                                  │
-│    = (nₚ/n)·Gₚ − (nₗ/n)·Gₗ − (nᵣ/n)·Gᵣ                    │
-│    nₚ=parent count, nₗ=left, nᵣ=right, G=Gini score          │
+│    = (nₚ/n)·Gₚ − (nₗ/n)·Gₗ − (nᵣ/n)·Gᵣ                            │
+│    nₚ=parent count, nₗ=left, nᵣ=right, G=Gini score              │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
