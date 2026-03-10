@@ -42,10 +42,10 @@
 ```
 ┌──────────────────────────────────────────────────────────────┐
 │                                                              │
-│   🦹 Burglary (B)           🌍 Earthquake (E)                │
-│   ┌─────────────┐           ┌─────────────┐                 │
-│   │ P(B)=0.001  │           │ P(E)=0.002  │                 │
-│   └──────┬──────┘           └──────┬──────┘                 │
+│   🦹 Burglary (B)           🌍 Earthquake (E)               │
+│   ┌─────────────┐           ┌─────────────┐                  │
+│   │ P(B)=0.001  │           │ P(E)=0.002  │                  │
+│   └──────┬──────┘           └──────┬──────┘                  │
 │          │                         │                         │
 │          └────────────┬────────────┘                         │
 │                       ↓                                      │
@@ -57,11 +57,11 @@
 │            ┌─────────┴─────────┐                             │
 │            ↓                   ↓                             │
 │    ┌─────────────┐    ┌─────────────┐                        │
-│    │ 📞 John (J) │    │ 📞 Mary (M) │                        │
-│    │  P(J|A) CPT │    │  P(M|A) CPT │                       │
+│    │ 📞 John (J) │    │ 📞 Mary (M) │                       │
+│    │  P(J|A) CPT │    │  P(M|A) CPT │                        │
 │    └─────────────┘    └─────────────┘                        │
 │                                                              │
-│    ←─── Causality flows DOWNWARD ──────────────→            │
+│    ←─── Causality flows DOWNWARD ──────────────→             │
 └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -545,24 +545,24 @@ Compute once for each of 4 (b,e) combos → store in table!
 
 ```
          ┌──────────────────────────────────────────────┐
-         │  Σ P(j|a)·P(m|a)·P(a|b,e)·P(b)·P(e)         │
-         │   a,e                                         │
+         │  Σ P(j|a)·P(m|a)·P(a|b,e)·P(b)·P(e)          │
+         │   a,e                                        │
          └───────────────────┬──────────────────────────┘
                              │
                   P(b) contains no a, no e
                              │ pull out!
                              ↓
          ┌──────────────────────────────────────────────┐
-         │  P(b) × Σ P(j|a)·P(m|a)·P(a|b,e)·P(e)       │
-         │          a,e                                  │
+         │  P(b) × Σ P(j|a)·P(m|a)·P(a|b,e)·P(e)        │
+         │          a,e                                 │
          └───────────────────┬──────────────────────────┘
                              │
                   Separate: P(e) has no 'a'
                              │ nest the sums!
                              ↓
          ┌──────────────────────────────────────────────┐
-         │  P(b) × Σ P(e) × [Σ P(a|b,e)·P(j|a)·P(m|a)] │
-         │          e          a                         │
+         │  P(b) × Σ P(e) × [Σ P(a|b,e)·P(j|a)·P(m|a)]  │
+         │          e          a                        │
          │                     └───────────────────────┘│
          │                          = f(b,e) 📝 SAVED!  │
          └──────────────────────────────────────────────┘
@@ -628,20 +628,20 @@ and reuses → eliminates ALL redundant computation!
 ╠══════════════════════════════════════════════════════════════════╣
 ║                                                                  ║
 ║  📐 EXACT INFERENCE (perfect answer)                             ║
-║     ├── Enumeration:       list all worlds, compute all         ║
-║     │                      O(2ⁿ) — exact but slow              ║
-║     └── Variable Elim:     compute factors once, reuse          ║
-║                            same answer, much fewer steps        ║
+║     ├── Enumeration:       list all worlds, compute all          ║
+║     │                      O(2ⁿ) — exact but slow                ║
+║     └── Variable Elim:     compute factors once, reuse           ║
+║                            same answer, much fewer steps         ║
 ║                                                                  ║
-║  🎲 APPROXIMATE INFERENCE (good enough, much faster)            ║
-║     ├── Prior Sampling:    roll dice per CPT, follow network    ║
-║     │                      fast but rare evidence wastes runs   ║
-║     ├── Rejection Sampling: keep only evidence-matching samples ║
-║     │                      still wastes samples for rare e     ║
-║     ├── Likelihood Weighting: fix evidence, weight each sample  ║
-║     │                      NO wasted samples — better!         ║
-║     └── Gibbs Sampling:    flip one variable at a time          ║
-║                            converges to true distribution      ║
+║  🎲 APPROXIMATE INFERENCE (good enough, much faster)             ║
+║     ├── Prior Sampling:    roll dice per CPT, follow network     ║
+║     │                      fast but rare evidence wastes runs    ║
+║     ├── Rejection Sampling: keep only evidence-matching samples  ║
+║     │                      still wastes samples for rare e       ║
+║     ├── Likelihood Weighting: fix evidence, weight each sample   ║
+║     │                      NO wasted samples — better!           ║
+║     └── Gibbs Sampling:    flip one variable at a time           ║
+║                            converges to true distribution        ║
 ╚══════════════════════════════════════════════════════════════════╝
 ```
 
@@ -659,38 +659,38 @@ WHEN TO USE WHICH:
 
 ```
 ╔══════════════════════════════════════════════════════════════════╗
-║         BAYESIAN NETWORK INFERENCE — MASTER CHEATSHEET          ║
+║         BAYESIAN NETWORK INFERENCE — MASTER CHEATSHEET           ║
 ╠══════════════════════════════════════════════════════════════════╣
 ║                                                                  ║
 ║  VARIABLES                                                       ║
-║  X = query (want)  ·  e = evidence (know)  ·  Y = hidden (Σ)   ║
+║  X = query (want)  ·  e = evidence (know)  ·  Y = hidden (Σ)     ║
 ║                                                                  ║
 ║  MASTER FORMULA                                                  ║
-║  P(X|e) = α × Σ P(X,e,y)     α = 1/(P(X=T,e)+P(X=F,e))        ║
+║  P(X|e) = α × Σ P(X,e,y)     α = 1/(P(X=T,e)+P(X=F,e))           ║
 ║                y                                                 ║
 ║                                                                  ║
 ║  JOINT EXPANSION                                                 ║
-║  P(j,m,a,b,e) = P(j|a)·P(m|a)·P(a|b,e)·P(b)·P(e)               ║
+║  P(j,m,a,b,e) = P(j|a)·P(m|a)·P(a|b,e)·P(b)·P(e)                 ║
 ║                                                                  ║
 ║  THREE TOOLS                                                     ║
-║  Marginalise:   P(X)=Σ P(X,y)        sum out hidden             ║
-║  Condition:     P(X)=Σ P(X|y)P(y)    use CPT weights            ║
-║  Independence:  P(a,b)=P(a)P(b)      no arrow = multiply        ║
+║  Marginalise:   P(X)=Σ P(X,y)        sum out hidden              ║
+║  Condition:     P(X)=Σ P(X|y)P(y)    use CPT weights             ║
+║  Independence:  P(a,b)=P(a)P(b)      no arrow = multiply         ║
 ║                                                                  ║
 ║  VARIABLE ELIMINATION FINAL FORM                                 ║
-║  P(b)×Σ P(e)×[Σ P(a|b,e)·P(j|a)·P(m|a)]                        ║
+║  P(b)×Σ P(e)×[Σ P(a|b,e)·P(j|a)·P(m|a)]                          ║
 ║        e       a                                                 ║
-║               └─────────────────────────┘                       ║
-║                    f(b,e) — computed ONCE, saved! 📝            ║
+║               └─────────────────────────┘                        ║
+║                    f(b,e) — computed ONCE, saved! 📝             ║
 ║                                                                  ║
 ║  KEY CPT SHORTCUTS                                               ║
-║  P(j|A=T)×P(m|A=T) = 0.90×0.70 = 0.63    ← memorise!           ║
-║  P(j|A=F)×P(m|A=F) = 0.05×0.01 = 0.0005  ← memorise!           ║
+║  P(j|A=T)×P(m|A=T) = 0.90×0.70 = 0.63    ← memorise!             ║
+║  P(j|A=F)×P(m|A=F) = 0.05×0.01 = 0.0005  ← memorise!             ║
 ║                                                                  ║
 ║  KEY RESULTS                                                     ║
-║  P(B=T|j,m) = 0.284   P(B=F|j,m) = 0.716  (sum=1 ✅)           ║
-║  α (slide)  = 1/0.416 = 2.4038                                  ║
-║  Prior P(B) = 0.001 → posterior 0.284 = 284× jump!              ║
+║  P(B=T|j,m) = 0.284   P(B=F|j,m) = 0.716  (sum=1 ✅)             ║
+║  α (slide)  = 1/0.416 = 2.4038                                   ║
+║  Prior P(B) = 0.001 → posterior 0.284 = 284× jump!               ║
 ║                                                                  ║
 ╚══════════════════════════════════════════════════════════════════╝
 ```
