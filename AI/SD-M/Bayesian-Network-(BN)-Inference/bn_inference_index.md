@@ -1,6 +1,6 @@
 # 📋 Bayesian Network Inference — Master INDEX
 ### Artificial Intelligence · AI
-### Book: Norvig | Unit: Probabilistic Reasoning — Part 2
+### Book: Norvig | Unit: Probabilistic Reasoning
 
 ---
 
