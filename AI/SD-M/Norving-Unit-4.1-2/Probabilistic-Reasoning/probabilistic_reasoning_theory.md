@@ -1161,7 +1161,7 @@ Even Variable Elimination can be slow for VERY large networks. Approximate metho
 ```
 
 > **Note:** Detailed coverage of approximate methods is in the next unit AND in the dedicated BN Inference guides:
-> [🧠 BN Inference Theory (Full Coverage)](../SD-M/Bayesian-Network-(BN)-Inference/bn_inference_theory.md) | [🏋️ BN Practice Problems](../SD-M/Bayesian-Network-(BN)-Inference/bn_inference_practice.md)
+> [🧠 BN Inference Theory (Full Coverage)](https://github.com/rpaut03l/TS-01/blob/main/AI/SD-M/Bayesian-Network-(BN)-Inference/bn_inference_theory.md) | [🏋️ BN Practice Problems](https://github.com/rpaut03l/TS-01/blob/main/AI/SD-M/Bayesian-Network-(BN)-Inference/bn_inference_practice.md)
 
 ---
 
