@@ -36,7 +36,7 @@
 
 > [📋 INDEX](./probabilistic_reasoning_index.md) | [Next →](#2-basic-probability-terms)
 
-### Baby Story 🍼
+### Easy Story 🍼
 
 Imagine you're a doctor. A patient walks in with a toothache. You think "cavity!" But wait — toothaches can also come from gum disease, an abscess, or just biting something hard. You can't be 100% sure. In logic, `Toothache ⇒ Cavity` would mean EVERY toothache = cavity. That's clearly wrong!
 
@@ -77,7 +77,7 @@ Agents face uncertainty due to:
 
 > [← Prev](#1-why-uncertainty--the-problem) | [📋 INDEX](./probabilistic_reasoning_index.md) | [Next →](#3-probability-axioms--rules)
 
-### Baby Story 🍼
+### Easy Story 🍼
 
 Think of rolling two dice. Before you roll, there are 36 possible things that could happen: (1,1), (1,2), ... (6,6). That big bag of 36 possibilities? That's your **sample space**. Each one outcome like (3,4) is a single **possible world**. And when you ask "what's the chance the sum is 11?" you're asking about a smaller group (an **event**) inside that big bag.
 
@@ -235,7 +235,7 @@ For continuous random variables, we use a **probability density function** f(X).
 
 > [← Prev](#2-basic-probability-terms) | [📋 INDEX](./probabilistic_reasoning_index.md) | [Next →](#4-bayes-rule)
 
-### Baby Story 🍼
+### Easy Story 🍼
 
 You have 3 power tools (mnemonic: **PPC**): **P**roduct rule to break ANDs apart, **P**lus-minus (inclusion-exclusion) for ORs, and **C**omplement to flip true/false. With just these 3, you can solve almost any probability question!
 
@@ -307,7 +307,7 @@ You have 3 power tools (mnemonic: **PPC**): **P**roduct rule to break ANDs apart
 
 > [← Prev](#3-probability-axioms--rules) | [📋 INDEX](./probabilistic_reasoning_index.md) | [Next →](#5-inference-using-full-joint-distribution)
 
-### Baby Story 🍼
+### Easy Story 🍼
 
 You know that 80% of people with cavities get toothaches. A patient has a toothache. But you want to know the REVERSE: what's the chance they have a cavity? Bayes' rule lets you flip the direction! If you know "prob of toothache given cavity," Bayes tells you "prob of cavity given toothache."
 
@@ -366,7 +366,7 @@ You know that 80% of people with cavities get toothaches. A patient has a tootha
 
 > [← Prev](#4-bayes-rule) | [📋 INDEX](./probabilistic_reasoning_index.md) | [Next →](#6-independence)
 
-### Baby Story 🍼
+### Easy Story 🍼
 
 Imagine you have a GIANT TABLE that lists the probability of every possible combination of Toothache, Cavity, and Catch. From this one table, you can answer ANY question — like "what's P(cavity)?" or "what's P(cavity|toothache)?" You just need two tricks: **marginalization** (adding up rows) and **conditioning** (dividing after adding).
 
@@ -420,7 +420,7 @@ Imagine you have a GIANT TABLE that lists the probability of every possible comb
 
 > [← Prev](#5-inference-using-full-joint-distribution) | [📋 INDEX](./probabilistic_reasoning_index.md) | [Next →](#7-conditional-independence)
 
-### Baby Story 🍼
+### Easy Story 🍼
 
 Whether it rains today has NOTHING to do with whether you have a cavity. Knowing it's rainy doesn't change your belief about cavities at all. These two things are **independent** — they don't affect each other.
 
@@ -472,7 +472,7 @@ Whether it rains today has NOTHING to do with whether you have a cavity. Knowing
 
 > [← Prev](#6-independence) | [📋 INDEX](./probabilistic_reasoning_index.md) | [Next →](#8-naive-bayes-model)
 
-### Baby Story 🍼
+### Easy Story 🍼
 
 Toothache and Catch (the dentist probe catching) are NOT completely independent — both are related to Cavity. BUT once you KNOW whether there's a cavity, they become independent! The toothache comes from nerves; the catch depends on dentist's skill. Cavity is the common cause linking them, and once you know the cause, the effects don't tell you about each other.
 
@@ -532,7 +532,7 @@ Toothache and Catch (the dentist probe catching) are NOT completely independent 
 
 > [← Prev](#7-conditional-independence) | [📋 INDEX](./probabilistic_reasoning_index.md) | [Next →](#9-bayesian-networks--syntax)
 
-### Baby Story 🍼
+### Easy Story 🍼
 
 One CAUSE (like Cavity) creates many EFFECTS (Toothache, Catch, Bad-Breath, ...). All effects depend on the cause but not directly on each other. This "one cause, many independent effects" pattern is called **Naive Bayes** — "naive" because we ASSUME effects are independent given the cause (even if in reality they might not be perfectly independent).
 
@@ -564,7 +564,7 @@ One CAUSE (like Cavity) creates many EFFECTS (Toothache, Catch, Bad-Breath, ...)
 
 > [← Prev](#8-naive-bayes-model) | [📋 INDEX](./probabilistic_reasoning_index.md) | [Next →](#10-bn-semantics--cpts)
 
-### Baby Story 🍼
+### Easy Story 🍼
 
 The full joint distribution table gets HUGE as you add variables. 5 Boolean variables = 2⁵ = 32 rows. 10 variables = 1024 rows! Bayesian Networks are a SMART SHORTCUT — instead of one giant table, you draw a picture (a graph) showing which variables CAUSE which, and store only small tables for each connection. Way less storage, same information!
 
@@ -649,7 +649,7 @@ Other names: belief network, probabilistic network, causal network, knowledge ma
 
 > [← Prev](#9-bayesian-networks--syntax) | [📋 INDEX](./probabilistic_reasoning_index.md) | [Next →](#11-markov-blanket)
 
-### Baby Story 🍼
+### Easy Story 🍼
 
 Each node in the network has a little table (CPT) that says "IF my parents are in THIS state, THEN here's my probability." Root nodes (no parents) just have a simple probability. Nodes with one parent have a 2-row table. Nodes with two parents have a 4-row table. And so on.
 
@@ -749,7 +749,7 @@ Each node in the network has a little table (CPT) that says "IF my parents are i
 
 > [← Prev](#10-bn-semantics--cpts) | [📋 INDEX](./probabilistic_reasoning_index.md) | [Next →](#12-obtaining-full-joint-from-bn)
 
-### Baby Story 🍼
+### Easy Story 🍼
 
 Imagine you're node X in the network. Your "Markov Blanket" is like a protective bubble around you. It includes your parents (who directly cause you), your children (who you directly cause), and your children's other parents (who team up with you to cause your children). Once you know the state of everyone in this bubble, you don't need to know ANYTHING about the rest of the network!
 
@@ -806,7 +806,7 @@ Imagine you're node X in the network. Your "Markov Blanket" is like a protective
 
 > [← Prev](#11-markov-blanket) | [📋 INDEX](./probabilistic_reasoning_index.md) | [Next →](#13-inference--formal-definition)
 
-### Baby Story 🍼
+### Easy Story 🍼
 
 Even though we store only small CPTs, we CAN reconstruct the full joint table if needed. The trick: multiply together each node's CPT entry for the given assignment. It's like a recipe — each ingredient (CPT) contributes its piece, and the product is the full joint probability.
 
@@ -875,7 +875,7 @@ Even though we store only small CPTs, we CAN reconstruct the full joint table if
 
 > [← Prev](#12-obtaining-full-joint-from-bn) | [📋 INDEX](./probabilistic_reasoning_index.md) | [Next →](#14-normalization-constant-α)
 
-### Baby Story 🍼
+### Easy Story 🍼
 
 In any probability question, there are three types of players: the thing you're ASKING about (query), the things you already KNOW (evidence), and the things you DON'T know and need to sum over (hidden). Inference = finding the answer by combining these three.
 
@@ -920,7 +920,7 @@ In any probability question, there are three types of players: the thing you're 
 
 > [← Prev](#13-inference--formal-definition) | [📋 INDEX](./probabilistic_reasoning_index.md) | [Next →](#15-exact-inference--enumeration)
 
-### Baby Story 🍼
+### Easy Story 🍼
 
 Imagine you calculate P(cavity, toothache) = 0.192 and P(¬cavity, toothache) = 0.224. These don't add to 1 because they're joint probs, not conditional. But their RATIO is correct! So just scale them so they add to 1. That scaling factor is α. It saves you from computing P(evidence) separately!
 
@@ -958,7 +958,7 @@ Imagine you calculate P(cavity, toothache) = 0.192 and P(¬cavity, toothache) = 
 
 > [← Prev](#14-normalization-constant-α) | [📋 INDEX](./probabilistic_reasoning_index.md) | [Next →](#16-exact-inference--variable-elimination)
 
-### Baby Story 🍼
+### Easy Story 🍼
 
 Enumeration means: "try every possible combination of hidden variables, compute each product, add them all up." It's like checking every single path through the network. Correct but slow — the number of combos explodes!
 
@@ -991,7 +991,7 @@ Enumeration means: "try every possible combination of hidden variables, compute 
 
 > [← Prev](#15-exact-inference--enumeration) | [📋 INDEX](./probabilistic_reasoning_index.md) | [Next →](#17-approximate-inference-overview)
 
-### Baby Story 🍼
+### Easy Story 🍼
 
 You need to calculate: 2 × 3 × 5 + 2 × 3 × 7 + 2 × 3 × 9
 
@@ -1122,7 +1122,7 @@ The SMART way: notice "2 × 3" repeats! Calculate 2 × 3 = 6 ONCE, then: 6×5 + 
 
 > [← Prev](#16-exact-inference--variable-elimination) | [📋 INDEX](./probabilistic_reasoning_index.md)
 
-### Baby Story 🍼
+### Easy Story 🍼
 
 Even Variable Elimination can be slow for VERY large networks. Approximate methods say: "instead of computing exact numbers, let's SIMULATE the network many times and count how often things happen." Like flipping coins to estimate probabilities!
 
