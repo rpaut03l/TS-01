@@ -161,16 +161,16 @@ UNIT 4: PROBABILISTIC REASONING
 | 10 | Homework: P(john calls AND earthquake) etc. | [Num §10](./probabilistic_reasoning_numericals.md#problem-10-homework-problems) |
 | 11 | Cavity with OR evidence — uses the α normalization trick | [Num §11](./probabilistic_reasoning_numericals.md#problem-11-pcavity--toothache--catch) |
 
-### 🧠 BN INFERENCE Deep Dive — [Open BN Inference Folder](../SD-M/Bayesian-Network-(BN)-Inference/bn_inference_index.md)
+### 🧠 BN INFERENCE Deep Dive — [Open BN Inference Folder](https://github.com/rpaut03l/TS-01/blob/main/AI/SD-M/Bayesian-Network-(BN)-Inference/bn_inference_index.md)
 
 > **Want to go deeper on Bayesian Networks?** Sections 9–17 above are covered in much more detail in these dedicated guides — more theory, more solved problems, and practice problems you can try yourself!
 
 | File | What's Inside (Simple) | Direct Link |
 |------|--------------|-------------|
-| 📋 BN Index | Starting point — links to everything BN-related | [bn_inference_index.md](../SD-M/Bayesian-Network-(BN)-Inference/bn_inference_index.md) |
-| 📘 BN Theory | How to build BNs, read CPTs, do inference — explained in full detail | [bn_inference_theory.md](../SD-M/Bayesian-Network-(BN)-Inference/bn_inference_theory.md) |
-| 🔢 BN Numericals | More solved problems with every step shown | [bn_inference_numericals.md](../SD-M/Bayesian-Network-(BN)-Inference/bn_inference_numericals.md) |
-| 🏋️ BN Practice | Try these yourself! Problems with hints but no answers | [bn_inference_practice.md](../SD-M/Bayesian-Network-(BN)-Inference/bn_inference_practice.md) |
+| 📋 BN Index | Starting point — links to everything BN-related | [bn_inference_index.md](https://github.com/rpaut03l/TS-01/blob/main/AI/SD-M/Bayesian-Network-(BN)-Inference/bn_inference_index.md) |
+| 📘 BN Theory | How to build BNs, read CPTs, do inference — explained in full detail | [bn_inference_theory.md](https://github.com/rpaut03l/TS-01/blob/main/AI/SD-M/Bayesian-Network-(BN)-Inference/bn_inference_theory.md) |
+| 🔢 BN Numericals | More solved problems with every step shown | [bn_inference_numericals.md](https://github.com/rpaut03l/TS-01/blob/main/AI/SD-M/Bayesian-Network-(BN)-Inference/bn_inference_numericals.md) |
+| 🏋️ BN Practice | Try these yourself! Problems with hints but no answers | [bn_inference_practice.md](https://github.com/rpaut03l/TS-01/blob/main/AI/SD-M/Bayesian-Network-(BN)-Inference/bn_inference_practice.md) |
 
 ---
 
@@ -317,11 +317,11 @@ TS-01/
 
 | Topic | Path | Connection |
 |-------|------|-----------|
-| **🧠 BN Inference (Deep Dive)** | [`AI/SD-M/Bayesian-Network-(BN)-Inference/`](../SD-M/Bayesian-Network-(BN)-Inference/bn_inference_index.md) | **Extended coverage of §9-17: BN construction, inference algorithms, more solved problems & practice** |
+| **🧠 BN Inference (Deep Dive)** | [`AI/SD-M/Bayesian-Network-(BN)-Inference/`](https://github.com/rpaut03l/TS-01/blob/main/AI/SD-M/Bayesian-Network-(BN)-Inference/bn_inference_index.md) | **Extended coverage of §9-17: BN construction, inference algorithms, more solved problems & practice** |
 
 ---
 
-> **Files:** [📘 THEORY](./probabilistic_reasoning_theory.md) | [🔢 NUMERICALS](./probabilistic_reasoning_numericals.md) | [🧠 BN Inference Deep Dive](../SD-M/Bayesian-Network-(BN)-Inference/bn_inference_index.md)
+> **Files:** [📘 THEORY](./probabilistic_reasoning_theory.md) | [🔢 NUMERICALS](./probabilistic_reasoning_numericals.md) | [🧠 BN Inference Deep Dive](https://github.com/rpaut03l/TS-01/blob/main/AI/SD-M/Bayesian-Network-(BN)-Inference/bn_inference_index.md)
 >
 > **Source:** (SDM) Slides · AI 
 >
