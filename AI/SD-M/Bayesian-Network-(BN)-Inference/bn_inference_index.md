@@ -218,18 +218,6 @@ prior      Initial belief              P(X) — before seeing evidence
   → PRACTICE.md  §5, §6, §7 — Python scripts
 ```
 
----
-
-## 🔗 Links to Other AI/* Modules in This Repo
-
-| Module | Path |
-|--------|------|
-| 🧠 Probabilistic Reasoning (Part 1) | [`AI/Probabilistic-Reasoning/`](../Probabilistic-Reasoning/Probabilistic_Reasoning_INDEX.md) |
-| 🤖 First-Order Logic + Planning | [`AI/FOL-Planning/`](../FOL-Planning/) |
-| 🌲 Search Algorithms | [`AI/Search/`](../Search/) |
-| 📊 ML — Random Forest | [`ML/Random-Forest/`](../../ML/Random-Forest/RF_INDEX.md) |
-| 📈 ML — Parameter Estimation | [`ML/Parameter-Estimation/`](../../ML/Parameter-Estimation/PE_INDEX.md) |
-| 🔢 ODS — Probability Bootcamp | [`ODS/Probability/`](../../ODS/Probability/Probability_BootCamp_INDEX.md) |
 
 ---
 
