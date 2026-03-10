@@ -31,7 +31,7 @@
 | File | Lines | What's Inside |
 |------|-------|--------------|
 | 📋 **INDEX** *(you are here)* | — | Topic map, notation dict, 60-sec revision card, quick links |
-| 📘 [THEORY](./bn_inference_theory.md) | ~750 | All concepts kid-style, formulas, diagrams, mnemonics, cheatsheet |
+| 📘 [THEORY](./bn_inference_theory.md) | ~750 | All concepts easy-style, formulas, diagrams, mnemonics, cheatsheet |
 | 🔢 [NUMERICALS](./bn_inference_numericals.md) | ~600 | 8 fully solved problems with all working shown |
 | 💻 [PRACTICE](./bn_inference_practice.md) | ~500 | Python code, graded problems, exam hacks, self-test |
 
