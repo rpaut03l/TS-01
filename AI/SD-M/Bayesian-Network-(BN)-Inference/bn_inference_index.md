@@ -1,6 +1,6 @@
 # 📋 Bayesian Network Inference — Master INDEX
 ### Artificial Intelligence · AI
-### Prof. Shilpa Dang (SDM) | Unit: Probabilistic Reasoning — Part 2
+### Book: Norvig | Unit: Probabilistic Reasoning — Part 2
 
 ---
 
@@ -8,19 +8,19 @@
 ┌──────────────────────────────────────────────────────────────────┐
 │                  HOW THESE 3 FILES CONNECT                       │
 │                                                                  │
-│   BN_Inference_INDEX.md  ←── YOU ARE HERE                       │
+│   BN_Inference_INDEX.md  ←── YOU ARE HERE                        │
 │         │                                                        │
-│         ├──→  BN_Inference_THEORY.md                            │
-│         │          All concepts, rules, formulas,               │
-│         │          text diagrams, mnemonics, cheatsheet         │
+│         ├──→  BN_Inference_THEORY.md                             │
+│         │          All concepts, rules, formulas,                │
+│         │          text diagrams, mnemonics, cheatsheet          │
 │         │                                                        │
-│         ├──→  BN_Inference_NUMERICALS.md                        │
+│         ├──→  BN_Inference_NUMERICALS.md                         │
 │         │          Every problem fully solved,                   │
-│         │          step-by-step with tables                     │
+│         │          step-by-step with tables                      │
 │         │                                                        │
-│         └──→  BN_Inference_PRACTICE.md                          │
+│         └──→  BN_Inference_PRACTICE.md                           │
 │                    Python code, exam hacks,                      │
-│                    graded problems, self-test Q&A               │
+│                    graded problems, self-test Q&A                │
 └──────────────────────────────────────────────────────────────────┘
 ```
 
@@ -31,9 +31,9 @@
 | File | Lines | What's Inside |
 |------|-------|--------------|
 | 📋 **INDEX** *(you are here)* | — | Topic map, notation dict, 60-sec revision card, quick links |
-| 📘 [THEORY](./BN_Inference_THEORY.md) | ~750 | All concepts kid-style, formulas, diagrams, mnemonics, cheatsheet |
-| 🔢 [NUMERICALS](./BN_Inference_NUMERICALS.md) | ~600 | 8 fully solved problems with all working shown |
-| 💻 [PRACTICE](./BN_Inference_PRACTICE.md) | ~500 | Python code, graded problems, exam hacks, self-test |
+| 📘 [THEORY](./bn_inference_theory.md) | ~750 | All concepts kid-style, formulas, diagrams, mnemonics, cheatsheet |
+| 🔢 [NUMERICALS](./bn_inference_numericals.md) | ~600 | 8 fully solved problems with all working shown |
+| 💻 [PRACTICE](./bn_inference_practice.md) | ~500 | Python code, graded problems, exam hacks, self-test |
 
 ---
 
@@ -112,21 +112,21 @@ prior      Initial belief              P(X) — before seeing evidence
 ║               INFERENCE ESSENTIALS                               ║
 ╠══════════════════════════════════════════════════════════════════╣
 ║                                                                  ║
-║  IDENTIFY FIRST:  X (want) · e (know) · Y (sum over)            ║
+║  IDENTIFY FIRST:  X (want) · e (know) · Y (sum over)             ║
 ║                                                                  ║
-║  FORMULA:  P(X|e) = α × Σ P(X, e, y)                           ║
+║  FORMULA:  P(X|e) = α × Σ P(X, e, y)                             ║
 ║                           y                                      ║
 ║                                                                  ║
-║  EXPAND:   P(j,m,a,b,e) = P(j|a)·P(m|a)·P(a|b,e)·P(b)·P(e)    ║
+║  EXPAND:   P(j,m,a,b,e) = P(j|a)·P(m|a)·P(a|b,e)·P(b)·P(e)       ║
 ║                                                                  ║
-║  ALPHA:    α = 1/(P(X=T,e) + P(X=F,e))   ← sum = 1/α!         ║
+║  ALPHA:    α = 1/(P(X=T,e) + P(X=F,e))   ← sum = 1/α!            ║
 ║                                                                  ║
-║  VE TRICK: P(b)×Σe P(e)×[Σa P(a|b,e)·P(j|a)·P(m|a)]           ║
+║  VE TRICK: P(b)×Σe P(e)×[Σa P(a|b,e)·P(j|a)·P(m|a)]              ║
 ║            P(b) = constant → pull out first                      ║
-║            f(b,e) = inner a-sum → compute ONCE per (b,e) pair   ║
+║            f(b,e) = inner a-sum → compute ONCE per (b,e) pair    ║
 ║                                                                  ║
 ║  KEY RESULT:                                                     ║
-║  P(B=T | John=T, Mary=T) = 0.284  ← jumped 284× from 0.001!    ║
+║  P(B=T | John=T, Mary=T) = 0.284  ← jumped 284× from 0.001!      ║
 ║  But still only 28.4% — rare events stay rare!                   ║
 ║                                                                  ║
 ╚══════════════════════════════════════════════════════════════════╝
@@ -174,26 +174,26 @@ prior      Initial belief              P(X) — before seeing evidence
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│                  BURGLAR-ALARM NETWORK                        │
+│                  BURGLAR-ALARM NETWORK                       │
 │                                                              │
-│   🦹 Burglary (B)         🌍 Earthquake (E)                  │
-│   P(B=T) = 0.001          P(E=T) = 0.002                    │
+│   🦹 Burglary (B)         🌍 Earthquake (E)                 │
+│   P(B=T) = 0.001          P(E=T) = 0.002                     │
 │          \                      /                            │
 │           ↓                    ↓                             │
 │                🚨 Alarm (A)                                  │
 │               /           \                                  │
 │              ↓              ↓                                │
-│       📞 John (J)     📞 Mary (M)                            │
+│       📞 John (J)     📞 Mary (M)                           │
 │                                                              │
 │   ALARM CPT:         JOHN CPT:    MARY CPT:                  │
-│   B  E  P(A)  P(¬A)  A  P(J)     A  P(M)                    │
-│   T  T  0.950 0.050  T  0.90     T  0.70                    │
-│   T  F  0.940 0.060  F  0.05     F  0.01                    │
+│   B  E  P(A)  P(¬A)  A  P(J)     A  P(M)                     │
+│   T  T  0.950 0.050  T  0.90     T  0.70                     │
+│   T  F  0.940 0.060  F  0.05     F  0.01                     │
 │   F  T  0.290 0.710                                          │
 │   F  F  0.001 0.999                                          │
 │                                                              │
-│   CAUSALITY FLOW →  B,E → A → J,M                           │
-│   INFERENCE  FLOW ← J,M → A → B,E  (detective direction!)   │
+│   CAUSALITY FLOW →  B,E → A → J,M                            │
+│   INFERENCE  FLOW ← J,M → A → B,E  (detective direction!)    │
 └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -236,10 +236,10 @@ Quick revision day-before:
 
 ---
 
-**📂 GitHub Path:** `TS-01/AI/BN-Inference/`
+**📂 GitHub Path:** `TS-01/AI/SD-M/Bayesian-Network-(BN)-Inference`
 
-> **Navigation:** 📋 **INDEX** *(you are here)* | [📘 THEORY →](./BN_Inference_THEORY.md) | [🔢 NUMERICALS →](./BN_Inference_NUMERICALS.md) | [💻 PRACTICE →](./BN_Inference_PRACTICE.md)
+> **Navigation:** 📋 **INDEX** *(you are here)* | [📘 THEORY →](./bn_inference_theory.md) | [🔢 NUMERICALS →](./bn_inference_numericals.md) | [💻 PRACTICE →](./bn_inference_practice.md)
 >
-> **Course:** Prof. Shilpa Dang (SDM) · CSL7610 AI · IIT Jodhpur · M.Tech AI · G25AIT2089
+> **Course:** AI 
 
 [🔝 Back to Top](#-bayesian-network-inference--master-index)
