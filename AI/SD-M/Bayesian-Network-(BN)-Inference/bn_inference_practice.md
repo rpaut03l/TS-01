@@ -1,6 +1,6 @@
 # 💻 Bayesian Network Inference — PRACTICE
 ### Artificial Intelligence · AI 
-### Book: Norvig | Unit: Probabilistic Reasoning — Part 2
+### Book: Norvig | Unit: Probabilistic Reasoning
 
 > **Navigation:** [📋 INDEX](./bn_inference_index.md) | [← THEORY](./bn_inference_theory.md) | [← NUMERICALS](./bn_inference_numericals.md) | 💻 **PRACTICE** *(you are here)*
 
