@@ -99,17 +99,6 @@ DSA/
 
 ---
 
-## 🔗 Related Topics in This Repo
-
-| Topic | Folder |
-|-------|--------|
-| Graph Basics | `DSA/Graphs/` |
-| Priority Queue / Heaps | `DSA/Heaps/` |
-| BFS / DFS | `DSA/BFS-DFS/` |
-| Bellman-Ford (negative weights) | `DSA/BellmanFord/` |
-
----
-
 [⬆️ Back to Top](#️-dijkstras-algorithm--complete-study-hub)
 
 ---
