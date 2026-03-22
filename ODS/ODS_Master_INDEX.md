@@ -1,7 +1,6 @@
 # Optimization for Data Science (ODS) — Master Study Hub
 
 ### AI/ML · Pr. K Som
-> **Grading:** Assignments 20% | Quiz 30% | Major Exam 50%
 > **Goal:** Find the BEST answer (minimum/maximum) using math — the engine behind ALL of AI/ML!
 
 ---
