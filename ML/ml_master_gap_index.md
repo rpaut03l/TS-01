@@ -1,6 +1,6 @@
 # 📑 ML Syllabus — MASTER GAP ANALYSIS & INDEX
 
-### * Machine Learning · Prof. S Bhagat, Sir.
+### * Machine Learning · Pr. S Bhagat.
 
 > 🔗 **Repo:** [github.com/rpaut03l/TS-01](https://github.com/rpaut03l/TS-01) / [TS-01-Pvt](https://github.com/rpaut03l/TS-01-Pvt) · ML Track
 
