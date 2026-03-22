@@ -1,0 +1,57 @@
+name: ML Pipeline
+
+on:
+  push:
+    paths: ['ML/**/*.py', 'ML/**/*.ipynb']
+  workflow_dispatch:
+
+jobs:
+  train-evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      - run: pip install numpy pandas scikit-learn matplotlib
+      - name: Run ML comparison
+        run: |
+          python3 -c "
+          from sklearn.datasets import load_iris, load_wine
+          from sklearn.model_selection import cross_val_score
+          from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, GradientBoostingClassifier
+          from sklearn.svm import SVC
+          from sklearn.tree import DecisionTreeClassifier
+          from sklearn.neighbors import KNeighborsClassifier
+          from sklearn.linear_model import LogisticRegression
+          import json
+
+          models = {
+              'Logistic Reg': LogisticRegression(max_iter=500),
+              'K-NN (k=5)': KNeighborsClassifier(5),
+              'Decision Tree': DecisionTreeClassifier(max_depth=5, random_state=42),
+              'Random Forest': RandomForestClassifier(100, random_state=42),
+              'AdaBoost': AdaBoostClassifier(n_estimators=100, random_state=42, algorithm='SAMME'),
+              'Gradient Boost': GradientBoostingClassifier(100, random_state=42),
+              'SVM (RBF)': SVC(kernel='rbf', random_state=42),
+          }
+          for name, ds in [('Iris', load_iris()), ('Wine', load_wine())]:
+              print(f'\n## {name} Dataset')
+              print('| Model | Accuracy | Std |')
+              print('|-------|----------|-----|')
+              best_n, best_s = '', 0
+              for mn, m in models.items():
+                  s = cross_val_score(m, ds.data, ds.target, cv=5)
+                  flag = ''
+                  if s.mean() > best_s: best_n, best_s = mn, s.mean()
+                  print(f'| {mn} | {s.mean():.4f} | +/-{s.std():.4f} |')
+              print(f'\n**Best: {best_n} ({best_s:.4f})**')
+          " > ml_report.md
+          cat ml_report.md >> $GITHUB_STEP_SUMMARY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ml-results-${{ github.run_number }}
+          path: ml_report.md
+          retention-days: 90

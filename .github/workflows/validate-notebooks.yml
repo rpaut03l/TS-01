@@ -1,0 +1,43 @@
+name: Validate Notebooks
+
+on:
+  push:
+    paths: ['**/*.ipynb']
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      - name: Install
+        run: |
+          pip install jupyter nbconvert nbformat
+          pip install numpy pandas scikit-learn matplotlib seaborn
+          pip install -r requirements.txt 2>/dev/null || true
+      - name: Validate
+        run: |
+          echo "## 📋 Validation Report" >> $GITHUB_STEP_SUMMARY
+          echo "| Notebook | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|----------|--------|" >> $GITHUB_STEP_SUMMARY
+          PASS=0; FAIL=0
+          for nb in $(find . -name "*.ipynb" -not -path "./.github/*" -not -path "*/.ipynb_checkpoints/*" | sort); do
+            if jupyter nbconvert --to notebook --execute \
+              --ExecutePreprocessor.timeout=120 \
+              --ExecutePreprocessor.kernel_name=python3 \
+              --output /tmp/test_out.ipynb "$nb" 2>/dev/null; then
+              echo "| \`$nb\` | ✅ |" >> $GITHUB_STEP_SUMMARY
+              PASS=$((PASS+1))
+            else
+              echo "| \`$nb\` | ❌ |" >> $GITHUB_STEP_SUMMARY
+              FAIL=$((FAIL+1))
+            fi
+          done
+          echo "**$PASS passed, $FAIL failed**" >> $GITHUB_STEP_SUMMARY

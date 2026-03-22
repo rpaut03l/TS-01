@@ -1,0 +1,23 @@
+name: Check Markdown Links
+
+on:
+  push:
+    paths: ['**/*.md']
+  schedule:
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: lycheeverse/lychee-action@v2
+        with:
+          args: --verbose --no-progress --accept 200,204,301,302 '**/*.md'
+          fail: false
+      - if: always()
+        run: |
+          echo "## 🔗 Link Check" >> $GITHUB_STEP_SUMMARY
+          [ -f lychee/out.md ] && cat lychee/out.md >> $GITHUB_STEP_SUMMARY || echo "All OK ✅" >> $GITHUB_STEP_SUMMARY
