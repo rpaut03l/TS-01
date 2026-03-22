@@ -34,7 +34,7 @@ jobs:
               'Decision Tree': DecisionTreeClassifier(max_depth=5, random_state=42),
               'Random Forest': RandomForestClassifier(100, random_state=42),
               'AdaBoost': AdaBoostClassifier(n_estimators=100, random_state=42),
-              'Gradient Boost': GradientBoostingClassifier(100, random_state=42),
+              'Gradient Boost': GradientBoostingClassifier(n_estimators=100, random_state=42),
               'SVM (RBF)': SVC(kernel='rbf', random_state=42),
           }
           for name, ds in [('Iris', load_iris()), ('Wine', load_wine())]:
