@@ -16,16 +16,14 @@ This repo covers **everything** from sorting toys in a line to finding the faste
 
 ---
 
-## 📖 Course Details
+## 📖 DSA Co. Details
 
 | Detail | Info |
 |--------|------|
 | **Course** | Data Structures, Algorithms & Techniques |
 | **Credits** | 2 |
-| **Total Lectures** | 18 |
+| **Total Lec's** | 18 |
 | **Textbook** | Introduction to Algorithms by CLRS (Cormen, Leiserson, Rivest, Stein) |
-| **Grading** | 50% Assignments (2 × 25%) + 50% Major Exam |
-| **Pass Criteria** | Score at least 30% (Relative Grading) |
 
 ---
 
@@ -130,7 +128,7 @@ Step 6: Greedy
                              │
               ┌──────────────┼──────────────┐
               │              │              │
-     ┌────────▼───────┐ ┌───▼──────┐ ┌────▼─────────┐
+     ┌────────▼───────┐ ┌────▼─────┐ ┌──────▼───────┐
      │ DATA STRUCTURES│ │  GRAPHS  │ │   ALGORITHM  │
      │ BST, RB-Trees, │ │ Dijkstra,│ │  TECHNIQUES  │
      │ Augmenting,    │ │ Flow,    │ │ DP, Greedy   │
