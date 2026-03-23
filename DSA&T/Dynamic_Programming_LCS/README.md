@@ -49,7 +49,7 @@ Define **c[i][j]** = length of LCS of the first i characters of X and first j ch
 
 ```
               ┌  0                            if i=0 or j=0 (empty string)
-c[i][j] =    │  c[i-1][j-1] + 1              if X[i] = Y[j] (MATCH! +1)
+c[i][j] =     │  c[i-1][j-1] + 1              if X[i] = Y[j] (MATCH! +1)
               └  max(c[i-1][j], c[i][j-1])    if X[i] ≠ Y[j] (skip one)
 ```
 
