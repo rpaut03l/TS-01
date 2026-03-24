@@ -171,7 +171,7 @@ Simulated Annealing   Genetic Algorithms   Resolution Proofs
 
 | Resource | Type | Link |
 |---|---|---|
-| AIMA (Russell & Norvig) | 📕 Textbook | [artint.info](https://artint.info/3e/html/ArtInt3e.html) |
+| AIMA (Russell & Norvig) | 📕 [Textbook](https://aima.cs.berkeley.edu/contents.html) | [artint.info](https://artint.info/3e/html/ArtInt3e.html) |
 | Stanford CS221 | 🎓 Lectures | [YouTube](https://www.youtube.com/playlist?list=PLoROMvodv4rO1NB9TD4iUZ3qghGEGtqNX) |
 | MIT AI (Patrick Winston) | 🎓 Lectures | [YouTube](https://www.youtube.com/playlist?list=PLUl4u3cNGP63gFHB6xb-kVBiQHYe_4hSi) |
 | IIT Delhi AI | 🎓 Lectures | [YouTube](https://www.youtube.com/playlist?list=PLp6ek2hDcoNB_YJCruBFjhF79f5ZHyBuz) |
