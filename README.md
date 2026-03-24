@@ -20,7 +20,7 @@
 | 🧠 **ML** | [Machine Learning](./ML/) | Ensemble Methods, Boosting, AdaBoost, Gradient Descent, Regularization, model building |
 | 🔢 **Maths** | [Mathematics for AI/ML](./Maths/) | Linear Algebra, Probability & Statistics, Optimization, Calculus foundations |
 | 💻 **DSA&T** | [Data Structures & Techniques](./DSA%26T/) | Arrays, Trees, Graphs, Dynamic Programming, Sorting & Searching |
-| 📊 **ODS** | [Operational Data Science](./ODS/) | Data Pipelines, Analytics, Feature Engineering, Operational workflows |
+| 📈 **ODS** | [Optimization for Data Science](./ODS/) | Convex Optimization, Gradient Descent, Convergence Analysis, Constrained Optimization, Duality |
 
 ---
 
@@ -36,6 +36,7 @@
 | 🕸️ **Probabilistic Models** | Bayesian Networks · CPTs · d-Separation · Causality · Simpson's Paradox · do-Calculus |
 | 🎮 **Reinforcement Learning** | MDP · Bellman Equation · Value Iteration · Q-Learning · REINFORCE · Actor-Critic |
 | 🧠 **ML Algorithms** | Ensemble Methods · AdaBoost · Gradient Boosting · Regression · Clustering · Deep Learning |
+| 📈 **Optimization** | Convex Functions · Gradient Descent · SGD · Convergence Rates · Duality · KKT Conditions |
 
 ---
 
@@ -129,6 +130,7 @@ Reinforcement Learning   Bayesian Networks   First-Order Logic   Planning
 A* Search Optimization   Constraint Satisfaction   Game Theory
 MDP & Policy Iteration   Q-Learning   Policy Gradient Methods
 Simulated Annealing   Genetic Algorithms   Resolution Proofs
+Convex Optimization   Gradient Descent Convergence   Duality Theory
 ```
 
 ---
