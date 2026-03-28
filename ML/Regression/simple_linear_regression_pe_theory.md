@@ -62,7 +62,7 @@ A **parameter** `θ = t(F)` is some function of the distribution F.
 ```
 POPULATION (unknown)          SAMPLE (what we have)
 ┌─────────────────┐          ┌─────────────────┐
-│  Parameter θ     │  ←───── │  Statistic T=s(x)│
+│  Parameter θ    │  ←─────  │ Statistic T=s(x)│
 │  (e.g., µ, σ²)  │ estimate │  (e.g., x̄, s²)  │
 └─────────────────┘          └─────────────────┘
 ```
