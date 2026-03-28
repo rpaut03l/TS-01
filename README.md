@@ -48,7 +48,7 @@
 | 🧮 | **Full Arithmetic Traces** | No hand-waving. Every f=g+h, every e^(ΔE/T), every P(B\|J,M) computed with every multiplication shown |
 | ⚠️ | **Exam Trap Alerts** | 200+ common mistakes flagged — the ones professors LOVE to test and students ALWAYS get wrong |
 | 📊 | **Worked Examples** | 100+ step-by-step traces: BFS/DFS on graphs, A* on Romania, AC-3 REVISE calls, Q-table updates |
-| 🔗 | **Linked Resources** | Every topic maps to: class slides, best YouTube lecture, AIMA textbook chapter |
+| 🔗 | **Linked Resources** | Every topic maps to: class data (ts-01), best YouTube lecture, AIMA textbook chapter |
 
 ---
 
