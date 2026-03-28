@@ -1,6 +1,6 @@
 # 📖 Study Materials — Complete Reference Collection
 
-> All reference links, slides, recordings, lectures, papers, and resources for the AI course.
+> All reference links, recordings, lectures, papers, and resources for the AI course.
 >
 > **Professors**: Pr Romi (RB-M) & Pr Shilpa (SD-M)
 
@@ -152,7 +152,7 @@ A comprehensive survey of search algorithms in AI. Covers BFS, DFS, A*, IDA*, an
 | **RL — Q-Learning** | RB-M & SD-M Slides | Stanford CS221 | Ch. 22 |
 | **RL — Policy Search** | SD-M Slides | Stanford CS221 | Ch. 22 |
 
-> 💡 **Pro Tip**: If a concept is unclear from class slides, watch the Stanford CS221 or MIT Winston lecture on that topic. They explain the SAME concepts differently, and sometimes a different explanation clicks!
+> 💡 **Pro Tip**: If a concept is unclear from slides, watch the Stanford CS221 or MIT Winston lecture on that topic. They explain the SAME concepts differently, and sometimes a different explanation clicks!
 
 
 ---
