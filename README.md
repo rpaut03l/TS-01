@@ -129,8 +129,8 @@
 Reinforcement Learning   Bayesian Networks   First-Order Logic   Planning
 A* Search Optimization   Constraint Satisfaction   Game Theory
 MDP & Policy Iteration   Q-Learning   Policy Gradient Methods
-Simulated Annealing   Genetic Algorithms   Resolution Proofs
-Convex Optimization   Gradient Descent Convergence   Duality Theory
+Simulated Annealing      Genetic Algorithms   Resolution Proofs
+Convex Optimization      Gradient Descent Convergence   Duality Theory
 ```
 
 ---
