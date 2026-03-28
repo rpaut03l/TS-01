@@ -152,7 +152,7 @@ A comprehensive survey of search algorithms in AI. Covers BFS, DFS, A*, IDA*, an
 | **RL — Q-Learning** | RB-M & SD-M Slides | Stanford CS221 | Ch. 22 |
 | **RL — Policy Search** | SD-M Slides | Stanford CS221 | Ch. 22 |
 
-> 💡 **Pro Tip**: If a concept is unclear from slides, watch the Stanford CS221 or MIT Winston lecture on that topic. They explain the SAME concepts differently, and sometimes a different explanation clicks!
+> 💡 **Pro Tip**: If a concept is unclear - watch the Stanford CS221 or MIT Winston lecture on that topic. They explain the SAME concepts differently, and sometimes a different explanation clicks!
 
 
 ---
