@@ -250,11 +250,11 @@ A prior is **conjugate** to a likelihood if the **posterior has the same family*
 │ PROPERTY  │ MLE                   │ MAP                 │ FULL BAYESIAN       │
 ├───────────┼───────────────────────┼─────────────────────┼─────────────────────┤
 │ Output    │ point estimate        │ point estimate      │ full distribution   │
-│ Uses prior│ ❌ No                  │ ✅ Yes (peak only)  │ ✅ Yes (entire)      │
-│ Small n   │ ⚠️ Overfits            │ 👍 Regularized      │ 👍👍 Best            │
-│ Large n   │ ✅ Converges           │ ✅ Same as MLE      │ ✅ Same as MLE       │
+│ Uses prior│ ❌ No                 │ ✅ Yes (peak only)  │ ✅ Yes (entire)    │
+│ Small n   │ ⚠️ Overfits           │ 👍 Regularized      │ 👍👍 Best          │
+│ Large n   │ ✅ Converges          │ ✅ Same as MLE      │ ✅ Same as MLE     │
 │ Cost      │ Cheap (closed-form)   │ Cheap               │ Expensive           │
-│ Example   │ θ̂ = k/n                │ θ̂ = (k+α−1)/(n+α+β−2)│ p(θ|D) = Beta(·,·) │
+│ Example   │ θ̂ = k/n               │θ̂ = (k+α−1)/(n+α+β−2)│ p(θ|D) = Beta(·,·)  │
 └───────────┴───────────────────────┴─────────────────────┴─────────────────────┘
 ```
 
