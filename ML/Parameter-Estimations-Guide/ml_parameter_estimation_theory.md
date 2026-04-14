@@ -43,17 +43,17 @@ Parameter estimation is **how we turn data into model parameters**.
 ```
 ┌─────────────────────────────────────────────────┐
 │ DATA  D = {x₁,...,xₙ}                           │
-│              │                                   │
-│              ▼                                   │
-│ MODEL  p(x | θ)       ← assume family            │
-│              │                                   │
-│              ▼                                   │
+│              │                                  │
+│              ▼                                  │
+│ MODEL  p(x | θ)       ← assume family           │
+│              │                                  │
+│              ▼                                  │
 │ GOAL:  find best θ̂                              │
-│              │                                   │
+│              │                                  │
 │   ┌──────────┼──────────┐                       │
 │   ▼          ▼          ▼                       │
-│ MLE         MAP      BAYESIAN                    │
-│ (data)   (+prior)   (full posterior)             │
+│ MLE         MAP      BAYESIAN                   │
+│ (data)   (+prior)   (full posterior)            │
 └─────────────────────────────────────────────────┘
 ```
 
