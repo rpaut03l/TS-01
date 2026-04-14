@@ -16,14 +16,14 @@
 │ UNBIASED σ²:     s² = (1/(n−1)) Σ (xᵢ − x̄)²                      │
 │ MLE POISSON:     λ̂ = x̄                                           │
 │ MLE EXPONENTIAL: λ̂ = 1 / x̄                                       │
-│                                                                   │
-│ BAYES:           p(θ|D) ∝ p(D|θ) · p(θ)                           │
-│ MAP:             θ̂ = argmax [ log p(D|θ) + log p(θ) ]             │
-│                                                                   │
-│ BETA POSTERIOR:  Beta(α, β) + k/n  →  Beta(α+k, β+n−k)            │
-│ BETA MEAN:       α / (α + β)                                      │
-│ BETA MODE:       (α − 1) / (α + β − 2)                            │
-│                                                                   │
+│                                                                  │
+│ BAYES:           p(θ|D) ∝ p(D|θ) · p(θ)                          │
+│ MAP:             θ̂ = argmax [ log p(D|θ) + log p(θ) ]            │
+│                                                                  │
+│ BETA POSTERIOR:  Beta(α, β) + k/n  →  Beta(α+k, β+n−k)           │
+│ BETA MEAN:       α / (α + β)                                     │
+│ BETA MODE:       (α − 1) / (α + β − 2)                           │
+│                                                                  │
 │ GAUSSIAN-GAUSSIAN POSTERIOR (σ² known):                          │
 │   μ_post = (σ²·μ₀ + σ₀²·Σxᵢ) / (σ² + n·σ₀²)                      │
 │   σ²_post = (σ²·σ₀²) / (σ² + n·σ₀²)                              │
