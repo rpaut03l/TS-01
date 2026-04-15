@@ -107,8 +107,6 @@ Fractal I/II discriminative methods are now complete. Outstanding gap folders:
 - **ML/Clustering/** — has trio ✅ (standard style)
 - **ML/SVM-Kernels/**, **ML/Neural-Networks/**, **ML/Deep-Learning/** — have trio ✅ (standard style)
 
-All listed Fractal I + II + III syllabus folders now have the full theory/numerical/practice markdown trio available. The remaining 🟡 NEW markers above reflect that those folders contain the trio but the gap-index status had not been refreshed after those files were added.
-
 ---
 
 *AI · ML · github.com/rpaut03l/TS-01*
