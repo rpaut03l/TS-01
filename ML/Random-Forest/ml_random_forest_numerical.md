@@ -12,17 +12,17 @@
 ┌──────────────────────────────────────────────────────────────┐
 │ BOOTSTRAP UNIQUE:   1 − (1 − 1/n)^n  →  1 − 1/e ≈ 0.632      │
 │ OOB FRACTION:       (1 − 1/n)^n  →  1/e ≈ 0.368              │
-│                                                               │
+│                                                              │
 │ FEATURES PER SPLIT: m = √p   (classification)                │
 │                     m = p/3  (regression)                    │
-│                                                               │
-│ GINI:       1 − Σ pₖ²                                         │
+│                                                              │
+│ GINI:       1 − Σ pₖ²                                        │
 │ ENTROPY:    − Σ pₖ log₂ pₖ                                    │
-│ INFO GAIN:  H(parent) − Σ (|child|/|parent|) H(child)         │
-│                                                               │
+│ INFO GAIN:  H(parent) − Σ (|child|/|parent|) H(child)        │
+│                                                              │
 │ RF REGRESSION PRED:  ŷ = (1/B) Σ_b T_b(x)                    │
 │ RF CLASSIF PRED:     ŷ = argmax_c Σ_b 1[T_b(x)=c]            │
-│                                                               │
+│                                                              │
 │ VARIANCE REDUCTION of avg of B correlated estimators:        │
 │   Var = ρ σ²  +  (1−ρ)/B · σ²                                │
 │   ρ = correlation between trees                              │
