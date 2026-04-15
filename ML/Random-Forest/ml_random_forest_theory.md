@@ -254,7 +254,7 @@ Model-agnostic, game-theoretic, slowest but gives per-sample attributions. Not R
 │ Train order │ —              │ Parallel ✅   │ Sequential ❌  │
 │ Overfit risk│ High           │ Very low      │ Medium (tune)   │
 │ Speed       │ Fast           │ Parallel fast │ Slow            │
-│ Interpretable│ ✅ Yes        │ Partial       │ Partial         │
+│Interpretable│ ✅ Yes         │ Partial       │ Partial         │
 │ Noisy labels│ Bad            │ Robust        │ Hurt by outliers│
 │ Hyperparams │ Few            │ Few           │ Many (sensitive)│
 └─────────────┴────────────────┴───────────────┴─────────────────┘
