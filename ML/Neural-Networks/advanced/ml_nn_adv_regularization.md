@@ -283,7 +283,7 @@ Dropout being a kind of **approximate variational inference** is neat: you can i
 ║  WHICH REGULARIZER WHEN                                      ║
 ╠══════════════════════════════════════════════════════════════╣
 ║  Default stack:  AdamW (weight decay) + dropout + early stop ║
-║  Images (CNN):   + BatchNorm + data aug + label smoothing   ║
+║  Images (CNN):   + BatchNorm + data aug + label smoothing    ║
 ║  Transformers:   + LayerNorm + dropout 0.1 + label smooth    ║
 ║  Tiny data:      stronger dropout, early stop, augmentation  ║
 ║  Tiny model:     LESS regularization                         ║
