@@ -14,15 +14,15 @@
 │ MANHATTAN:   d(x,y) = Σ |xᵢ − yᵢ|                            │
 │ MINKOWSKI:   d(x,y) = ( Σ |xᵢ − yᵢ|ᵖ )^(1/p)                 │
 │ CHEBYSHEV:   d(x,y) = max |xᵢ − yᵢ|                          │
-│ COSINE:      d(x,y) = 1 − (x·y)/(‖x‖‖y‖)                    │
+│ COSINE:      d(x,y) = 1 − (x·y)/(‖x‖‖y‖)                     │
 │ HAMMING:     d(x,y) = (1/d) Σ 1[xᵢ ≠ yᵢ]                     │
-│                                                               │
-│ VOTE (unweighted):  ŷ = argmax_c Σᵢ∈Nₖ 1[yᵢ=c]                │
-│ VOTE (weighted):    ŷ = argmax_c Σᵢ∈Nₖ (1/dᵢ) · 1[yᵢ=c]       │
-│ REGRESSION:         ŷ = (1/k) Σᵢ∈Nₖ yᵢ                        │
-│                                                               │
+│                                                              │
+│ VOTE (unweighted):  ŷ = argmax_c Σᵢ∈Nₖ 1[yᵢ=c]               │
+│ VOTE (weighted):    ŷ = argmax_c Σᵢ∈Nₖ (1/dᵢ) · 1[yᵢ=c]      │
+│ REGRESSION:         ŷ = (1/k) Σᵢ∈Nₖ yᵢ                       │
+│                                                              │
 │ STANDARDIZE:   x' = (x − μ) / σ                              │
-│ MIN-MAX:       x' = (x − x_min) / (x_max − x_min)             │
+│ MIN-MAX:       x' = (x − x_min) / (x_max − x_min)            │
 └──────────────────────────────────────────────────────────────┘
 ```
 
