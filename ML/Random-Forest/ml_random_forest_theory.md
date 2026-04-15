@@ -47,12 +47,12 @@ One doctor can be wrong. Ask **500 doctors** — each with slightly different tr
 ```
 ┌───────────────────────────────────────────────┐
 │ RANDOM FOREST = BAGGING + FEATURE RANDOMNESS  │
-│                                                │
-│     high-variance tree                         │
-│          +                                     │
-│     many independent copies                    │
-│     ────────────────────                       │
-│     low-variance ensemble                      │
+│                                               │
+│     high-variance tree                        │
+│          +                                    │
+│     many independent copies                   │
+│     ────────────────────                      │
+│     low-variance ensemble                     │
 └───────────────────────────────────────────────┘
 ```
 
@@ -249,12 +249,12 @@ Model-agnostic, game-theoretic, slowest but gives per-sample attributions. Not R
 ┌─────────────┬────────────────┬───────────────┬─────────────────┐
 │ ASPECT      │ DECISION TREE  │ RANDOM FOREST │ BOOSTING        │
 ├─────────────┼────────────────┼───────────────┼─────────────────┤
-│ Bias        │ Low            │ Low           │ Progressive ↓    │
+│ Bias        │ Low            │ Low           │ Progressive ↓   │
 │ Variance    │ Very high      │ Low           │ Medium          │
-│ Train order │ —              │ Parallel ✅   │ Sequential ❌    │
+│ Train order │ —              │ Parallel ✅   │ Sequential ❌  │
 │ Overfit risk│ High           │ Very low      │ Medium (tune)   │
 │ Speed       │ Fast           │ Parallel fast │ Slow            │
-│ Interpretable│ ✅ Yes          │ Partial       │ Partial         │
+│ Interpretable│ ✅ Yes        │ Partial       │ Partial         │
 │ Noisy labels│ Bad            │ Robust        │ Hurt by outliers│
 │ Hyperparams │ Few            │ Few           │ Many (sensitive)│
 └─────────────┴────────────────┴───────────────┴─────────────────┘
@@ -304,15 +304,15 @@ Model-agnostic, game-theoretic, slowest but gives per-sample attributions. Not R
 ╔══════════════════════════════════════════════════════════════╗
 ║  RANDOM FOREST ONE-LINERS                                    ║
 ╠══════════════════════════════════════════════════════════════╣
-║  RF = Bagging + random feature subset at every split        ║
-║  Bootstrap: sample n WITH replacement → ~63.2% unique       ║
-║  OOB: ~36.8% left out → built-in validation                 ║
-║  m = √p (classification),  m = p/3 (regression)             ║
-║  Classification predict: majority (or soft) vote            ║
-║  Regression predict: average                                ║
-║  Variance reduction requires de-correlated trees            ║
-║  Trees are grown fully (unpruned) — variance handled        ║
-║       by averaging, not by depth limits.                    ║
+║  RF = Bagging + random feature subset at every split         ║
+║  Bootstrap: sample n WITH replacement → ~63.2% unique        ║
+║  OOB: ~36.8% left out → built-in validation                  ║
+║  m = √p (classification),  m = p/3 (regression)              ║
+║  Classification predict: majority (or soft) vote             ║
+║  Regression predict: average                                 ║
+║  Variance reduction requires de-correlated trees             ║
+║  Trees are grown fully (unpruned) — variance handled         ║
+║       by averaging, not by depth limits.                     ║
 ╚══════════════════════════════════════════════════════════════╝
 ```
 
