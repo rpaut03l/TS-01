@@ -213,14 +213,14 @@ UAT justifies why neural nets *could* work. Depth + SGD + modern init + BN + tri
 ╔══════════════════════════════════════════════════════════════╗
 ║  INITIALIZATION ONE-LINERS                                   ║
 ╠══════════════════════════════════════════════════════════════╣
-║  LeCun:   Var(W) = 1 / n_in          (SELU, tanh)           ║
-║  Xavier:  Var(W) = 2 / (n_in+n_out)  (sigmoid, tanh)        ║
-║  He:      Var(W) = 2 / n_in          (ReLU family)          ║
-║  Orth:    W orthogonal · gain        (RNNs, deep FC)        ║
+║  LeCun:   Var(W) = 1 / n_in          (SELU, tanh)            ║
+║  Xavier:  Var(W) = 2 / (n_in+n_out)  (sigmoid, tanh)         ║
+║  He:      Var(W) = 2 / n_in          (ReLU family)           ║
+║  Orth:    W orthogonal · gain        (RNNs, deep FC)         ║
 ║                                                              ║
-║  Biases → 0 (usually), except LSTM forget-bias = 1          ║
-║  UAT: 1 hidden layer + non-poly activation → universal     ║
-║  Depth lets you approximate with exponentially fewer units  ║
+║  Biases → 0 (usually), except LSTM forget-bias = 1           ║
+║  UAT: 1 hidden layer + non-poly activation → universal       ║
+║  Depth lets you approximate with exponentially fewer units   ║
 ╚══════════════════════════════════════════════════════════════╝
 ```
 
