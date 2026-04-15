@@ -10,23 +10,23 @@
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│ CLASS MEAN:    μₖ = (1/nₖ) Σ xᵢ   (i in class k)             │
+│ CLASS MEAN:    μₖ = (1/nₖ) Σ xᵢ   (i in class k)              │
 │ GLOBAL MEAN:   μ  = (1/n)  Σ xᵢ                              │
-│                                                               │
+│                                                              │
 │ WITHIN-CLASS SCATTER:                                        │
-│   Sₖ = Σᵢ∈k (xᵢ − μₖ)(xᵢ − μₖ)ᵀ                              │
-│   Sw = Σₖ Sₖ                                                 │
-│                                                               │
+│   Sₖ = Σᵢ∈k (xᵢ − μₖ)(xᵢ − μₖ)ᵀ                               │
+│   Sw = Σₖ Sₖ                                                  │
+│                                                              │
 │ BETWEEN-CLASS SCATTER:                                       │
-│   Sb = Σₖ nₖ (μₖ − μ)(μₖ − μ)ᵀ                               │
-│                                                               │
+│   Sb = Σₖ nₖ (μₖ − μ)(μₖ − μ)ᵀ                                 │
+│                                                              │
 │ FISHER CRITERION (2 class): J(w) = (wᵀ Sb w) / (wᵀ Sw w)     │
 │ OPTIMAL DIRECTION:           w ∝ Sw⁻¹ (μ₂ − μ₁)              │
-│                                                               │
-│ MULTI-CLASS: eigenvectors of Sw⁻¹ Sb, top (C−1) of them       │
-│                                                               │
+│                                                              │
+│ MULTI-CLASS: eigenvectors of Sw⁻¹ Sb, top (C−1) of them      │
+│                                                              │
 │ LDA CLASSIF RULE (equal priors, shared Σ):                   │
-│   δₖ(x) = xᵀΣ⁻¹μₖ − ½μₖᵀΣ⁻¹μₖ + log πₖ                       │
+│   δₖ(x) = xᵀΣ⁻¹μₖ − ½μₖᵀΣ⁻¹μₖ + log πₖ                         │
 │   ŷ = argmax_k δₖ(x)                                         │
 └──────────────────────────────────────────────────────────────┘
 ```
