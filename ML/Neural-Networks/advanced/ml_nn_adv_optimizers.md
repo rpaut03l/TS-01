@@ -288,11 +288,11 @@ scheduler = LambdaLR(optimizer, lr_lambda=lr_lambda)
 ╠══════════════════════════════════════════════════════════════╣
 ║  SGD:       θ ← θ − η g                                      ║
 ║  Momentum:  v ← βv + g; θ ← θ − ηv    (β≈0.9)                ║
-║  Nesterov:  g at look-ahead θ − ηβv                         ║
-║  AdaGrad:   G += g²; θ ← θ − η g / √G                       ║
-║  RMSProp:   v ← βv + (1−β)g²; θ ← θ − η g / √v              ║
+║  Nesterov:  g at look-ahead θ − ηβv                          ║
+║  AdaGrad:   G += g²; θ ← θ − η g / √G                        ║
+║  RMSProp:   v ← βv + (1−β)g²; θ ← θ − η g / √v               ║
 ║  Adam:      m, v updates + bias correction                   ║
-║  AdamW:     Adam + weight decay applied OUTSIDE the update  ║
+║  AdamW:     Adam + weight decay applied OUTSIDE the update   ║
 ╚══════════════════════════════════════════════════════════════╝
 ```
 
