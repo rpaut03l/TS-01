@@ -260,13 +260,13 @@ Many modern backbones mix conv and attention:
 ╠══════════════════════════════════════════════════════════════╣
 ║  ResNet:       y = F(x) + x    — identity skip               ║
 ║  DenseNet:     concat of all prev layers                     ║
-║  MobileNet:    depthwise separable conv → 8-9× fewer FLOPs  ║
-║  EfficientNet: compound scaling (α^φ · β^2φ · γ^2φ)         ║
+║  MobileNet:    depthwise separable conv → 8-9× fewer FLOPs   ║
+║  EfficientNet: compound scaling (α^φ · β^2φ · γ^2φ)          ║
 ║  ViT:          patches → transformer encoder → CLS token     ║
-║  Swin:         window attention + shifted windows → O(n)    ║
-║  ConvNeXt:     modernized ResNet matches ViT performance    ║
+║  Swin:         window attention + shifted windows → O(n)     ║
+║  ConvNeXt:     modernized ResNet matches ViT performance     ║
 ║                                                              ║
-║  Best training recipe >> architecture family                ║
+║  Best training recipe >> architecture family                 ║
 ╚══════════════════════════════════════════════════════════════╝
 ```
 
