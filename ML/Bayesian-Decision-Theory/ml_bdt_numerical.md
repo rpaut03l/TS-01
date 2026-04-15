@@ -10,26 +10,26 @@
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│ BAYES:       p(ωⱼ|x) = p(x|ωⱼ) p(ωⱼ) / p(x)                   │
+│ BAYES:       p(ωⱼ|x) = p(x|ωⱼ) p(ωⱼ) / p(x)                  │
 │ EVIDENCE:    p(x)    = Σⱼ p(x|ωⱼ) p(ωⱼ)                      │
-│                                                               │
+│                                                              │
 │ MAP RULE:    pick ωⱼ that maximizes p(ωⱼ|x)                  │
-│              ⟺ maximizes p(x|ωⱼ) p(ωⱼ)                       │
-│                                                               │
+│              ⟺ maximizes p(x|ωⱼ) p(ωⱼ)                      │
+│                                                              │
 │ CONDITIONAL RISK:                                            │
 │    R(αᵢ|x) = Σⱼ λ(αᵢ|ωⱼ) p(ωⱼ|x)                             │
 │    optimal: argmin R(αᵢ|x)                                   │
-│                                                               │
+│                                                              │
 │ GAUSSIAN CLASS-COND:                                         │
-│    p(x|ωⱼ) = (2π|Σⱼ|)^(−1/2) · exp(−½(x−μⱼ)ᵀΣⱼ⁻¹(x−μⱼ))     │
-│                                                               │
+│    p(x|ωⱼ) = (2π|Σⱼ|)^(−1/2) · exp(−½(x−μⱼ)ᵀΣⱼ⁻¹(x−μⱼ))      │
+│                                                              │
 │ LOG DISCRIMINANT:                                            │
-│    gⱼ(x) = −½(x−μⱼ)ᵀΣⱼ⁻¹(x−μⱼ) − ½ log|Σⱼ| + log p(ωⱼ)      │
-│                                                               │
+│    gⱼ(x) = −½(x−μⱼ)ᵀΣⱼ⁻¹(x−μⱼ) − ½ log|Σⱼ| + log p(ωⱼ)       │
+│                                                              │
 │ LIKELIHOOD RATIO:                                            │
 │    L(x) = p(x|ω₁) / p(x|ω₂)                                  │
 │    threshold for 0-1 loss: L(x) > p(ω₂)/p(ω₁)                │
-│                                                               │
+│                                                              │
 │ BAYES ERROR:  P(e|x) = 1 − max_i p(ωᵢ|x)                     │
 └──────────────────────────────────────────────────────────────┘
 ```
