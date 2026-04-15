@@ -41,10 +41,10 @@ You move to a new city. To guess if a restaurant is good, you find the **5 most 
 
 ```
 ┌───────────────────────────────────────────────┐
-│ TRAINING:   store all (xᵢ, yᵢ)   → O(1)        │
-│ PREDICT:    compute distance to each xᵢ        │
-│             pick k smallest → majority vote    │
-│             → O(n · d) per query               │
+│ TRAINING:   store all (xᵢ, yᵢ)   → O(1)       │
+│ PREDICT:    compute distance to each xᵢ       │
+│             pick k smallest → majority vote   │
+│             → O(n · d) per query              │
 └───────────────────────────────────────────────┘
 ```
 
@@ -194,7 +194,7 @@ In high dimensions, **all points become roughly equidistant** — the concept of
 
 ```
 ┌────────────────────────────────────────────┐
-│ d = 2   →  nearest vs farthest ratio ≈ 2  │
+│ d = 2   →  nearest vs farthest ratio ≈ 2   │
 │ d = 10  →  ratio ≈ 1.2                     │
 │ d = 100 →  ratio ≈ 1.02   ← meaningless!   │
 └────────────────────────────────────────────┘
@@ -266,14 +266,14 @@ KD-Trees collapse back to O(n) in very high dimensions (curse of dimensionality,
 ╔══════════════════════════════════════════════════════════════╗
 ║  K-NN ONE-LINERS                                             ║
 ╠══════════════════════════════════════════════════════════════╣
-║  Lazy learner: store training data, compute at query time   ║
-║  Predict: majority vote (classification), mean (regression) ║
-║  Default k rule-of-thumb:  k ≈ √n,  odd for binary          ║
-║  Small k → overfit ; Large k → underfit                     ║
-║  Always SCALE features before K-NN                          ║
-║  Euclidean = L2, Manhattan = L1, Cosine for text            ║
-║  O(nd) prediction; KD-Tree helps if d small                 ║
-║  Curse of dimensionality hurts in high d                    ║
+║  Lazy learner: store training data, compute at query time    ║
+║  Predict: majority vote (classification), mean (regression)  ║
+║  Default k rule-of-thumb:  k ≈ √n,  odd for binary           ║
+║  Small k → overfit ; Large k → underfit                      ║
+║  Always SCALE features before K-NN                           ║
+║  Euclidean = L2, Manhattan = L1, Cosine for text             ║
+║  O(nd) prediction; KD-Tree helps if d small                  ║
+║  Curse of dimensionality hurts in high d                     ║
 ╚══════════════════════════════════════════════════════════════╝
 ```
 
