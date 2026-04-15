@@ -277,12 +277,12 @@ They let the network learn an **identity mapping** easily by just pushing F → 
 ┌──────────┬────────────────┬──────────┬────────────┬──────────────────────┐
 │ Name     │ Formula        │ Deriv    │ Saturates? │ Typical use          │
 ├──────────┼────────────────┼──────────┼────────────┼──────────────────────┤
-│ Sigmoid  │ 1/(1+e⁻ˣ)      │ σ(1−σ)   │ Yes ±       │ output binary, gates │
-│ Tanh     │ (eˣ−e⁻ˣ)/...   │ 1−tanh²  │ Yes ±       │ output [-1,1], RNN   │
+│ Sigmoid  │ 1/(1+e⁻ˣ)      │ σ(1−σ)   │ Yes ±      │ output binary, gates │
+│ Tanh     │ (eˣ−e⁻ˣ)/...   │ 1−tanh²  │ Yes ±      │ output [-1,1], RNN   │
 │ ReLU     │ max(0,x)       │ 0 / 1    │ Left       │ default CNN/FC       │
 │ LReLU    │ x / αx         │ 1 / α    │ No         │ GANs                 │
 │ ELU      │ x / α(eˣ−1)    │ 1 / αeˣ  │ Left soft  │ deep FC w/o BN       │
-│ SELU     │ λ·ELU(x)       │ λ·ELU'   │ No (self-norm) │ deep FC w/o BN  │
+│ SELU     │ λ·ELU(x)       │ λ·ELU'   │No(self-norm)│ deep FC w/o BN      │
 │ GELU     │ x·Φ(x)         │ complex  │ No         │ transformers         │
 │ Swish    │ x·σ(x)         │ σ+xσ(1−σ)│ No         │ efficient CNNs       │
 │ Mish     │ x·tanh(sp(x))  │ complex  │ No         │ some CV models       │
@@ -299,15 +299,15 @@ They let the network learn an **identity mapping** easily by just pushing F → 
 ╔══════════════════════════════════════════════════════════════╗
 ║  VANISHING / EXPLODING GRADIENT FIXES                        ║
 ╠══════════════════════════════════════════════════════════════╣
-║  Vanishing  →  ReLU family + He init + Skip connections    ║
+║  Vanishing  →  ReLU family + He init + Skip connections      ║
 ║              + BatchNorm / LayerNorm                         ║
-║  Exploding  →  Gradient clipping + orthogonal init (RNNs)  ║
+║  Exploding  →  Gradient clipping + orthogonal init (RNNs)    ║
 ║              + careful LR                                    ║
 ║                                                              ║
-║  Sigmoid/tanh saturate → use only at outputs or gates       ║
-║  Dead ReLU → lower LR, He init, LeakyReLU                   ║
-║  Skip connections are the real fix: identity path         ║
-║     keeps gradient alive regardless of depth                ║
+║  Sigmoid/tanh saturate → use only at outputs or gates        ║
+║  Dead ReLU → lower LR, He init, LeakyReLU                    ║
+║  Skip connections are the real fix: identity path            ║
+║     keeps gradient alive regardless of depth                 ║
 ╚══════════════════════════════════════════════════════════════╝
 ```
 
