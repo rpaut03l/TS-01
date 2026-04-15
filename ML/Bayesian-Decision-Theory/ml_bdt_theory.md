@@ -42,15 +42,15 @@ Bayesian Decision Theory is the **optimal framework** for decisions of this shap
 ### The Framework
 ```
 ┌───────────────────────────────────────────────┐
-│  PRIOR       p(ωⱼ)        how frequent each    │
-│                            class is            │
-│  LIKELIHOOD  p(x|ωⱼ)      how data looks in    │
-│                            each class          │
+│  PRIOR       p(ωⱼ)        how frequent each   │
+│                            class is           │
+│  LIKELIHOOD  p(x|ωⱼ)      how data looks in   │
+│                            each class         │
 │  POSTERIOR   p(ωⱼ|x)      what Bayes says     │
 │  LOSS        λ(αᵢ|ωⱼ)     cost of action αᵢ   │
 │                            when truth is ωⱼ   │
-│  DECISION    pick αᵢ that minimizes            │
-│              EXPECTED LOSS                      │
+│  DECISION    pick αᵢ that minimizes           │
+│              EXPECTED LOSS                    │
 └───────────────────────────────────────────────┘
 ```
 
@@ -207,15 +207,15 @@ Decision boundaries are **quadratic** → this is **QDA**.
 All three are **Gaussian Bayes classifiers**, differing in what they assume about Σ:
 
 ```
-┌──────────────────┬─────────────────────┬────────────────┬──────────────┐
-│ METHOD           │ Σ assumption         │ Boundary       │ Parameters   │
-├──────────────────┼─────────────────────┼────────────────┼──────────────┤
-│ Naive Bayes      │ diagonal, per class │ quadratic       │ Cd + Cd       │
-│ LDA              │ Σ shared across     │ linear          │ Cd + d(d+1)/2│
-│                  │ classes             │                │              │
-│ QDA              │ Σᵢ per class        │ quadratic       │ Cd + C·d(d+1)/2│
-│ Gaussian Bayes   │ same as QDA         │ quadratic       │ same         │
-└──────────────────┴─────────────────────┴────────────────┴──────────────┘
+┌──────────────────┬─────────────────────┬────────────────┬───────────────┐
+│ METHOD           │ Σ assumption        │ Boundary       │ Parameters    │
+├──────────────────┼─────────────────────┼────────────────┼───────────────┤
+│ Naive Bayes      │ diagonal, per class │ quadratic      │ Cd + Cd       │
+│ LDA              │ Σ shared across     │ linear         │ Cd + d(d+1)/2 │
+│                  │ classes             │                │               │
+│ QDA              │ Σᵢ per class        │ quadratic      │Cd + C·d(d+1)/2│
+│ Gaussian Bayes   │ same as QDA         │ quadratic      │ same          │
+└──────────────────┴─────────────────────┴────────────────┴───────────────┘
 ```
 
 > All three are **special cases of the Bayes-optimal classifier** under different Gaussian assumptions. Deciding which one to use is a bias/variance trade-off: more assumptions = less variance = better on small data, worse if the assumption is wrong.
@@ -247,14 +247,14 @@ For two classes with known Gaussian densities and a computable boundary, this in
 ╔══════════════════════════════════════════════════════════════╗
 ║  BAYESIAN DECISION THEORY ONE-LINERS                         ║
 ╠══════════════════════════════════════════════════════════════╣
-║  Posterior  ∝  likelihood · prior                           ║
-║  0-1 loss + argmax posterior = MAP classifier               ║
-║  General loss: pick min expected risk R(αᵢ|x)               ║
-║  Log-discriminants for numerical stability                  ║
-║  Gaussian shared Σ  →  LDA  (linear boundary)               ║
-║  Gaussian per-class Σ →  QDA (quadratic boundary)           ║
-║  Naive Bayes = diagonal Σ, features independent             ║
-║  Bayes error is the theoretical floor; features matter      ║
+║  Posterior  ∝  likelihood · prior                            ║
+║  0-1 loss + argmax posterior = MAP classifier                ║
+║  General loss: pick min expected risk R(αᵢ|x)                ║
+║  Log-discriminants for numerical stability                   ║
+║  Gaussian shared Σ  →  LDA  (linear boundary)                ║
+║  Gaussian per-class Σ →  QDA (quadratic boundary)            ║
+║  Naive Bayes = diagonal Σ, features independent              ║
+║  Bayes error is the theoretical floor; features matter       ║
 ╚══════════════════════════════════════════════════════════════╝
 ```
 
