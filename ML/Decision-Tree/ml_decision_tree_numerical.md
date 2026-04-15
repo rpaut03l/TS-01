@@ -9,24 +9,24 @@
 ## 📦 ALL FORMULAS
 
 ```
-┌──────────────────────────────────────────────────────────────┐
-│ ENTROPY:      H(S) = − Σ pₖ log₂ pₖ                          │
-│ GINI:         G(S) = 1 − Σ pₖ²                               │
-│ MISCLASS:     E(S) = 1 − max pₖ                              │
-│                                                               │
-│ INFO GAIN:    IG(S, f) = H(S) − Σ (|Sᵥ|/|S|) · H(Sᵥ)          │
-│ GAIN RATIO:   GR = IG / SplitInfo                             │
-│    SplitInfo = − Σ (|Sᵥ|/|S|) log₂(|Sᵥ|/|S|)                  │
-│                                                               │
-│ GINI GAIN:    ΔG = G(S) − Σ (|Sᵥ|/|S|) · G(Sᵥ)                │
-│                                                               │
-│ REGRESSION SPLIT CRITERION (variance reduction):             │
-│   Var(S) = (1/|S|) Σ (yᵢ − ȳ_S)²                              │
-│   ΔVar = Var(parent) − Σ (|Sᵥ|/|S|) · Var(Sᵥ)                │
-│                                                               │
-│ BASE-2 LOG cheat:                                            │
-│   log₂(2) = 1, log₂(3) ≈ 1.585, log₂(4) = 2, log₂(5) ≈ 2.322 │
-└──────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────┐
+│ ENTROPY:      H(S) = − Σ pₖ log₂ pₖ                             │
+│ GINI:         G(S) = 1 − Σ pₖ²                                 │
+│ MISCLASS:     E(S) = 1 − max pₖ                                │
+│                                                                │
+│ INFO GAIN:    IG(S, f) = H(S) − Σ (|Sᵥ|/|S|) · H(Sᵥ)           │
+│ GAIN RATIO:   GR = IG / SplitInfo                              │
+│    SplitInfo = − Σ (|Sᵥ|/|S|) log₂(|Sᵥ|/|S|)                   │
+│                                                                │
+│ GINI GAIN:    ΔG = G(S) − Σ (|Sᵥ|/|S|) · G(Sᵥ)                 │
+│                                                                │
+│ REGRESSION SPLIT CRITERION (variance reduction):               │
+│   Var(S) = (1/|S|) Σ (yᵢ − ȳ_S)²                               │
+│   ΔVar = Var(parent) − Σ (|Sᵥ|/|S|) · Var(Sᵥ)                  │
+│                                                                │
+│ BASE-2 LOG cheat:                                              │
+│   log₂(2) = 1, log₂(3) ≈ 1.585, log₂(4) = 2, log₂(5) ≈ 2.322   │
+└────────────────────────────────────────────────────────────────┘
 ```
 
 ---
