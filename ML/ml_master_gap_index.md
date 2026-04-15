@@ -13,32 +13,35 @@ FRACTAL I: SUPERVISED LEARNING (14 Lectures)
 ═══════════════════════════════════════════════════════════════════
  Topic                           Lectures  Status     Folder
 ─────────────────────────────────────────────────────────────────
- Introduction & Foundations         7       🟡 NEW     ML/Foundations/
+ Introduction & Foundations         7       ✅ FULL    ML/Foundations/
    ├─ Definitions & Paradigms                          
    ├─ Datasets for ML                                  
    ├─ Data Normalization                               
    ├─ Hypothesis Evaluation                            
    ├─ VC-Dimensions & Distribution                     
    ├─ Bias-Variance Tradeoff                           
-   └─ Regression (Linear)                   ✅ EXISTS  ML/Regression/
+   └─ Regression (Linear)                   ✅ FULL    ML/Regression/
+                                                       (SLR+MLR+Logistic+Ridge+Lasso trio)
                                                        
- Bayes Decision Theory              5       ✅ EXISTS  ML/Bayesian-Decision-Theory/
-   ├─ Bayes decision rule                              
-   ├─ Min error rate classification                    
+ Bayes Decision Theory              5       🟡 Partial ML/Bayesian-Decision-Theory/
+   ├─ Bayes decision rule                              (guide + practice; needs
+   ├─ Min error rate classification                     numerical trio file)
    └─ Normal density & discriminant                    
                                                        
- Parameter Estimation               2       ✅ EXISTS  ML/Parameter-Estimations-Guide/
-   ├─ MLE                                             
-   └─ Bayesian Parameter Estimation                    
+ Parameter Estimation               2       ✅ FULL    ML/Parameter-Estimations-Guide/
+   ├─ MLE                                              (theory + practice +
+   └─ Bayesian Parameter Estimation                     numerical markdown trio)
 
 FRACTAL II: UNSUPERVISED LEARNING (14 Lectures)
 ═══════════════════════════════════════════════════════════════════
  Discriminative Methods             6       Partial
-   ├─ Distance-based methods (K-NN)          ✅ EXISTS  ML/K-NN/
-   ├─ Linear Discriminant Functions          🟡 NEW     ML/LDA/
-   ├─ Decision Tree                          ✅ EXISTS  ML/Decision-Tree/
-   ├─ Random Forest                          ✅ EXISTS  ML/Ch07_Ensemble_Learning/
+   ├─ Distance-based methods (K-NN)          🟡 Partial ML/K-Nearest-Neighbors_(K-NN)/
+   ├─ Linear Discriminant Functions          🟡 Partial ML/LDA/
+   ├─ Decision Tree                          🟡 Partial ML/Decision-Tree/
+   ├─ Random Forest                          ✅ FULL    ML/Random-Forest/
+   │                                                    (standalone trio + Ch07 ensemble)
    └─ Boosting                               ✅ EXISTS  ML/Ch07_Ensemble_Learning/
+                                                        ML/Ensemble_Boosting_AdaBoost/
                                                        
  Feature Selection & Dim Reduction  4       🟡 NEW     ML/Feature-Selection-DimRed/
    ├─ PCA                                             
@@ -70,6 +73,27 @@ FRACTAL III: KERNELS & NEURAL NETWORKS (14 Lectures)
    ├─ CNN                                             
    └─ Autoencoders                                     
 ```
+
+---
+
+## 📂 Phase-1 additions (this PR)
+
+| Folder | New files | Status |
+|---|---|---|
+| [ML/Parameter-Estimations-Guide/](Parameter-Estimations-Guide/) | [theory](Parameter-Estimations-Guide/ml_parameter_estimation_theory.md) · [numerical](Parameter-Estimations-Guide/ml_parameter_estimation_numerical.md) · [practice](Parameter-Estimations-Guide/ml_parameter_estimation_practice.md) | ✅ |
+| [ML/Random-Forest/](Random-Forest/) | [theory](Random-Forest/ml_random_forest_theory.md) · [numerical](Random-Forest/ml_random_forest_numerical.md) · [practice](Random-Forest/ml_random_forest_practice.md) | ✅ |
+| [ML/Regression/](Regression/) | [theory](Regression/ml_regression_theory.md) · [numerical](Regression/ml_regression_numerical.md) · [practice](Regression/ml_regression_practice.md) | ✅ |
+
+> Legacy files (`simple_linear_regression_pe_*.md` in `ML/Regression/` and the PDFs in `ML/Parameter-Estimations-Guide/` and `ML/Random-Forest/`) remain untouched and continue to work.
+
+---
+
+## 🔭 Remaining gaps (future phases)
+
+- **ML/K-Nearest-Neighbors_(K-NN)/** — needs `ml_knn_theory.md`, `ml_knn_numerical.md`
+- **ML/LDA/** — needs `ml_lda_practice.md`, `ml_lda_numerical.md`
+- **ML/Decision-Tree/** — needs `ml_decision_tree_practice.md`, `ml_decision_tree_numerical.md`
+- **ML/Bayesian-Decision-Theory/** — needs `ml_bdt_theory.md`, `ml_bdt_numerical.md`
 
 ---
 
