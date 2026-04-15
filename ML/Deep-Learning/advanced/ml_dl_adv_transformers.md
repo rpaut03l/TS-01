@@ -265,15 +265,15 @@ For long documents (n = 100k tokens), n² = 10¹⁰ — infeasible.
 ╔══════════════════════════════════════════════════════════════╗
 ║  TRANSFORMER FORMULAE                                        ║
 ╠══════════════════════════════════════════════════════════════╣
-║  Q = XW_Q,  K = XW_K,  V = XW_V                             ║
-║  Attn(Q,K,V) = softmax(QKᵀ/√d_k) · V                        ║
-║  MultiHead: split dim, run h attentions, concat, project    ║
+║  Q = XW_Q,  K = XW_K,  V = XW_V                              ║
+║  Attn(Q,K,V) = softmax(QKᵀ/√d_k) · V                         ║
+║  MultiHead: split dim, run h attentions, concat, project     ║
 ║  Block (pre-LN):                                             ║
 ║     x ← x + Attn(LN(x))                                      ║
 ║     x ← x + FFN(LN(x))                                       ║
 ║  FFN = Linear(GELU(Linear(x))), inner dim = 4·d_model        ║
-║  Positional encoding required (attention is perm-invariant) ║
-║  Causal mask for decoder/autoregressive LMs                 ║
+║  Positional encoding required (attention is perm-invariant)  ║
+║  Causal mask for decoder/autoregressive LMs                  ║
 ║  Complexity: O(n² · d)                                       ║
 ╚══════════════════════════════════════════════════════════════╝
 ```
