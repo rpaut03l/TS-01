@@ -266,11 +266,11 @@ With N examples in a batch, each gets N − 1 negatives for free. **Larger batch
 ╔══════════════════════════════════════════════════════════════╗
 ║  LOSS FUNCTIONS AT A GLANCE                                  ║
 ╠══════════════════════════════════════════════════════════════╣
-║  Binary clf:      BCE (use _with_logits)                    ║
-║  Multi-class:     Cross-entropy + label smoothing           ║
+║  Binary clf:      BCE (use _with_logits)                     ║
+║  Multi-class:     Cross-entropy + label smoothing            ║
 ║  Imbalanced clf:  Focal (γ=2) or weighted CE                 ║
 ║  Regression:      MSE (clean) / Huber (outliers)             ║
-║  Detection bbox:  Smooth L1 / GIoU                            ║
+║  Detection bbox:  Smooth L1 / GIoU                           ║
 ║  Siamese same/diff: Contrastive                              ║
 ║  Face / identity: Triplet + hard mining                      ║
 ║  Self-supervised: InfoNCE with cosine sim + temperature      ║
