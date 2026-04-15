@@ -233,17 +233,17 @@ Many modern backbones mix conv and attention:
 ## 8. Choosing an Architecture in 2026
 
 ```
-┌───────────────────────┬────────────────────────────────────┐
-│ GOAL                   │ PICK                              │
-├───────────────────────┼────────────────────────────────────┤
-│ Baseline, transfer    │ ResNet-50 or ConvNeXt-Tiny         │
-│ Tight compute         │ MobileNet v3 or EfficientNet-B0    │
-│ Huge data + budget    │ ViT-L/16 or Swin-L, pretrained     │
-│ Detection/segmentation│ Swin + Mask R-CNN / DETR           │
-│ On-device realtime    │ MobileNet v3 + quantization        │
-│ Self-supervised       │ ViT + MAE or DINO                  │
-│ Small dataset fine-tune│ ImageNet ResNet-50 or ConvNeXt    │
-└───────────────────────┴────────────────────────────────────┘
+┌────────────────────────┬────────────────────────────────────┐
+│ GOAL                   │ PICK                               │
+├────────────────────────┼────────────────────────────────────┤
+│ Baseline, transfer     │ ResNet-50 or ConvNeXt-Tiny         │
+│ Tight compute          │ MobileNet v3 or EfficientNet-B0    │
+│ Huge data + budget     │ ViT-L/16 or Swin-L, pretrained     │
+│ Detection/segmentation │ Swin + Mask R-CNN / DETR           │
+│ On-device realtime     │ MobileNet v3 + quantization        │
+│ Self-supervised        │ ViT + MAE or DINO                  │
+│ Small dataset fine-tune│ ImageNet ResNet-50 or ConvNeXt     │
+└────────────────────────┴────────────────────────────────────┘
 ```
 
 > **Rule:** pretrain on a big dataset first, then fine-tune on yours. The backbone family is usually a smaller effect than the pretraining corpus.
