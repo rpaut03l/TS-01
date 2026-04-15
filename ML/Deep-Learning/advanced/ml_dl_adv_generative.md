@@ -262,14 +262,14 @@ DDIM, DPM++, etc. let you sample in ~10-50 steps instead of 1000. **Consistency 
 
 ```
 ┌─────────────┬───────────┬──────────┬────────────┐
-│             │ VAE       │ GAN       │ DIFFUSION │
+│             │ VAE       │ GAN      │ DIFFUSION  │
 ├─────────────┼───────────┼──────────┼────────────┤
-│ Likelihood  │ ELBO      │ implicit  │ ELBO / ... │
-│ Training    │ stable    │ unstable  │ stable     │
-│ Sample qty  │ decent    │ best (was)│ best       │
-│ Sample div  │ good      │ mode coll.│ best       │
-│ Sample speed│ fast      │ fast      │ slow       │
-│ Main use    │ latent ML │ GAN era   │ 2022+ SOTA │
+│ Likelihood  │ ELBO      │ implicit │ ELBO / ... │
+│ Training    │ stable    │ unstable │ stable     │
+│ Sample qty  │ decent    │best (was)│ best       │
+│ Sample div  │ good      │mode coll.│ best       │
+│ Sample speed│ fast      │fast      │ slow       │
+│ Main use    │ latent ML │GAN era   │ 2022+ SOTA │
 └─────────────┴───────────┴──────────┴────────────┘
 ```
 
@@ -287,14 +287,14 @@ DDIM, DPM++, etc. let you sample in ~10-50 steps instead of 1000. **Consistency 
 ╔══════════════════════════════════════════════════════════════╗
 ║  GENERATIVE MODELS ONE-LINERS                                ║
 ╠══════════════════════════════════════════════════════════════╣
-║  VAE: maximize ELBO = recon − KL(q(z|x) ‖ p(z))             ║
-║  Reparameterization: z = μ + σ·ε (backprop through sampling)║
-║  GAN: min_G max_D E[log D(x)] + E[log(1 − D(G(z)))]         ║
-║  Mode collapse: G produces only a few outputs               ║
-║  WGAN-GP: Wasserstein distance + gradient penalty           ║
+║  VAE: maximize ELBO = recon − KL(q(z|x) ‖ p(z))              ║
+║  Reparameterization: z = μ + σ·ε (backprop through sampling) ║
+║  GAN: min_G max_D E[log D(x)] + E[log(1 − D(G(z)))]          ║
+║  Mode collapse: G produces only a few outputs                ║
+║  WGAN-GP: Wasserstein distance + gradient penalty            ║
 ║  DCGAN: strided conv, BN, LeakyReLU, tanh output             ║
 ║  Diffusion: predict the noise, denoise step by step          ║
-║  Training objective ‖ ε − ε_θ(x_t, t) ‖² is astonishingly  ║
+║  Training objective ‖ ε − ε_θ(x_t, t) ‖² is astonishingly    ║
 ║     simple and works                                         ║
 ╚══════════════════════════════════════════════════════════════╝
 ```
