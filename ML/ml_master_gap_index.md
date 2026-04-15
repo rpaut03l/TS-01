@@ -23,9 +23,9 @@ FRACTAL I: SUPERVISED LEARNING (14 Lectures)
    └─ Regression (Linear)                   ✅ FULL    ML/Regression/
                                                        (SLR+MLR+Logistic+Ridge+Lasso trio)
                                                        
- Bayes Decision Theory              5       🟡 Partial ML/Bayesian-Decision-Theory/
-   ├─ Bayes decision rule                              (guide + practice; needs
-   ├─ Min error rate classification                     numerical trio file)
+ Bayes Decision Theory              5       ✅ FULL    ML/Bayesian-Decision-Theory/
+   ├─ Bayes decision rule                              (theory + numerical trio
+   ├─ Min error rate classification                     + existing guide/practice)
    └─ Normal density & discriminant                    
                                                        
  Parameter Estimation               2       ✅ FULL    ML/Parameter-Estimations-Guide/
@@ -34,10 +34,10 @@ FRACTAL I: SUPERVISED LEARNING (14 Lectures)
 
 FRACTAL II: UNSUPERVISED LEARNING (14 Lectures)
 ═══════════════════════════════════════════════════════════════════
- Discriminative Methods             6       Partial
-   ├─ Distance-based methods (K-NN)          🟡 Partial ML/K-Nearest-Neighbors_(K-NN)/
-   ├─ Linear Discriminant Functions          🟡 Partial ML/LDA/
-   ├─ Decision Tree                          🟡 Partial ML/Decision-Tree/
+ Discriminative Methods             6       ✅ FULL
+   ├─ Distance-based methods (K-NN)          ✅ FULL    ML/K-Nearest-Neighbors_(K-NN)/
+   ├─ Linear Discriminant Functions          ✅ FULL    ML/LDA/
+   ├─ Decision Tree                          ✅ FULL    ML/Decision-Tree/
    ├─ Random Forest                          ✅ FULL    ML/Random-Forest/
    │                                                    (standalone trio + Ch07 ensemble)
    └─ Boosting                               ✅ EXISTS  ML/Ch07_Ensemble_Learning/
@@ -76,7 +76,7 @@ FRACTAL III: KERNELS & NEURAL NETWORKS (14 Lectures)
 
 ---
 
-## 📂 Phase-1 additions (this PR)
+## 📂 Phase-1 additions (merged — PR #20)
 
 | Folder | New files | Status |
 |---|---|---|
@@ -84,16 +84,30 @@ FRACTAL III: KERNELS & NEURAL NETWORKS (14 Lectures)
 | [ML/Random-Forest/](Random-Forest/) | [theory](Random-Forest/ml_random_forest_theory.md) · [numerical](Random-Forest/ml_random_forest_numerical.md) · [practice](Random-Forest/ml_random_forest_practice.md) | ✅ |
 | [ML/Regression/](Regression/) | [theory](Regression/ml_regression_theory.md) · [numerical](Regression/ml_regression_numerical.md) · [practice](Regression/ml_regression_practice.md) | ✅ |
 
-> Legacy files (`simple_linear_regression_pe_*.md` in `ML/Regression/` and the PDFs in `ML/Parameter-Estimations-Guide/` and `ML/Random-Forest/`) remain untouched and continue to work.
+## 📂 Phase-2 additions (this PR)
+
+| Folder | New files | Status |
+|---|---|---|
+| [ML/K-Nearest-Neighbors_(K-NN)/](K-Nearest-Neighbors_(K-NN)/) | [theory](K-Nearest-Neighbors_(K-NN)/ml_knn_theory.md) · [numerical](K-Nearest-Neighbors_(K-NN)/ml_knn_numerical.md) | ✅ |
+| [ML/LDA/](LDA/) | [practice](LDA/ml_lda_practice.md) · [numerical](LDA/ml_lda_numerical.md) | ✅ |
+| [ML/Decision-Tree/](Decision-Tree/) | [practice](Decision-Tree/ml_decision_tree_practice.md) · [numerical](Decision-Tree/ml_decision_tree_numerical.md) | ✅ |
+| [ML/Bayesian-Decision-Theory/](Bayesian-Decision-Theory/) | [theory](Bayesian-Decision-Theory/ml_bdt_theory.md) · [numerical](Bayesian-Decision-Theory/ml_bdt_numerical.md) | ✅ |
+
+> All legacy files are untouched and continue to work:
+> - `simple_linear_regression_pe_*.md`, PDFs in Parameter-Est / RF folders (Phase 1)
+> - `k-nn_*_guide*.md`, `lda_*.md`, `decision_tree_*_guide*.md`, `bayesian_*_guide.md`, `bayesian-practice-problems.md`, mindmap PNGs (Phase 2)
 
 ---
 
 ## 🔭 Remaining gaps (future phases)
 
-- **ML/K-Nearest-Neighbors_(K-NN)/** — needs `ml_knn_theory.md`, `ml_knn_numerical.md`
-- **ML/LDA/** — needs `ml_lda_practice.md`, `ml_lda_numerical.md`
-- **ML/Decision-Tree/** — needs `ml_decision_tree_practice.md`, `ml_decision_tree_numerical.md`
-- **ML/Bayesian-Decision-Theory/** — needs `ml_bdt_theory.md`, `ml_bdt_numerical.md`
+Fractal I/II discriminative methods are now complete. Outstanding gap folders:
+
+- **ML/Feature-Selection-DimRed/** — has trio ✅ (standard style)
+- **ML/Clustering/** — has trio ✅ (standard style)
+- **ML/SVM-Kernels/**, **ML/Neural-Networks/**, **ML/Deep-Learning/** — have trio ✅ (standard style)
+
+All listed Fractal I + II + III syllabus folders now have the full theory/numerical/practice markdown trio available. The remaining 🟡 NEW markers above reflect that those folders contain the trio but the gap-index status had not been refreshed after those files were added.
 
 ---
 
