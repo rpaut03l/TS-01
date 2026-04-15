@@ -225,7 +225,7 @@ The context vector becomes a bottleneck for long sequences. **Attention** (Bahda
 ├────────────────────────┼────────────┼─────────────┤
 │ General NLP / LLMs     │ ❌         │ ✅          │
 │ Big compute budget     │ —          │ ✅          │
-│ Tiny compute / on-device│ ✅         │ —           │
+│ Tiny compute / on-device│ ✅        │ —           │
 │ Streaming / real-time  │ ✅         │ (tricky)    │
 │ Very short sequences   │ OK         │ ✅          │
 │ Very long sequences    │ ❌         │ (with care) │
@@ -247,15 +247,15 @@ The context vector becomes a bottleneck for long sequences. **Attention** (Bahda
 ╔══════════════════════════════════════════════════════════════╗
 ║  RNN / LSTM / GRU ONE-LINERS                                 ║
 ╠══════════════════════════════════════════════════════════════╣
-║  Vanilla RNN:   h_t = tanh(W[h, x])                         ║
-║  LSTM:   cell state w/ additive updates + 3 gates           ║
+║  Vanilla RNN:   h_t = tanh(W[h, x])                          ║
+║  LSTM:   cell state w/ additive updates + 3 gates            ║
 ║  GRU:    simpler, 2 gates, no separate cell                  ║
-║  Gates fix vanishing by giving gradient an identity path   ║
+║  Gates fix vanishing by giving gradient an identity path     ║
 ║  Forget-gate bias init = 1                                   ║
 ║  Teacher forcing: train with ground-truth prev tokens        ║
 ║  Scheduled sampling: bridge train/inference gap              ║
-║  Seq2seq context vector is a bottleneck → attention         ║
-║  Transformers replaced LSTMs for most NLP (2017+)           ║
+║  Seq2seq context vector is a bottleneck → attention          ║
+║  Transformers replaced LSTMs for most NLP (2017+)            ║
 ╚══════════════════════════════════════════════════════════════╝
 ```
 
