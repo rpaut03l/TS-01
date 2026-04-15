@@ -42,7 +42,7 @@ Regression = **fit a function f(x) ≈ y** where y is continuous (or we pretend 
 
 ```
 ┌────────────────────────────────────────────────┐
-│ Given: (x₁,y₁),...,(xₙ,yₙ)                     │
+│ Given: (x₁,y₁),...,(xₙ,yₙ)                      │
 │ Find:  f ∈ H such that Σ L(yᵢ, f(xᵢ)) is small │
 │ For linear regression: f(x) = wᵀx + b          │
 │ Loss:  (yᵢ − f(xᵢ))²  (squared error)          │
@@ -134,11 +134,11 @@ Scales linearly. Must tune learning rate η. Converges for η small enough becau
 ```
 ┌──────────────────────────────────────────────────────────────┐
 │ MSE   =  (1/n) Σ (yᵢ − ŷᵢ)²                                  │
-│ RMSE  =  √MSE                (same units as y)              │
-│ MAE   =  (1/n) Σ |yᵢ − ŷᵢ|    (robust to outliers)          │
+│ RMSE  =  √MSE                (same units as y)               │
+│ MAE   =  (1/n) Σ |yᵢ − ŷᵢ|    (robust to outliers)           │
 │ R²    =  1 − SS_res / SS_tot                                 │
 │           SS_res = Σ (yᵢ − ŷᵢ)²                              │
-│           SS_tot = Σ (yᵢ − ȳ)²                              │
+│           SS_tot = Σ (yᵢ − ȳ)²                               │
 │ ADJUSTED R² = 1 − (1−R²)(n−1)/(n−p−1)                        │
 └──────────────────────────────────────────────────────────────┘
 ```
@@ -282,7 +282,7 @@ More generally, **basis expansions** (splines, RBF features, Fourier) give nonli
 ├──────────────┼──────────────┼───────────────┼─────────────┼─────────────┤
 │ Output       │ continuous   │ continuous    │ probability │ continuous  │
 │ # features   │ 1            │ p             │ p           │ p           │
-│ Closed form  │ ✅ Yes       │ ✅ (XᵀX)⁻¹    │ ❌          │ Ridge ✅    │
+│ Closed form  │ ✅ Yes       │ ✅ (XᵀX)⁻¹    │ ❌         │ Ridge ✅    │
 │ Loss         │ MSE          │ MSE           │ log-loss    │ MSE + reg   │
 │ Optimizer    │ formula      │ formula / GD  │ GD / Newton │ formula/CD  │
 │ Hyperparams  │ none         │ none          │ none        │ λ           │
@@ -301,11 +301,11 @@ More generally, **basis expansions** (splines, RBF features, Fourier) give nonli
 ╔══════════════════════════════════════════════════════════════╗
 ║  KEY EQUATIONS                                               ║
 ╠══════════════════════════════════════════════════════════════╣
-║  SLR slope:     β̂₁ = Σ(x−x̄)(y−ȳ) / Σ(x−x̄)²                  ║
+║  SLR slope:     β̂₁ = Σ(x−x̄)(y−ȳ) / Σ(x−x̄)²                   ║
 ║  SLR intercept: β̂₀ = ȳ − β̂₁ x̄                                ║
 ║  MLR normal eq: β̂  = (XᵀX)⁻¹ Xᵀ y                            ║
 ║  Ridge:         β̂  = (XᵀX + λI)⁻¹ Xᵀ y                       ║
-║  Logistic:      p = σ(wᵀx + b),  σ(z) = 1/(1+e⁻ᶻ)             ║
+║  Logistic:      p = σ(wᵀx + b),  σ(z) = 1/(1+e⁻ᶻ)            ║
 ║  R²:            1 − SS_res / SS_tot                          ║
 ║  Adj R²:        1 − (1−R²)(n−1)/(n−p−1)                      ║
 ║  Log loss:      −(1/n) Σ [y log p̂ + (1−y) log(1−p̂)]          ║
