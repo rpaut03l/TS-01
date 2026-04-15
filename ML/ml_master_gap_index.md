@@ -43,33 +43,33 @@ FRACTAL II: UNSUPERVISED LEARNING (14 Lectures)
    └─ Boosting                               ✅ EXISTS  ML/Ch07_Ensemble_Learning/
                                                         ML/Ensemble_Boosting_AdaBoost/
                                                        
- Feature Selection & Dim Reduction  4       🟡 NEW     ML/Feature-Selection-DimRed/
-   ├─ PCA                                             
+ Feature Selection & Dim Reduction  4       ✅ FULL    ML/Feature-Selection-DimRed/
+   ├─ PCA                                              (ml_pca_ica_fs_*.md trio)
    ├─ LDA (for dim reduction)                          
    ├─ ICA                                             
    ├─ SFFS                                            
    └─ SBFS                                            
                                                        
- Clustering                         4       🟡 NEW     ML/Clustering/
-   ├─ K-Means                                         
+ Clustering                         4       ✅ FULL    ML/Clustering/
+   ├─ K-Means                                          (ml_kmeans_gmm_em_*.md trio)
    ├─ Gaussian Mixture Models                          
    └─ EM Algorithm                                     
 
 FRACTAL III: KERNELS & NEURAL NETWORKS (14 Lectures)
 ═══════════════════════════════════════════════════════════════════
- Kernel Machines                    6       🟡 NEW     ML/SVM-Kernels/
-   ├─ Kernel Tricks                                    
+ Kernel Machines                    6       ✅ FULL    ML/SVM-Kernels/
+   ├─ Kernel Tricks                                    (ml_svm_kernels_*.md trio)
    ├─ SVMs (primal & dual)                            
    ├─ K-SVR                                           
    └─ K-PCA                                           
                                                        
- Artificial Neural Networks         4       🟡 NEW     ML/Neural-Networks/
-   ├─ MLP                                             
+ Artificial Neural Networks         4       ✅ FULL    ML/Neural-Networks/
+   ├─ MLP                                              (ml_nn_mlp_bp_*.md trio)
    ├─ Backpropagation                                  
    └─ RBF-Net                                         
                                                        
- Deep Learning Foundations          4       🟡 NEW     ML/Deep-Learning/
-   ├─ DNN                                             
+ Deep Learning Foundations          4       ✅ FULL    ML/Deep-Learning/
+   ├─ DNN                                              (ml_dl_cnn_ae_*.md trio)
    ├─ CNN                                             
    └─ Autoencoders                                     
 ```
