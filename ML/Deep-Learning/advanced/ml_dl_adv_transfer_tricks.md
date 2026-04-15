@@ -297,7 +297,7 @@ PyTorch's native answer to DeepSpeed ZeRO. Now standard for large-model training
 ╔══════════════════════════════════════════════════════════════╗
 ║  THE MODERN TRAINING CHECKLIST                               ║
 ╠══════════════════════════════════════════════════════════════╣
-║  ✅ Start from a pretrained backbone                        ║
+║  ✅ Start from a pretrained backbone                         ║
 ║  ✅ AdamW + cosine schedule + linear warmup                  ║
 ║  ✅ Mixed precision (AMP / BF16)                             ║
 ║  ✅ Strong data augmentation (RandAugment)                   ║
@@ -308,7 +308,7 @@ PyTorch's native answer to DeepSpeed ZeRO. Now standard for large-model training
 ║  ✅ Discriminative LRs for fine-tuning                       ║
 ║  ✅ Save best-validation checkpoint (early stopping-ish)     ║
 ║  ✅ Gradient checkpointing if memory is tight                ║
-║  ✅ DDP (not DP) for multi-GPU                                ║
+║  ✅ DDP (not DP) for multi-GPU                               ║
 ╚══════════════════════════════════════════════════════════════╝
 ```
 
