@@ -78,7 +78,7 @@ Interactive live demos from fellow M.Tech AI batchmates, worth a look:
 | 🎨 Watching a GAN Collapse | Generative Adversarial Networks — mode collapse, live | [rpaut03l.github.io/gan-mode-collapse-demo-grp-1-iit-j](https://rpaut03l.github.io/gan-mode-collapse-demo-grp-1-iit-j/demo/mode_collapse_live_demo.html) |
 | 🎬 RBM Movie Recommender | Restricted Boltzmann Machines for recommendation | [teal-frangipane-2c6927.netlify.app](https://teal-frangipane-2c6927.netlify.app/) |
 | 🧠 DBN Visualization | Deep Belief Networks, visualized | [nikhilsaini-iitj.github.io/dbn-visualization](https://nikhilsaini-iitj.github.io/dbn-visualization/) |
-| 🔬 Interactive Demo | *(topic not specified — link as shared)* | [scarlet-hatti-38.tiiny.site](https://scarlet-hatti-38.tiiny.site/) |
+| 🧲 Contrastive Learning Explorer | Explore how neural networks learn by comparing positive and negative pairs in embedding space | [scarlet-hatti-38.tiiny.site](https://scarlet-hatti-38.tiiny.site/) |
 | 🔗 Contrastive Learning (Group 21) | Self-supervised contrastive learning | [g25ait2134-tech.github.io/DL_Contrastive_Learning_Group21](https://g25ait2134-tech.github.io/DL_Contrastive_Learning_Group21/) |
 | ♻️ Transfer Learning — Feature Reuse | Transfer learning & feature reuse | [sureshbabugandla.github.io/transfer-learning-feature-reuse](https://sureshbabugandla.github.io/transfer-learning-feature-reuse/#overview) |
 
@@ -201,10 +201,6 @@ TS-01 covers the *foundations* (AI, ML, Maths, DSA&T, ODS). The applied,
 production-facing continuation — Deep Learning Operations and ML Operations —
 lives in the sibling repo **[TS-02](https://github.com/rpaut03l/TS-02)**.
 
-<table>
-<tr>
-<td width="50%" valign="top">
-
 **🔥 [DLOps](https://github.com/rpaut03l/TS-02/tree/main/DLOps)**
 *PyTorch → CNNs → tracking → distributed → deployment*
 
@@ -225,8 +221,7 @@ lives in the sibling repo **[TS-02](https://github.com/rpaut03l/TS-02)**.
 
 📎 Start here → [DLOps Hub](https://github.com/rpaut03l/TS-02/blob/main/DLOps/DLOPS_EXAM_00_Hub.md) · [README](https://github.com/rpaut03l/TS-02/blob/main/DLOps/README.md) · [all notebooks](https://github.com/rpaut03l/TS-02/tree/main/DLOps/notebooks)
 
-</td>
-<td width="50%" valign="top">
+<br>
 
 **⚙️ [MLOps](https://github.com/rpaut03l/TS-02/tree/main/MLOps)**
 *Data → pipelines → containers → orchestration → production*
@@ -242,13 +237,9 @@ lives in the sibling repo **[TS-02](https://github.com/rpaut03l/TS-02)**.
 🔗 Related: [K8s MLOps pipeline repo](https://github.com/rpaut03l/rptl_gn_mlops/tree/mlops-pipeline) ·
 [ML workflows blog](https://www.rohitpatel.in/2025/11/machine-learning-workflows-ml-models.html)
 
-</td>
-</tr>
-</table>
-
 > **How the three repos fit together:** TS-01 (theory/foundations) →
-> TS-02/MLOps (systems & pipelines) → TS-02/DLOps
-> — read in that order, or jump straight to whichever layer
+> TS-02/MLOps (systems & pipelines) → TS-02/DLOps (deep learning in
+> production) — read in that order, or jump straight to whichever layer
 > you need.
 
 ---
