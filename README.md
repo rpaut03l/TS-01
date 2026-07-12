@@ -12,6 +12,78 @@
 
 ---
 
+### 🏆 Featured Projects — Applied Portfolio
+
+Beyond coursework: end-to-end applied work spanning cybersecurity, deep
+learning, and MLOps — built, demoed, tested, and documented.
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**🔓 [Reentrancy Attack — Smart Contract Security](https://github.com/rpaut03l/ts_02_safevault-reentrancy-demo)**
+
+![Solidity](https://img.shields.io/badge/Solidity-363636?style=flat-square&logo=solidity&logoColor=white) ![Foundry](https://img.shields.io/badge/Foundry-000000?style=flat-square) ![MetaMask](https://img.shields.io/badge/MetaMask-F6851B?style=flat-square&logo=metamask&logoColor=white)
+
+Live exploit + defense on Ethereum smart contracts — drains an 11 ETH vault
+via a classic reentrancy bug, then blocks the identical attack with
+Checks-Effects-Interactions + a `nonReentrant` guard. Built with Foundry,
+Anvil, and a Next.js/MetaMask UI; proven with Forge tests exposing the full
+recursive call trace. *CSL6010 Cyber Security · Group 6*
+
+**🛡️ [PoisonedRAG + RAG-Shield — RAG Poisoning Defense](https://github.com/rpaut03l/poisonedrag-ragshield-group6-iitj)**
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white) ![FAISS](https://img.shields.io/badge/FAISS-4285F4?style=flat-square)
+
+Reproduces a USENIX Security 2025 RAG-poisoning attack (~90% attack success
+from just 5 malicious documents), then builds **RAG-Shield** — a 3-ring
+defense-in-depth pipeline (ingest screening, retrieval trust scoring,
+cross-LLM consensus across Claude/Mistral/LLaMA) that drives attack success
+down to ~13% while preserving normal-query accuracy. *CSL6010 · Group 6*
+
+</td>
+<td width="50%" valign="top">
+
+**🎨 [Mode Collapse in GANs — Presentation Kit](https://github.com/rpaut03l/gan-mode-collapse-demo-grp-1-iit-j/tree/main)**
+
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white) ![HTML5](https://img.shields.io/badge/Interactive_Demo-E34F26?style=flat-square&logo=html5&logoColor=white)
+
+Solo-built deep-learning presentation kit: an interactive browser-based live
+demo that simulates GAN mode collapse in real time (ten target classes
+collapsing to one, live mode-coverage tracking, one-click fix reveal), a
+presenter runbook, a Q&A guide, and full study notes running theory →
+numericals → runnable PyTorch (simple GAN + DCGAN).
+📦 [Repo](https://github.com/rpaut03l/gan-mode-collapse-demo-grp-1-iit-j/tree/main) · 🎥 [Live Demo](https://rpaut03l.github.io/gan-mode-collapse-demo-grp-1-iit-j/demo/mode_collapse_live_demo.html) · *Deep Learning · Group 1*
+
+**🎭 [MLOps Emotion Pipeline — DistilBERT CI/CD](https://github.com/rpaut03l/mlops-emotion-pipeline-group-12-iit-j)**
+
+![HuggingFace](https://img.shields.io/badge/🤗_HuggingFace-FFD21E?style=flat-square) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![GitHubActions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white) ![W&B](https://img.shields.io/badge/Weights_%26_Biases-FFBE00?style=flat-square&logo=weightsandbiases&logoColor=black)
+
+End-to-end MLOps: fine-tunes `distilbert-base-uncased` for 6-class emotion
+classification (Kaggle GPU training + W&B experiment tracking), publishes to
+a public Hugging Face model repo, packages inference in Docker, and ships via
+GitHub Actions CI/CD with a branch-protected, peer-reviewed PR workflow.
+*MLOps · Group 12*
+
+</td>
+</tr>
+</table>
+
+**🎓 More Deep Learning Demos — Batchmates' Work**
+
+Interactive live demos from fellow M.Tech AI batchmates, worth a look:
+
+| Demo | Topic | Live Link |
+|---|---|---|
+| 🎨 Watching a GAN Collapse | Generative Adversarial Networks — mode collapse, live | [rpaut03l.github.io/gan-mode-collapse-demo-grp-1-iit-j](https://rpaut03l.github.io/gan-mode-collapse-demo-grp-1-iit-j/demo/mode_collapse_live_demo.html) |
+| 🎬 RBM Movie Recommender | Restricted Boltzmann Machines for recommendation | [teal-frangipane-2c6927.netlify.app](https://teal-frangipane-2c6927.netlify.app/) |
+| 🧠 DBN Visualization | Deep Belief Networks, visualized | [nikhilsaini-iitj.github.io/dbn-visualization](https://nikhilsaini-iitj.github.io/dbn-visualization/) |
+| 🔬 Interactive Demo | *(topic not specified — link as shared)* | [scarlet-hatti-38.tiiny.site](https://scarlet-hatti-38.tiiny.site/) |
+| 🔗 Contrastive Learning (Group 21) | Self-supervised contrastive learning | [g25ait2134-tech.github.io/DL_Contrastive_Learning_Group21](https://g25ait2134-tech.github.io/DL_Contrastive_Learning_Group21/) |
+| ♻️ Transfer Learning — Feature Reuse | Transfer learning & feature reuse | [sureshbabugandla.github.io/transfer-learning-feature-reuse](https://sureshbabugandla.github.io/transfer-learning-feature-reuse/#overview) |
+
+---
+
 ### 🎒 What This Repo Contains
 
 | | Subject | Description |
@@ -123,15 +195,61 @@
 
 ---
 
-### 🔖 Currently Exploring
+### 🔗 Continue the Journey — TS-02 (DLOps & MLOps)
 
-```
-Reinforcement Learning   Bayesian Networks   First-Order Logic   Planning
-A* Search Optimization   Constraint Satisfaction   Game Theory
-MDP & Policy Iteration   Q-Learning   Policy Gradient Methods
-Simulated Annealing      Genetic Algorithms   Resolution Proofs
-Convex Optimization      Gradient Descent Convergence   Duality Theory
-```
+TS-01 covers the *foundations* (AI, ML, Maths, DSA&T, ODS). The applied,
+production-facing continuation — Deep Learning Operations and ML Operations —
+lives in the sibling repo **[TS-02](https://github.com/rpaut03l/TS-02)**.
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**🔥 [DLOps](https://github.com/rpaut03l/TS-02/tree/main/DLOps)**
+*PyTorch → CNNs → tracking → distributed → deployment*
+
+| # | Topic | Notebook |
+|---|---|---|
+| 01 | [Intro to PyTorch](https://github.com/rpaut03l/TS-02/blob/main/DLOps/DLOPS_01_Intro_PyTorch.md) — tensors, autograd, first nn | [.ipynb](https://github.com/rpaut03l/TS-02/blob/main/DLOps/notebooks/01_Intro_To_PyTorch/PyTorch_Tutorial.ipynb) |
+| 02 | [Basics for DL](https://github.com/rpaut03l/TS-02/blob/main/DLOps/DLOPS_02_Basics_PyTorch_DL.md) — activations, losses, optimizers | [.ipynb](https://github.com/rpaut03l/TS-02/blob/main/DLOps/notebooks/02_Basics_of_Pytorch_for_DL/Basics_of_Pytorch_for_DL.ipynb) |
+| 03 | [CNN + Feature Extraction](https://github.com/rpaut03l/TS-02/blob/main/DLOps/DLOPS_03_CNN_Feature_Extraction.md) — CIFAR/LeNet, RandomForest hybrid | [.ipynb](https://github.com/rpaut03l/TS-02/blob/main/DLOps/notebooks/03_CNN_Feature_Extraction/3_Classification_and_Feature_Extraction_using_CNN.ipynb) |
+| 04 | [Datasets & DataLoaders](https://github.com/rpaut03l/TS-02/blob/main/DLOps/DLOPS_04_Datasets_DataLoaders.md) — transforms, augmentation | [.ipynb](https://github.com/rpaut03l/TS-02/blob/main/DLOps/notebooks/04_Datasets_and_DataLoaders/4_Datasets_and_DataLoaders.ipynb) |
+| 05 | [Custom Datasets](https://github.com/rpaut03l/TS-02/blob/main/DLOps/DLOPS_05_Custom_Datasets_Training.md) — ImageFolder, TinyVGG | [.ipynb](https://github.com/rpaut03l/TS-02/blob/main/DLOps/notebooks/05_Custom_Datasets_Training/5_DLops_Custom_Datasets_and_DataLoaders_Teaching.ipynb) |
+| 06 | [TensorBoard](https://github.com/rpaut03l/TS-02/blob/main/DLOps/DLOPS_06_TensorBoard.md) — SummaryWriter, PR curves, hparams | [.ipynb](https://github.com/rpaut03l/TS-02/blob/main/DLOps/notebooks/06_TensorBoard/06_DLops_TensorBoard_Experiment_Tracking.ipynb) |
+| 07 | [W&B Sweeps (course)](https://github.com/rpaut03l/TS-02/blob/main/DLOps/DLOPS_07_WandB_Sweeps_Course.md) — init/log/sweep/agent | [.ipynb](https://github.com/rpaut03l/TS-02/blob/main/DLOps/notebooks/07_WandB_Sweeps_Course/07_DLops_Hyperparameter_Tuning_with_WandB_Sweeps.ipynb) |
+| 08 | [W&B Sweeps (official)](https://github.com/rpaut03l/TS-02/blob/main/DLOps/DLOPS_08_WandB_Sweeps_Official.md) — sweep_config grammar | [.ipynb](https://github.com/rpaut03l/TS-02/blob/main/DLOps/notebooks/08_WandB_Sweeps_Official/13c_Organizing_Hyperparameter_Sweeps_in_PyTorch_with_WandB.ipynb) |
+| 09 | [W&B Artifacts](https://github.com/rpaut03l/TS-02/blob/main/DLOps/DLOPS_09_WandB_Artifacts.md) — data + model versioning | [.ipynb](https://github.com/rpaut03l/TS-02/blob/main/DLOps/notebooks/09_WandB_Artifacts/14_Pipeline_Versioning_with_WandB_Artifacts.ipynb) |
+| 10 | [Distributed Training](https://github.com/rpaut03l/TS-02/blob/main/DLOps/DLOPS_10_Distributed_Training.md) — DataParallel, model parallel | [18a](https://github.com/rpaut03l/TS-02/blob/main/DLOps/notebooks/10_Distributed_Training/18a_data_parallel_tutorial.ipynb) · [18b](https://github.com/rpaut03l/TS-02/blob/main/DLOps/notebooks/10_Distributed_Training/18b_parallelism_tutorial.ipynb) · [18c](https://github.com/rpaut03l/TS-02/blob/main/DLOps/notebooks/10_Distributed_Training/18c_model_parallel_tutorial.ipynb) |
+| 11 | [TorchScript](https://github.com/rpaut03l/TS-02/blob/main/DLOps/DLOPS_11_TorchScript.md) — trace vs script | [.ipynb](https://github.com/rpaut03l/TS-02/blob/main/DLOps/notebooks/11_TorchScript/15_Intro_to_TorchScript_tutorial.ipynb) |
+| 12 | [ONNX](https://github.com/rpaut03l/TS-02/blob/main/DLOps/DLOPS_12_ONNX.md) — export, checker, onnxruntime | [.ipynb](https://github.com/rpaut03l/TS-02/blob/main/DLOps/notebooks/12_ONNX/16a_intro_onnx.ipynb) |
+
+📎 Start here → [DLOps Hub](https://github.com/rpaut03l/TS-02/blob/main/DLOps/DLOPS_EXAM_00_Hub.md) · [README](https://github.com/rpaut03l/TS-02/blob/main/DLOps/README.md) · [all notebooks](https://github.com/rpaut03l/TS-02/tree/main/DLOps/notebooks)
+
+</td>
+<td width="50%" valign="top">
+
+**⚙️ [MLOps](https://github.com/rpaut03l/TS-02/tree/main/MLOps)**
+*Data → pipelines → containers → orchestration → production*
+
+| Area | Covers |
+|---|---|
+| Systems Concepts | ML system design, reproducibility, the "why" behind MLOps |
+| Preprocessing & EDA | Data cleaning, feature pipelines, exploratory workflows |
+| Git · Docker · K8s | Containerizing training/serving, versioned pipelines, orchestration |
+| Experiment Tracking | Bridges directly into DLOps modules 06-09 (TensorBoard, W&B) |
+| Deployment | Serving patterns that pair with DLOps modules 11-12 (TorchScript, ONNX) |
+
+🔗 Related: [K8s MLOps pipeline repo](https://github.com/rpaut03l/rptl_gn_mlops/tree/mlops-pipeline) ·
+[ML workflows blog](https://www.rohitpatel.in/2025/11/machine-learning-workflows-ml-models.html)
+
+</td>
+</tr>
+</table>
+
+> **How the three repos fit together:** TS-01 (theory/foundations) →
+> TS-02/MLOps (systems & pipelines) → TS-02/DLOps
+> — read in that order, or jump straight to whichever layer
+> you need.
 
 ---
 
